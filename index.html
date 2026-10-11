@@ -1,132 +1,439 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>邵东村</title>
-<meta name="description" content="宜兴市湖父镇邵东村：村庄、老房子和驻村记录。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<html lang="zh-CN" data-page-node-id="yqHTBi6U7MmaJVUVeIWwXV" data-dm-ref="1"><head data-page-node-id="UcfOu2ClDDgC2wsEuFAM0z">
+<meta charset="UTF-8" data-page-node-id="SxhevclP5csRFDcufDwcHz">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="mpKVZKmHB1PVCPuxzLQk63">
+<title>邵东村 · 阳羡贡茶古道上的村落 | 江苏宜兴湖㳇镇</title>
+<meta name="description" content="邵东村，位于江苏宜兴湖㳇镇，藏在阳羡生态旅游度假区的竹海深处。这里有江苏唯一的贡茶古道、古琴大师成公亮的邵坞足迹，以及乡村振兴的鲜活实践。" data-page-node-id="DEfqo8D1ibREKdAj91N140">
 <style>
-  :root {
-    --wall: #eceee9;      /* 粉墙 */
-    --ink: #1f2a2b;       /* 墨 */
-    --tile: #4a5a5e;      /* 青瓦 */
-    --bamboo: #5f7d63;    /* 竹 */
-    --earth: #8a6a4f;     /* 夯土 */
-    --line: #c9cec6;
-    --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
-    --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--wall);
-    color: var(--ink);
-    font-family: var(--sans);
-    font-size: 17px;
-    line-height: 1.9;
-  }
-  a { color: var(--bamboo); text-underline-offset: 4px; }
-  a:focus-visible { outline: 3px solid var(--earth); outline-offset: 3px; }
+:root{
+  --paper:#f6f2ea; --paper2:#efe9dc; --ink:#2b2620; --ink2:#5a544a; --ink3:#8b8478;
+  --tea:#2f6b4f; --tea-deep:#1d4a36; --tea-soft:#e7f0ea;
+  --gold:#b8893b; --gold-soft:#f4ead4; --red:#9e3b32; --red-soft:#f3e6e3;
+  --line:#ddd5c7; --shadow:0 10px 30px rgba(40,34,24,.08);
+  --serif:"Songti SC","STSong","SimSun","Noto Serif SC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.85;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
 
-  /* 首屏：竖排大字 */
-  .hero {
-    min-height: 92vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1.5rem, 6vw, 4rem);
-    padding: 3rem 1.5rem;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero h1 {
-    margin: 0;
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: clamp(5.5rem, 24vw, 12rem);
-    line-height: 1.05;
-    letter-spacing: 0.08em;
-    writing-mode: vertical-rl;
-    color: var(--tile);
-  }
-  .hero .side {
-    writing-mode: vertical-rl;
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    letter-spacing: 0.35em;
-    color: var(--earth);
-    border-right: 2px solid var(--earth);
-    padding-right: 1rem;
-    line-height: 2;
-  }
+/* ---------- 导航 ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(246,242,234,.82);
+  backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);transition:.3s}
+.nav.scrolled{box-shadow:0 4px 18px rgba(40,34,24,.07)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.06em}
+.brand .seal{width:30px;height:30px;border-radius:6px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-family:var(--serif);box-shadow:0 2px 6px rgba(158,59,50,.35)}
+.nav-links{display:flex;gap:26px;font-size:14.5px}
+.nav-links a{color:var(--ink2);position:relative;padding:4px 0;transition:.2s}
+.nav-links a:hover{color:var(--tea)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--tea);transition:.25s}
+.nav-links a:hover::after{width:100%}
+.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+@media(max-width:860px){
+  .menu-btn{display:block}
+  .nav-links{position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--paper);
+    border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:.35s}
+  .nav-links.open{max-height:340px}
+  .nav-links a{padding:14px 22px;border-top:1px solid var(--line)}
+}
 
-  main { max-width: 36rem; margin: 0 auto; padding: 0 1.5rem 4rem; }
-  section { padding: 3.5rem 0 0; }
-  h2 {
-    font-family: var(--serif);
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin: 0 0 1rem;
-    color: var(--tile);
-  }
-  p { margin: 0 0 1.1rem; }
-  .note {
-    border-left: 3px solid var(--bamboo);
-    padding: 0.2rem 0 0.2rem 1rem;
-    color: var(--tile);
-  }
-  footer {
-    max-width: 36rem;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 3rem;
-    border-top: 1px solid var(--line);
-    font-size: 0.9rem;
-    color: var(--tile);
-  }
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:90px 0 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 50% 8%, #fde7c6 0%, #f1d9ad 26%, #cdb083 55%, #6f7d5e 100%);}
+.hero-mountains{position:absolute;left:0;right:0;bottom:0;width:100%;height:62%;display:block}
+.hero-content{position:relative;z-index:2;color:#352c20}
+.hero .kicker{font-size:14px;letter-spacing:.4em;color:#5a4a2e;margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-size:clamp(56px,12vw,128px);font-weight:700;line-height:1;
+  color:#2b2218;letter-spacing:.04em;text-shadow:0 4px 24px rgba(120,90,40,.25)}
+.hero .sub{font-size:clamp(16px,2.4vw,22px);color:#4a3d28;margin-top:18px;font-family:var(--serif);letter-spacing:.08em}
+.hero .line{margin:26px auto 0;max-width:560px;font-size:16px;color:#4a3d28;line-height:2}
+.hero .line b{color:#7a2f28;font-weight:600}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#5a4a2e;
+  font-size:13px;letter-spacing:.2em;animation:bob 2s infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ---------- 通用 section ---------- */
+section{padding:78px 0}
+.sec-head{text-align:center;margin-bottom:46px}
+.sec-head .tag{display:inline-block;font-size:13px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}
+.sec-head h2{font-family:var(--serif);font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--ink);letter-spacing:.04em}
+.sec-head .en{display:block;font-size:13px;letter-spacing:.28em;color:var(--ink3);margin-top:10px;text-transform:uppercase}
+.sec-head .deco{width:54px;height:3px;background:var(--tea);margin:18px auto 0;border-radius:2px}
+
+/* ---------- 村情速览 ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--shadow)}
+.stat .v{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--tea-deep);line-height:1.1}
+.stat .v small{font-size:15px;color:var(--ink2);font-weight:400;margin-left:2px}
+.stat .k{margin-top:8px;font-size:13.5px;color:var(--ink2)}
+.lead{margin:34px auto 0;max-width:760px;text-align:center;font-size:17px;color:var(--ink2);line-height:2}
+
+/* ---------- 王牌 vs 真问题 ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.cols{grid-template-columns:1fr}}
+.block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;box-shadow:var(--shadow)}
+.block h3{font-family:var(--serif);font-size:21px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.block.good h3{color:var(--tea)}
+.block.bad h3{color:var(--red)}
+.block h3 .num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff}
+.block.good h3 .num{background:var(--tea)}
+.block.bad h3 .num{background:var(--red)}
+.item{display:flex;gap:14px;padding:14px 0;border-top:1px dashed var(--line)}
+.item:first-of-type{border-top:none}
+.item .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.block.good .ic{background:var(--tea-soft)}
+.block.bad .ic{background:var(--red-soft)}
+.item .t{font-weight:600;color:var(--ink);margin-bottom:2px}
+.item .d{font-size:14px;color:var(--ink2);line-height:1.7}
+
+/* ---------- 贡茶古道 ---------- */
+.theme-tea{background:linear-gradient(180deg,#fff 0%,var(--tea-soft) 100%)}
+.timeline{position:relative;margin-top:10px;padding-left:8px}
+.timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:2px;background:var(--tea);opacity:.4}
+.tl-row{position:relative;padding:0 0 26px 46px}
+.tl-row .dot{position:absolute;left:6px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--tea)}
+.tl-row .yr{font-family:var(--serif);font-weight:700;color:var(--tea-deep);font-size:17px}
+.tl-row .tt{font-weight:600;margin:2px 0 4px}
+.tl-row .dd{font-size:14.5px;color:var(--ink2);line-height:1.8}
+.qute{margin:30px auto 0;max-width:720px;background:#fff;border-left:5px solid var(--gold);border-radius:0 12px 12px 0;
+  padding:22px 26px;font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.9;box-shadow:var(--shadow)}
+.qute .by{display:block;margin-top:10px;font-size:14px;color:var(--ink3);font-family:var(--sans)}
+.tea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:760px){.tea-grid{grid-template-columns:1fr}}
+.node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+.node .n{font-family:var(--serif);font-size:18px;color:var(--tea-deep);font-weight:700;margin-bottom:6px}
+.node p{font-size:14px;color:var(--ink2);line-height:1.75}
+
+/* ---------- 成公亮 ---------- */
+.theme-night{background:linear-gradient(165deg,#243027 0%,#1d4a36 60%,#143226 100%);color:#eee6d6}
+.theme-night .sec-head h2{color:#f3ead7}
+.theme-night .sec-head .tag{color:#e0b878}
+.theme-night .sec-head .en{color:#9fb4a3}
+.theme-night .sec-head .deco{background:#e0b878}
+.cheng{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center}
+@media(max-width:820px){.cheng{grid-template-columns:1fr}}
+.cheng .txt p{color:#d9d2c2;line-height:1.95;margin-bottom:16px;font-size:15.5px}
+.cheng .txt .hl{color:#f0c987;font-weight:600}
+.cheng .card-q{background:rgba(255,255,255,.06);border:1px solid rgba(224,184,120,.35);border-radius:16px;padding:30px;
+  font-family:var(--serif);font-size:21px;line-height:2;color:#f5ecd9}
+.cheng .card-q .by{display:block;margin-top:16px;font-size:14px;color:#cdb892;font-family:var(--sans)}
+
+/* ---------- 传说 ---------- */
+.legend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:760px){.legend-grid{grid-template-columns:1fr}}
+.legend{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.legend .lg-ic{font-size:30px;margin-bottom:10px}
+.legend h4{font-family:var(--serif);font-size:19px;color:var(--ink);margin-bottom:8px}
+.legend p{font-size:14px;color:var(--ink2);line-height:1.78}
+.legend .note{margin-top:10px;font-size:12.5px;color:var(--ink3);font-style:italic}
+
+/* ---------- 物产体验 ---------- */
+.theme-gold{background:linear-gradient(180deg,#fff 0%,var(--gold-soft) 100%)}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:820px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+.prod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;box-shadow:var(--shadow);transition:.25s}
+.prod:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(40,34,24,.12)}
+.prod .em{font-size:34px;margin-bottom:10px}
+.prod .t{font-weight:600;color:var(--ink);margin-bottom:4px}
+.prod .d{font-size:13px;color:var(--ink2);line-height:1.65}
+.exp{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.exp{grid-template-columns:1fr}}
+.exp-item{background:#fff;border-top:3px solid var(--gold);border-radius:0 12px 12px 12px;padding:20px;box-shadow:var(--shadow)}
+.exp-item h4{font-family:var(--serif);font-size:18px;color:var(--tea-deep);margin-bottom:6px}
+.exp-item p{font-size:14px;color:var(--ink2);line-height:1.75}
+
+/* ---------- 第一书记 ---------- */
+.first{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.first-info{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+@media(max-width:760px){.first-info{grid-template-columns:1fr}}
+.fi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+.fi .k{font-size:13px;color:var(--ink3);margin-bottom:6px}
+.fi .v{font-size:16px;color:var(--ink);font-weight:600;line-height:1.6}
+.main-line{background:#fff;border:1px solid var(--line);border-left:5px solid var(--tea);border-radius:0 14px 14px 0;
+  padding:22px 26px;margin-bottom:40px;box-shadow:var(--shadow)}
+.main-line .lbl{font-size:13px;color:var(--tea);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+.main-line .v{font-family:var(--serif);font-size:22px;color:var(--tea-deep);line-height:1.7}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:var(--shadow);position:relative}
+.step .sno{font-family:var(--serif);font-size:40px;color:var(--tea-soft);font-weight:700;line-height:1}
+.step .st{font-family:var(--serif);font-size:19px;color:var(--tea-deep);font-weight:700;margin:8px 0 10px}
+.step p{font-size:14px;color:var(--ink2);line-height:1.8}
+.step .when{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gold);background:var(--gold-soft);padding:3px 10px;border-radius:20px}
+
+/* ---------- 页脚 ---------- */
+footer{background:#26211b;color:#c9c0b0;padding:54px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr}}
+footer h5{font-family:var(--serif);font-size:17px;color:#f0e8d8;margin-bottom:14px}
+footer p,footer li{font-size:13.5px;line-height:1.9;color:#b3aa9a}
+footer ul{list-style:none}
+footer a{color:#d9b878}
+footer a:hover{text-decoration:underline}
+.foot-brand{font-family:var(--serif);font-size:22px;color:#f0e8d8;margin-bottom:10px}
+.disclaimer{margin-top:30px;padding-top:20px;border-top:1px solid #3a342b;font-size:12.5px;color:#8e8576;line-height:1.9}
+.disclaimer b{color:#b3aa9a}
+
+/* ---------- 动画 ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
-</head>
-<body>
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="s9p9PggxtCOb6TurFWgDh0" style="position: relative;">
 
-<header class="hero">
-  <p class="side">宜兴市　湖父镇</p>
-  <h1>邵东村</h1>
+<!-- 导航 -->
+<nav class="nav scrolled" id="nav" data-page-node-id="yK3gx2jPYREHnuBzRN3PKk">
+  <div class="wrap nav-in" data-page-node-id="31zeWy5zw15L0xZbGgPvGe">
+    <a href="#top" class="brand" data-page-node-id="inaKFpLyDWDjqrxO9B3U3K"><span class="seal" data-page-node-id="U1Hq5jWb4ErkqpMtUC1lit">邵</span>邵东村</a>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单" data-page-node-id="ECzYyvpB7mE9Bc6XxLXN5c">☰</button>
+    <div class="nav-links" id="navLinks" data-page-node-id="Xf9xZrDR26UTc2yRVMzrZx">
+      <a href="#about" data-page-node-id="gPwReOIZpgrPxnB2jOjfov">村情</a>
+      <a href="#tea" data-page-node-id="XpHlrq8oywFoeuAceRqFf3">贡茶古道</a>
+      <a href="#cheng" data-page-node-id="b4RB6fetDlbTyi4FaiNXWa">琴声廿三弯</a>
+      <a href="#legend" data-page-node-id="9MTZciHlguZdtuxkkXJGHX">山间古韵</a>
+      <a href="#prod" data-page-node-id="tyjav2iYh60kLnNeKuabn4">物产体验</a>
+      <a href="#first" data-page-node-id="nDJk3lwXc6Ynv3vGBuqmd1">乡村振兴</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top" data-page-node-id="j9SqfyExBjnWms9NGmvLmH">
+  <div class="hero-bg" data-page-node-id="I3l8Q9jduhc3xvO3eQWTwB"></div>
+  <svg class="hero-mountains" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true" data-page-node-id="5HgCGs3aYpKTbn6HAv6Zur">
+    <path d="M0,420 L0,250 C180,180 320,300 480,230 C640,160 760,300 960,210 C1140,130 1280,260 1440,200 L1440,420 Z" fill="#5d6e4c" opacity=".55" data-page-node-id="TiL9CG4Dt8vaIiHgDFtZnv"></path>
+    <path d="M0,420 L0,310 C200,250 360,350 560,290 C760,230 900,360 1120,300 C1280,255 1360,330 1440,300 L1440,420 Z" fill="#3f5238" opacity=".75" data-page-node-id="WExox0xG7n9snNAz3Wo6D0"></path>
+    <path d="M0,420 L0,360 C240,320 420,390 640,350 C860,310 1000,390 1240,355 C1340,340 1400,375 1440,365 L1440,420 Z" fill="#233a26" data-page-node-id="YY9YZXoLFfRtxZDMyNyr3X"></path>
+  </svg>
+  <div class="hero-content" data-page-node-id="nI0e0CAD4KCWhshpbw82Tx">
+    <div class="kicker" data-page-node-id="ZDzD7ezhmgDK98rW714kvH">江 苏 · 宜 兴 · 湖 㳇 镇</div>
+    <h1 data-page-node-id="FkS94zGjHO0Xovl1aO9GD1">邵东村</h1>
+    <div class="sub" data-page-node-id="FPXOELtdjxNjryYl99BDzu">阳羡贡茶古道上的村落 · 藏在竹海深处的诗意山乡</div>
+    <p class="line" data-page-node-id="uqHerxk6lzl6CbEz64OSls" style="">一条贡茶古道，半部阳羡茶史；<br data-page-node-id="OwyyK4O0MI9aJEWh7iYUjh">一位古琴大师，半月邵坞抚琴。<br data-page-node-id="PQ7h6o52BJmBuITJAzU0gz"><b data-page-node-id="vbmt5mwPixJL9PFCBNmzqc" style="">这里，是江苏唯一的贡茶史源头。​​</b></p>
+  </div>
+  <div class="scroll-hint" data-page-node-id="DsDLws2Z1WAcVkJDX0YqzY">向下探索 ↓</div>
 </header>
 
-<main>
-  <section id="about">
-    <h2>这是一个什么样的村子</h2>
-    <p>邵东村位于江苏省宜兴市湖父镇。这里写村子的基本情况：位置、地形、人口、主要产业和特色。</p>
-    <p>这个页面由驻村第一书记维护，用来记录村子的现状、变化，以及正在思考的事情。</p>
-    <!-- TODO：补充村子的基本信息，建议用自己核实过的数字 -->
-  </section>
+<!-- 村情 -->
+<section id="about" data-page-node-id="lzSv27F5D5ZtRVVXiJxEGi">
+  <div class="wrap" data-page-node-id="h860gfHZzU8oxWhnFSSRfw">
+    <div class="sec-head reveal in" data-page-node-id="DMEg8lMF0rMK8U9Qqi1Odv">
+      <span class="tag" data-page-node-id="w15Jwly1sNDLQzFomGx0zg">村 情 速 览</span>
+      <h2 data-page-node-id="BiAId9HniHpr9DPZ6naSZN">邵东村，藏在苏浙交界</h2>
+      <span class="en" data-page-node-id="sJ4mJCIU4Fsa9hS3OwXgcV">A Village Between Jiangsu and Zhejiang</span>
+      <div class="deco" data-page-node-id="hHHlweku3kxMCAiHgCHAvb"></div>
+    </div>
+    <div class="stats reveal in" data-page-node-id="KZM5EcA96gAnSB83NYGThP">
+      <div class="stat" data-page-node-id="VaUxnT0pMNQ1GOd5LWwtNE"><div class="v" data-page-node-id="OeWqaT2DRdP2iEb1Mre9Nn" style=""><small data-page-node-id="neVuFKIXq4hC8j8B8KprBZ"><font color="#1d4a36" data-page-node-id="PjdsyDSErAPEehBy3Tj7Dx"><span style="font-size: 34px;" data-page-node-id="pn7yi7GITKqvtULOjiwQXC"><b data-page-node-id="T5RRWekVANsAlmH0SxI5Y2">732</b></span></font>户</small></div><div class="k" data-page-node-id="vljzoOzOGELHMLxSFmvuzS" style="">户籍人口 · 约两千余 ​​</div></div>
+      
+      
+      
+      <div class="stat" data-page-node-id="AHWDYjFdHFlcHt985qhCK8"><div class="v" data-page-node-id="3sI5ATj61oHJTPfQLDoydJ">约10<small data-page-node-id="ye0QYl8JZJkcDpHN6Nade4">km²</small></div><div class="k" data-page-node-id="xwNqWGJm8vHCAubs8KQMkq">村域面积</div></div>
+      <div class="stat" data-page-node-id="ogHf4WlQqPlkrSqrylsNx5"><div class="v" data-page-node-id="9aABG2Nqu0yD8SuDEqNeQ6">1.7<small data-page-node-id="JfDT8FuxdGKSOSRGDJIITM">万亩</small></div><div class="k" data-page-node-id="CE0EpxOCwq5V25oBbWwRz4">竹林面积</div></div>
+      <div class="stat" data-page-node-id="Tq076M2Pmdew9Llg13xc9t"><div class="v" data-page-node-id="2zlmAewxpnUd5VaHTJTXkT">82<small data-page-node-id="5b3DNptdpMtCuklfuehj25">%+</small></div><div class="k" data-page-node-id="fJYFiraKhtkELCWE0o0oiu">森林覆盖率</div></div>
+      <div class="stat" data-page-node-id="feat-sanmian"><div class="v" data-page-node-id="feat-sanmian-v">三面环山</div><div class="k" data-page-node-id="feat-sanmian-k">地貌特征 · 群山环抱</div></div>
+      <div class="stat" data-page-node-id="feat-xishui"><div class="v" data-page-node-id="feat-xishui-v">溪水纵横</div><div class="k" data-page-node-id="feat-xishui-k">水网特征 · 溪涧密布</div></div>
+      
+    </div>
+    <p class="lead reveal in" data-page-node-id="rvu2Coze4IE2e3i1B8mWly" style="white-space: pre-wrap; cursor: text;">邵东村位于宜兴市湖㳇镇，地处阳羡生态旅游度假区腹地，苏浙两省交界、三面环山，是典型的江南丘陵山村。2001 年由原东岭、邵坞两村合并而成，村中竹海成片、溪涧纵横，既坐拥阳羡茶千年文脉，也承载着当代乡村振兴的鲜活探索。​</p>
+  </div>
+</section>
 
-  <section id="houses">
-    <h2>老房子</h2>
-    <p>村里留着不少老房子。近期的一场山洪让一部分房屋受损严重，其中有些已经成为危房。</p>
-    <p class="note">我们不想把它们一拆了之。希望在安全评估的基础上，找到修缮、改造和再利用的办法，让老房子继续有用。</p>
-  </section>
+<!-- 贡茶古道 -->
+<section id="tea" class="theme-tea" data-page-node-id="BjpUOaBQt3tEAaeoDDt8tS">
+  <div class="wrap" data-page-node-id="vnSluPDGViAID0QL0FLm9Z">
+    <div class="sec-head reveal in" data-page-node-id="eNoEjU6FyEGTDTzSzVNwYR">
+      <span class="tag" data-page-node-id="tcsJFNVawANYB8eE9qaFFw">文 化 I P · 核 心</span>
+      <h2 data-page-node-id="a8BYVWW7WmCbL3JXETvYDe">阳羡贡茶，廿三弯里的千年回响</h2>
+      <span class="en" data-page-node-id="FGrtW6dRz7WBOrBW7ZMBuk">The Tribute Tea Ancient Trail</span>
+      <div class="deco" data-page-node-id="0YUdX4ypFocrWJ9MfWmAr7"></div>
+    </div>
 
-  <section id="records">
-    <h2>驻村记录</h2>
-    <p>驻村期间的所见所想，整理成"邵东村第一书记"系列文章，发布在微信公众号"小村里的小唐"。</p>
-    <p>已写到的主题包括村里的老房子，以及通过《湖父镇志》了解村子的历史。</p>
-    <!-- TODO：之后可以在这里加文章链接 -->
-  </section>
+    <div class="timeline reveal in" data-page-node-id="tP5clrhZTFOZXOJAtOvm9U">
+      <div class="tl-row" data-page-node-id="5aVRQJTJVh206NCZX2T1om"><span class="dot" data-page-node-id="u74BCutxrXQiJHcqxDl34C"></span><div class="yr" data-page-node-id="7J1QugLuiBfivlyp8S4dLM">唐 · 永泰年间</div><div class="tt" data-page-node-id="S8g9y1lxfeDzz9UfnkXJXl">阳羡茶入贡</div><div class="dd" data-page-node-id="45OHb1hVn3LRDFm4M4gZgN">常州刺史李栖筠将阳羡茶进献朝廷，唐代宗钦定为"制度性贡茶"，阳羡自此成为唐代最重要的贡茶产区之一。</div></div>
+      <div class="tl-row" data-page-node-id="dYqJFGdi7HKSMsu48O19JY"><span class="dot" data-page-node-id="EavwVNLI6sYW2gBH235fNm"></span><div class="yr" data-page-node-id="aVLZHNCDsLp60K0sqf9Zfn">唐 · 茶圣亲临</div><div class="tt" data-page-node-id="mAKJv4lUfDrWmW8irdPr0h" style="white-space: pre-wrap;">陆羽赴廿三湾觅茶</div><div class="dd" data-page-node-id="O3CqF2k8u2FELCJ9KKPS31" style="white-space: pre-wrap; cursor: text;">茶圣陆羽为考察茶事亲赴邵东村一带的廿三湾选种种植，阳羡茶被其品评为"冠绝他境"。​</div></div>
+      <div class="tl-row" data-page-node-id="NXFdBNTivjxs9U8cdhSRxf"><span class="dot" data-page-node-id="DYjeGghIgPk8DnErQ6RdcH"></span><div class="yr" data-page-node-id="2Z9ixRmBSbMPU7CEzm6ejD">唐 · 两府议茶</div><div class="tt" data-page-node-id="E6LBKaVrrXYJgDfDZ1YV29">境会亭</div><div class="dd" data-page-node-id="U1Q3Zc2K48DgCmwfE5DaBp">常州、湖州两府在廿三弯山顶设"境会亭"议定贡茶事宜，是贡茶古道叙事中可实物依托的历史节点（2016 年已重建）。</div></div>
+      <div class="tl-row" data-page-node-id="bjy-tl"><span class="dot" data-page-node-id="bjy-dot"></span><div class="yr" data-page-node-id="bjy-yr" style="white-space: pre-wrap; cursor: text;">唐 · 宝历二年​</div><div class="tt" data-page-node-id="bjy-tt">白居易闻宴赋诗</div><div class="dd" data-page-node-id="bjy-dd">苏州刺史白居易受邀赴廿三弯境会亭，与湖、常两州刺史共襄贡茶盛会，却因坠马伤足未能上山。遥闻茶宴盛况，写下《夜闻贾常州崔湖州茶山境会亭欢宴》，以"遥闻境会茶山夜，珠翠歌钟俱绕身"道尽羡慕与遗憾——一桩缺席，反让千年茶事更见温度。</div></div>
+      <div class="tl-row" data-page-node-id="vsz8Pi5VAGAymhvZvOdYn4"><span class="dot" data-page-node-id="ZzKAHCLCzeZxyQLm9ttv2J"></span><div class="yr" data-page-node-id="DbiiJGQZEpFIvA3lshtvH5">今 · 古道遗存</div><div class="tt" data-page-node-id="qOCFNo0Z5tGEhz1DUaMJNF">廿三弯贡茶古道</div><div class="dd" data-page-node-id="sqvrwr7GV31N4urVnVicUA">宜兴境内现存约 1000 米古道遗迹，是江苏境内唯一反映古代茶叶进贡史实的交通遗址，邵东村正位于这条文化带的核心节点。</div></div>
+    </div>
 
-  <section id="visit">
-    <h2>欢迎来看看</h2>
-    <p>如果你懂建筑、设计、乡村规划，或者只是对老房子和小村子感兴趣，欢迎来邵东村走一走、看一看。</p>
-    <p>联系方式：<a href="tangload@163.com">tangload@163.com</a></p>
-    <!-- TODO：把邮箱换成你愿意公开的联系方式，或删除这一行 -->
-  </section>
-</main>
+    <div class="qute reveal in" data-page-node-id="pLXlrlDa2g3c4QumbrPuBn">"天子未尝阳羡茶，百草不敢先开花。"<span class="by" data-page-node-id="Eq9ap72okJFEwvQfrDBr3d">—— 唐 · 卢仝《走笔谢孟谏议寄新茶》</span></div>
 
-<footer>
-  邵东村 · 江苏省宜兴市湖父镇
+    <div class="qute reveal in" data-page-node-id="bjy-qt">"遥闻境会茶山夜，珠翠歌钟俱绕身。盘下中分两州界，灯前合作一家春。青娥递舞应争妙，紫笋齐尝各斗新。自叹花时北窗下，蒲黄酒对病眠人。"<span class="by" data-page-node-id="bjy-qt-by">—— 唐 · 白居易《夜闻贾常州崔湖州茶山境会亭欢宴》（宝历二年，826 年）</span></div>
+
+    <div class="tea-grid" data-page-node-id="AVLFcM8DsN3gDuE9HvRlp3">
+      <div class="node reveal in" data-page-node-id="zzq4DMpZ0TuQ49VCr4NBqT"><div class="n" data-page-node-id="48HAdnAEWJQkygiV87MQvr">廿三弯古道</div><p data-page-node-id="IfqRaMKBOK5UBmnjhCpkeG">翻山即长兴顾渚——陆羽命名"紫笋茶"之地。一道弯一道弯的青石古道，是古代茶马般的进贡通道，也是今日的网红徒步线。</p></div>
+      <div class="node reveal in" data-page-node-id="j8mZbnpxXBV37w3T1zCqAB"><div class="n" data-page-node-id="9qHG1nZAxkAK67JGciIjal">境会亭</div><p data-page-node-id="mhRpP5VWTE4ewcW1tR86vf">当年常州、湖州两府议定贡茶的草亭遗址，2016 年重建，立于廿三弯山顶，可俯瞰两省山色，是贡茶故事的"活坐标"。</p></div>
+      <div class="node reveal in" data-page-node-id="WCe8DmbrtQw2tEGEY29p9R"><div class="n" data-page-node-id="iPCniF2wpUo2U0zYXhAd5I">赐福寺</div><p data-page-node-id="etE6Vyn7cNCtbNnADgVMlV">坐落于山间的古刹，与项羽翻越长岗岭的传说相邻，登山途中可访古、可静心，是"古道+古刹"徒步体验的重要一环。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 成公亮 -->
+<section id="cheng" class="theme-night" data-page-node-id="XVA3q3OVH8gseN9UJhE8l8">
+  <div class="wrap" data-page-node-id="FHAF9CcCHeeWxGSu1wDZuL">
+    <div class="sec-head reveal in" data-page-node-id="cC45CJOCc4owH72xOmrpiH">
+      <span class="tag" data-page-node-id="4hSyCvELup6UJcXBEvCL8u">名 人 故 事</span>
+      <h2 data-page-node-id="XnbP9gzVcGA6z61XPw63mL">琴声里的廿三弯</h2>
+      <span class="en" data-page-node-id="Ug09TaOjtq3KQOQW0RB8iV">A Guqin Master's Fourteen Days</span>
+      <div class="deco" data-page-node-id="UHBg05UQzk6vCxykTE0l1S"></div>
+    </div>
+    <div class="cheng" data-page-node-id="psKk6hiG2h1lzB7wnpAmgA">
+      <div class="txt reveal in" data-page-node-id="bWbH2m7Qr2QpsijpYuUCbi">
+        <p data-page-node-id="FTOhXWV5dQRjyNPiIbXIUf">成公亮（1940—2015），宜兴丁山人，当代古琴大师、广陵派传人、南京艺术学院教授——一位与邵东村有着实打实交集的全国性文化名人。</p>
+        <p data-page-node-id="e4qtrKie9BWkOGxzWI4Vej">2000 年盛夏，他借住邵东村邵坞片<span class="hl" data-page-node-id="rnYutlHA8b9Z3rCEqLcinl">十四天</span>，写下了系列散文《走进邵坞》，把山村傍晚的炊烟与人声，听成<span class="hl" data-page-node-id="QNYCAaAZggUG0SIUsHVHhV">"一首远古的琴曲"</span>。</p>
+        <p data-page-node-id="h8hKWDuPc0tiJ7IuGfUhNn">这是不可复制的叙事母题：白天走贡茶古道，傍晚听千年琴声。一位琴人，两周长住，让邵东村与古琴艺术、与一种中国人的山水精神，从此有了温柔的牵连。</p>
+      </div>
+      <div class="card-q reveal in" data-page-node-id="ibRJMEGjug7Dq7LCsrNEY9">"邵坞的傍晚，母亲的呼唤声在山谷里回荡，像听一首远古的琴曲。"<span class="by" data-page-node-id="KQTBVzqoqsdHwWH10haCKu">—— 成公亮《走进邵坞》</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 山间传说与古韵 -->
+<section id="legend" data-page-node-id="4VLRIEPK5LEilPzYmtbm2h">
+  <div class="wrap" data-page-node-id="7SWVJ9Bxs4X8I6Pjt7DHoi">
+    <div class="sec-head reveal in" data-page-node-id="7A4gk5N9bqUrR61ZaFKwzl">
+      <span class="tag" data-page-node-id="stqZBsmEiKmauku7VpfSFP">山 间 古 韵</span>
+      <h2 data-page-node-id="MU3GuNZidDcGB9u8DwTCCQ">传说、古刹与集体记忆</h2>
+      <span class="en" data-page-node-id="GJNq3qAHNSATblPLP7zVQ8">Legends &amp; Collective Memory</span>
+      <div class="deco" data-page-node-id="zkPicFCDVsQmR7E6uXaAsW"></div>
+    </div>
+    <div class="legend-grid" data-page-node-id="z0FgITkfZcSUJtiulMNHAT">
+      <div class="legend reveal in" data-page-node-id="9BXHyArVTYamraRn9mfmZ6"><div class="lg-ic" data-page-node-id="NwCuybhpHKNuFrn3uBUOG2">🗡️</div><h4 data-page-node-id="nHpWMGdF0ghMl21xnCK8Hz">项羽与廿三弯</h4><p data-page-node-id="oEbcGPknE929SHbRXFIKtF">相传项羽兵败后翻越长岗岭，留下"霸王潭""无梢竹"等遗迹与"霸王归天"的蚂蚁字传说，为古道添上一层英雄史诗的色彩。</p><div class="note" data-page-node-id="vCDuOBrT05zyySqXAIekJb">※ 民间传说，标注以区别于可考史实</div></div>
+      <div class="legend reveal in" data-page-node-id="HTv4nxhT1TcWTuzZEDcKRo"><div class="lg-ic" data-page-node-id="ywDdFg5jrIqwPpFt3pgZ80">🛕</div><h4 data-page-node-id="wt7JDKVHcSH8bnUywqHnEo">青隐寺</h4><p data-page-node-id="z6bJUAbcSvZVE5WhRu0fsC">源出南唐后主李煜的"青隐阁"，元统三年（1345）建寺，当地还流传着乾隆皇帝的传说，是湖㳇山地佛教文化的一处见证。</p><div class="note" data-page-node-id="cv0soXQZiP7NWWbspcOkI6">※ 史实与传说交织，宜分别标注</div></div>
+      <div class="legend reveal in" data-page-node-id="MFzl9K2CTzL4M6PQsSo1lM"><div class="lg-ic" data-page-node-id="5CXLAqFAvCRQVq0BWhwHNt">💧</div><h4 data-page-node-id="MCAq6H9H8thUruhpdUx7Rf">东岭水库</h4><p data-page-node-id="RMJeKBFkxJErZWEF3YTC04">由村民集体自建水电而来，曾被电影《火红的年代》取景；如今是夏季网红嬉水地，也是村落"自力更生"精神的具象符号。</p><div class="note" data-page-node-id="nmx8M2iqz8VlcdvlUFRdo4">※ 集体建设史实</div></div>
+      <div class="legend reveal in" data-page-node-id="GB5M4eOkjniV0PMpzE8vp8"><div class="lg-ic" data-page-node-id="609740PgfmAlmUoEc757hd">📜</div><h4 data-page-node-id="cKCz0gt17YMrUVhHbGsFlx">村史源流</h4><p data-page-node-id="LEZnuvX2SxL4yjGoEK3MOO">明正德年间应氏三兄弟自外地北迁定居，1996 年原东岭、邵坞两村合并为今邵东村；邵家段自然村已列入江苏省传统村落名录。</p><div class="note" data-page-node-id="LZoKviB5GfUFGGA1AQlgow">※ 据村志续修资料</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 物产与体验 -->
+<section id="prod" class="theme-gold" data-page-node-id="oHz0iOExPeFINRri8tEv6a">
+  <div class="wrap" data-page-node-id="k06jwuGOSlEAXDwHG6wPIn">
+    <div class="sec-head reveal in" data-page-node-id="FwszAK8IMnZuyw7HQoEBki">
+      <span class="tag" data-page-node-id="ZAjixJiXijIFJxuxctvrXy">物 产 与 体 验</span>
+      <h2 data-page-node-id="IdoI54EthgbVqzLNyvytTJ">把山里的好东西带回家</h2>
+      <span class="en" data-page-node-id="TfAGJP7FfZ06g46HPtF921">Local Produce &amp; Experiences</span>
+      <div class="deco" data-page-node-id="v3Tw9swNyujYsIhIG4bnLo"></div>
+    </div>
+    <div class="prod-grid" data-page-node-id="zQYPW3JZFxZz4VCEAgwA3r">
+      <div class="prod reveal in" data-page-node-id="11lt31B8TylQaO49AWuPgK"><div class="em" data-page-node-id="WTmi6ixKpHFZwo8iaJUm7v">🎋</div><div class="t" data-page-node-id="iKmbeFU4siGLAdmV4wZ8uH">毛竹</div><div class="d" data-page-node-id="zDP3OZoorINcQK2M68ZXfI">省重要毛竹基地，年产竹材百万支，竹海成片是邵东村最壮观的底色。</div></div>
+      <div class="prod reveal in" data-page-node-id="ztbEigXC8A4mr1fua22UsZ"><div class="em" data-page-node-id="deDMsTquMdG9FrxsADvKey">🥬</div><div class="t" data-page-node-id="0p0BrkI3ywAJA9ZvXZKycz">笋干</div><div class="d" data-page-node-id="IsyBvVGpDDBalb6inprVWy">深山冬笋、春笋制成笋干，是当地人家家户户的招牌山货。</div></div>
+      <div class="prod reveal in" data-page-node-id="WB5dWHs5EnwATPzhW13Tur"><div class="em" data-page-node-id="HNi34hGOXBaomaNPt41Vd5">🍵</div><div class="t" data-page-node-id="9TvZST8yMqSF7Tebpz5nGk">阳羡茶</div><div class="d" data-page-node-id="yskxr7otETTX48X9rkSdaC">千年贡茶文脉的当代延续，茶园管护与茶事体验正成为文旅新卖点。</div></div>
+      <div class="prod reveal in" data-page-node-id="IDFJsnVdYUKhSClAwTrWqe"><div class="em" data-page-node-id="yUv5dHXBnx1JbaIq2bItgR">⛲</div><div class="t" data-page-node-id="v7SxjdQnZjHvuO6LFRQlqy">山泉</div><div class="d" data-page-node-id="OPbAoBcTFFdNNzAl7nDICB">2018 年探明为储备水源的优质山泉，清冽甘甜，是村落的隐性宝藏。</div></div>
+    </div>
+    <div class="exp" data-page-node-id="WFAHrvZ063mVGtGkxqcX4T">
+      <div class="exp-item reveal in" data-page-node-id="Yt0Vc9lPxTR1NHHJGDgCl7"><h4 data-page-node-id="1AJr7XVpVAQc6ZE7FASrSZ">重走廿三弯</h4><p data-page-node-id="mGdEIFimPGZsFv2N27st68">沿贡茶古道徒步，二十三道弯串联境会亭、赐福寺，一路讲贡茶故事，是邵东村最具标识度的体验线。</p></div>
+      <div class="exp-item reveal in" data-page-node-id="EiCNxBIxXzFmwumZEZwlNk"><h4 data-page-node-id="QMDb9287Gkx0FDaNUDStUS">永红涧溯溪</h4><p data-page-node-id="0whDKP4MEldqweTBt8cHRD">夏日溪谷叠水、清凉嬉水，长三角溯溪爱好者的心头好，配套导视与停车正在完善。</p></div>
+      <div class="exp-item reveal in" data-page-node-id="BA71nVMJeiNGECyi0608O4"><h4 data-page-node-id="OEYTNEpLdLmFkddAbGrDv6">溪畔茶空间</h4><p data-page-node-id="HEhVp5GYGt3eZZPf0d5HCO">在茶山与溪畔设茶空间、山货市集与农家餐饮，让游客留下来、花出去，把"一日游"变成真金白银。</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 王牌 vs 真问题 -->
+<section style="background:var(--paper2)" data-page-node-id="ATKHLoEOt5kQ2MIo5DVHff">
+  <div class="wrap" data-page-node-id="wZMpxJ5sFR6UNDvYC4mPJ5">
+    <div class="sec-head reveal in" data-page-node-id="jOR6OXxiggyHJHFlcuaxz1">
+      <span class="tag" data-page-node-id="eTE1fqm1HCeX6LWQfPF0Xk">机 遇 与 挑 战</span>
+      <h2 data-page-node-id="y9uEH8o69JLIWF0ZvUTyCe">三张王牌，三个真问题</h2>
+      <span class="en" data-page-node-id="JfP1emWHNjITJDkMPXPO0a">Strengths &amp; Challenges</span>
+      <div class="deco" data-page-node-id="R3pUWqWYmhMEJLY3c6BtuN"></div>
+    </div>
+    <div class="cols" data-page-node-id="oquPAnHIBvEp7pkJ26oNA6">
+      <div class="block good reveal in" data-page-node-id="ulKl8j6eOv5xtLQcxBzLBN">
+        <h3 data-page-node-id="Y4bTIjXZF3NS140q1TFNhz"><span class="num" data-page-node-id="UPXCPJ8LZ9DegiVcjzk8y3">+</span>三张王牌</h3>
+        <div class="item" data-page-node-id="TCU7O8YkVb6praXHWUDdw9"><div class="ic" data-page-node-id="qZPZUhbJdea75lC61XhnE5">🍃</div><div data-page-node-id="4TS1VpVLqNr9H5kyPUfD3b"><div class="t" data-page-node-id="WyFj6GhlYX3aHfU6di8GEH">资源的稀缺性 · 贡茶古道</div><div class="d" data-page-node-id="1Ta9w12kQqqjA3yjVUlAyj" style="">江苏境内唯一反映古代茶叶进贡史实的交通遗址，陆羽曾亲赴廿三湾觅茶，全省独一份的文化 IP。​</div></div></div>
+        <div class="item" data-page-node-id="uPi93b4Gixy1zTmsBmSx4W"><div class="ic" data-page-node-id="CXEPb2J59waQHnMGx1D2ys">🥾</div><div data-page-node-id="NsHDccvzQvpSJH41AuhMaV"><div class="t" data-page-node-id="UozjKQKypt4OsmGnErYUin" style="">流量的自然性 · 廿三弯与永红涧​</div><div class="d" data-page-node-id="UIv0GW4YKOuZJ0LJ7TyjBP" style="white-space: pre-wrap; cursor: text;">廿三弯登山道、永红涧溪谷已是长三角徒步与溯溪圈的热门打卡地，每逢春季踏青、夏季避暑，客流自发涌入。​</div></div></div>
+        <div class="item" data-page-node-id="WWpoUep7AeDAdQt0sx3e16"><div class="ic" data-page-node-id="HRE8wrvCmW1qyO9y0L7aA9">🏛️</div><div data-page-node-id="PHCtFmjHaVFWZ3g6dPWiTv"><div class="t" data-page-node-id="zrxalhEBCt54ZRuX4ynhjM">底蕴的厚度 · 丰富的历史人文资源</div><div class="d" data-page-node-id="Pm2Dtt9pvQjLrYFcZgD9z9" style="">古琴大师成公亮曾借住邵坞十四天、写下《走进邵坞》；项羽翻越长岗岭的传说、南唐青隐寺、自力更生的东岭水库，连同应氏北迁的村史脉络，让这座山村自带人文厚度。</div></div></div>
+      </div>
+      <div class="block bad reveal in" data-page-node-id="KJzgttkbO9ERhzBFUWTEH1">
+        <h3 data-page-node-id="TpcMFEbMki9oAMjOkAFSeq"><span class="num" data-page-node-id="uBDM9IIDIToJthgsRaLyUH">!</span>三个真问题</h3>
+        <div class="item" data-page-node-id="b9YfwO0GRclSOmYkyQKffZ"><div class="ic" data-page-node-id="r5FrPfyUOT5NeCkcdSQKFq">💸</div><div data-page-node-id="RfPGnCXbGM8skH0E1oeAt4"><div class="t" data-page-node-id="ZDH89rH8CBvx50kSUjxeF3">有流量、没留量</div><div class="d" data-page-node-id="xZgv5QpFtfgSW6iEZF2YQS">区域曾长期"无商业配套，需自备食物和装备"，游客玩水、拍照、走人，村集体与村民难以从流量中获益。</div></div></div>
+        <div class="item" data-page-node-id="NURMrQOCEjnPGOFGW2oMPm"><div class="ic" data-page-node-id="QcCyNANPcDsec0s97Cdv8D">🌧️</div><div data-page-node-id="cMYq6R1UAQOS3mwwTwmY5w"><div class="t" data-page-node-id="AfYvI0OpwwVK3nHLE7C1Ns">基建断点 + 灾后欠账</div><div class="d" data-page-node-id="dfKsi6EnLYixhpUDDPcSGD">沿河步道被库塘隔断未连通，旺季停车无序；2026 年"8·14"特大暴雨造成道路、护栏、桥涵、供水受损。</div></div></div>
+        <div class="item" data-page-node-id="99QSfaGSLVHgkFJ6R2D8RO"><div class="ic" data-page-node-id="QP3LxdzAEgHN3oXSookQmm">👵</div><div data-page-node-id="UIyrcuNoVduK0xmtXClqWq"><div class="t" data-page-node-id="8DBPdlh3YfCTXyNZMdvLoe">人口空心化与人才断档</div><div class="d" data-page-node-id="Pvr5CSuSWDVyDveFxhJUbq">常住仅约 600 人，60 岁以上占 42%，缺年轻人、缺运营人才——产业无人运营是最根本的制约。</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 乡村振兴 -->
+<section id="first" class="first" data-page-node-id="7GoxMEQnmkC6U2SRQBGqIx">
+  <div class="wrap" data-page-node-id="mEhGXIrMGEisCTNCOni1pa">
+    <div class="sec-head reveal in" data-page-node-id="AECAE1IsqHHcxbDgzVp73r">
+      <span class="tag" data-page-node-id="rDLS81ZQFrbUpPv3IZRkfk">乡 村 振 兴</span>
+      <h2 data-page-node-id="ZXaGUGuaEghtj0jWu84OBJ">邵东村的振兴实践</h2>
+      <span class="en" data-page-node-id="h8H4z6HxAxmItIEJZUoWtS">Rural Revitalization in Shaodong</span>
+      <div class="deco" data-page-node-id="Zq18MfMDEIZrKBcKwCAEML"></div>
+    </div>
+    <div class="main-line reveal in" data-page-node-id="qDIIAnrP3eJRFYsOydMBNl">
+      <div class="lbl" data-page-node-id="v4GYZVQUQvQt7nl5n7CYeL">两 年 主 线</div>
+      <div class="v" data-page-node-id="4ktR2cT0Nqq2vsKsJTeSOH">灾后重建提信心 · 贡茶古道树 IP · 交旅融合促增收</div>
+    </div>
+    <div class="sec-head reveal in" style="margin-bottom:28px" data-page-node-id="Vtz2WtkItxQDbMpgSyNNYB"><h2 style="font-size:24px" data-page-node-id="cCTTSNmmoiNJBUHJXvjr9I">分步实施：一张路线图</h2></div>
+    <div class="steps" data-page-node-id="wVXt8JMolv45QbOVbjZ1RD">
+      <div class="step reveal in" data-page-node-id="QUzQVMQASh92upiG34022h"><div class="sno" data-page-node-id="AkklIxJYHIAYZPFXKn7M5L">壹</div><div class="st" data-page-node-id="2eAPhQP79wig7nvHdIbC52">今年底前 · 夯实地基</div><p data-page-node-id="zJ3Q0cNhc20TquY5AgtzHt">借灾后修复连通廿三弯步道断点、增设古道标识与境会亭解说牌；同步开展文化资源普查建档，采访亲历者留存口述史，把"传说"与"史实"分开标注。</p><span class="when" data-page-node-id="rea2ItOjmWBDEmbv8zthHG">2026 年底前</span></div>
+      <div class="step reveal in" data-page-node-id="m6MWJwx3bff2NRhvdpemgc"><div class="sno" data-page-node-id="RxgHoWn7vfb9EHkG9jBLtb">贰</div><div class="st" data-page-node-id="DZMlwHFlCuFrt5VEaHhAvl">明年上半年 · 试点引爆</div><p data-page-node-id="ZtKqhVKJexAYEqPrkH3OL4">推出"重走廿三弯"示范徒步线，举办首场"琴声里的廿三弯"春茶琴会；落地 2—3 户民宿示范户，让贡茶古道与成公亮 IP 真正可体验。</p><span class="when" data-page-node-id="i1jO0wO2Lk0Fc096WV4POU">2027 上半年</span></div>
+      <div class="step reveal in" data-page-node-id="HmYxVR5Egn5NtptP8QsTO7"><div class="sno" data-page-node-id="484UzBuDuJoYK9YhmErgJG">叁</div><div class="st" data-page-node-id="B88ZCGjg1S3r1CfEsXK5Gw">明年下半年 · 长效运营</div><p data-page-node-id="kpOFZGE7VtH88jQ05yzI9u">引入专业运营主体，注册"廿三弯"伴手礼品牌，推动节事常态化；借邵家段省传统村落基础启动名村提升与申报，让 IP 变成村集体"钱袋子"。</p><span class="when" data-page-node-id="Fla7a9CSnzCW4IAnpm0dub">2027 下半年</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer data-page-node-id="VsLgGhD7kHaee1llwJLEmg">
+  <div class="wrap" data-page-node-id="Rwn9faVRLBNnWwNBfhSq4m">
+    <div class="foot-grid" data-page-node-id="PcQYB4Ha0faW1IPNBmdQvq">
+      <div data-page-node-id="rzdDhUkxh939nKhx2bWxnd">
+        <div class="foot-brand" data-page-node-id="pl5cvVLGK8ah7DgnlQ1Ad5">邵东村</div>
+        <p data-page-node-id="cvvwXv2AmnNfUtzD2ONAAv">江苏宜兴湖㳇镇 · 阳羡贡茶古道上的村落。一座藏在竹海深处的诗意山乡，正沿着贡茶古道与琴声，走向乡村振兴的春天。</p>
+      </div>
+      <div data-page-node-id="dujzW5B05DunWup64Fgnl9">
+        <h5 data-page-node-id="TmX0LMf6su2koCd1zw5BE2">快速导航</h5>
+        <ul data-page-node-id="YhAbCqXz2dqG3RGvJt0EDn">
+          <li data-page-node-id="bSoSOttDHTWKg1J5tW2tO3"><a href="#about" data-page-node-id="5YrU59M3iaYOHrVi3xOmu7">村情速览</a></li>
+          <li data-page-node-id="kCF4xgeMoaysdZxGFBoLyr"><a href="#tea" data-page-node-id="9ADeeIlgJmQAn0B1IO54PE">贡茶古道</a></li>
+          <li data-page-node-id="eszwHOCqxXTjBJ5P9kljhx"><a href="#cheng" data-page-node-id="fiCH633SFivTb0MT3ucS2H">琴声廿三弯</a></li>
+          <li data-page-node-id="PC6hkGN9NNlG8204glYBBB"><a href="#legend" data-page-node-id="A0lzss0G4pYzWYMYYEluGW">山间古韵</a></li>
+          <li data-page-node-id="7EfzR457DH7FwzxbyQ25xJ"><a href="#prod" data-page-node-id="W1VDfHj6aN1huZAtDCv5X8">物产体验</a></li>
+          <li data-page-node-id="u2fUmAnx31qjLRqyPVo4UN"><a href="#first" data-page-node-id="8oA1oaD50gFQ5FyhdHC7yK">乡村振兴</a></li>
+        </ul>
+      </div>
+      <div data-page-node-id="JLJO17uwa1IQwyftkb95UN">
+        <h5 data-page-node-id="ckDS21f48LXpE2SzuuoBPt">关于本站</h5>
+        <ul data-page-node-id="W3UIt5IaTdAdDItzN6F3tr">
+          <li data-page-node-id="qV5HoO2fyBw5XCiC4yLXzT">本页为邵东村文化 IP 与乡村振兴展示页</li>
+          <li data-page-node-id="tLTySHjDvBiiRq9Ip9HxEC">由驻村第一书记工作团队整理维护</li>
+          <li data-page-node-id="580jBtriIhO8Bkc2JHEKyt">最后更新：2026 年 10 月</li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer" data-page-node-id="cKHPLdISzfwORQfSdSCFEh">
+      <b data-page-node-id="mZecfJz3aCEZwqgxSLa6pi">说明：</b>本网站内容据邵东村公开村情、村志资料、驻村工作记录及公开报道整理。涉及人口、资产、项目补助标准等数据，须以主管部门正式文件与现场核实为准；民间传说与可考史实已尽量分别标注。镇名"湖㳇镇"亦作"湖父镇"，以官方标准地名为准。<br data-page-node-id="8Uyuv5DzxxsWqNbvAV5G2k">
+      © 2026 邵东村 · 仅供文化交流与乡村振兴宣传使用。
+    </div>
+  </div>
 </footer>
 
-</body>
-</html>
+<script>
+// 导航滚动样式
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>30)});
+// 移动端菜单
+const mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+mb.addEventListener('click',()=>nl.classList.toggle('open'));
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+// 滚动揭示动画
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body></html>
