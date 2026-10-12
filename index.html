@@ -186,6 +186,44 @@ footer a:hover{text-decoration:underline}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ---------- 互动：反馈 / 分享 / 展开 ---------- */
+.fab-bar{position:fixed;right:18px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(40,34,24,.22);
+  background:var(--tea);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.fab:hover{transform:translateY(-3px);background:var(--tea-deep)}
+.fab.alt{background:var(--gold)}
+.fab.alt:hover{background:#9c6f2e}
+.modal-mask{position:fixed;inset:0;background:rgba(20,16,10,.5);z-index:70;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-mask.show{display:flex}
+.modal{background:var(--paper);max-width:430px;width:100%;border-radius:16px;padding:26px 24px;box-shadow:var(--shadow);position:relative;max-height:88vh;overflow:auto}
+.modal h3{font-family:var(--serif);color:var(--tea-deep);font-size:21px;margin-bottom:4px}
+.modal .sub{font-size:13px;color:var(--ink3);margin-bottom:14px}
+.modal .close{position:absolute;top:12px;right:16px;border:none;background:none;font-size:24px;color:var(--ink3);cursor:pointer;line-height:1}
+.modal .fb-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.modal .fb-row:first-of-type{border-top:none}
+.modal .fb-ic{font-size:24px;line-height:1.2}
+.modal .fb-row a{color:var(--tea);font-weight:600;word-break:break-all}
+.modal .fb-qr{width:150px;height:150px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff;display:block;margin:0 auto}
+.modal .fb-note{font-size:12.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.modal .qr-wrap{text-align:center}
+.share-pop{position:fixed;right:18px;bottom:90px;z-index:60;background:var(--paper);border-radius:14px;box-shadow:var(--shadow);
+  padding:12px;display:none;flex-direction:column;gap:6px;width:210px}
+.share-pop.show{display:flex}
+.share-pop a,.share-pop button{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);background:none;border:none;cursor:pointer;padding:8px 10px;border-radius:8px;text-align:left;transition:.15s}
+.share-pop a:hover,.share-pop button:hover{background:var(--tea-soft)}
+.share-pop .qr{width:170px;height:170px;align-self:center;border-radius:8px;margin-top:4px}
+.legend{cursor:pointer}
+.legend.collapsed p,.legend.collapsed .note{display:none}
+.legend .lg-toggle{font-size:12px;color:var(--gold);margin-top:10px;user-select:none}
+.tl-toggle-wrap{text-align:center;margin:18px 0 4px}
+.tl-toggle-btn{font-family:var(--sans);font-size:13.5px;color:var(--tea);background:var(--tea-soft);border:1px solid var(--line);
+  border-radius:20px;padding:7px 18px;cursor:pointer;transition:.2s}
+.tl-toggle-btn:hover{background:var(--tea);color:#fff}
+.tl-row.collapsed .dd{display:none}
+.busuanzi{font-size:12.5px;color:var(--ink3);margin-top:14px}
+.busuanzi span{color:var(--gold);font-weight:600}
+@media(max-width:520px){.fab-bar{right:12px;bottom:16px}.fab{width:48px;height:48px;font-size:20px}}
 </style>
 <style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
 <body data-page-node-id="s9p9PggxtCOb6TurFWgDh0" style="position: relative;">
@@ -267,6 +305,7 @@ footer a:hover{text-decoration:underline}
       <div class="tl-row" data-page-node-id="yk-tl"><span class="dot" data-page-node-id="yk-dot"></span><div class="yr" data-page-node-id="yk-yr">南宋 · 绍定年间（约 1228—1233）</div><div class="tt" data-page-node-id="yk-tt">岳珂过啄木岭赋诗</div><div class="dd" data-page-node-id="yk-dd" style="white-space: pre-wrap; cursor: text;">岳飞之孙、南宋文学家岳珂途经廿三弯山岭，暑天中暑憩于道旁，写下《过啄木岭暑暍憩道傍移时始行三首》五言律诗。"多愧北窗翁"恰与白居易"自叹花时北窗下"遥相呼应。啄木岭北峰下山，便是今日邵东村之境。​​​</div></div>
       <div class="tl-row" data-page-node-id="vsz8Pi5VAGAymhvZvOdYn4"><span class="dot" data-page-node-id="ZzKAHCLCzeZxyQLm9ttv2J"></span><div class="yr" data-page-node-id="DbiiJGQZEpFIvA3lshtvH5">今 · 古道遗存</div><div class="tt" data-page-node-id="qOCFNo0Z5tGEhz1DUaMJNF">廿三弯贡茶古道</div><div class="dd" data-page-node-id="sqvrwr7GV31N4urVnVicUA">宜兴境内现存约 1000 米古道遗迹，是江苏境内唯一反映古代茶叶进贡史实的交通遗址，邵东村正位于这条文化带的核心节点。</div></div>
     </div>
+    <div class="tl-toggle-wrap" data-page-node-id="tl-toggle-wrap"><button class="tl-toggle-btn" id="tlToggle" data-page-node-id="tl-toggle-btn">收起详情 ▲</button></div>
 
     <div class="qute reveal in" data-page-node-id="pLXlrlDa2g3c4QumbrPuBn">"天子未尝阳羡茶，百草不敢先开花。"<span class="by" data-page-node-id="Eq9ap72okJFEwvQfrDBr3d">—— 唐 · 卢仝《走笔谢孟谏议寄新茶》</span></div>
 
@@ -423,9 +462,48 @@ footer a:hover{text-decoration:underline}
     <div class="disclaimer" data-page-node-id="cKHPLdISzfwORQfSdSCFEh">
       <b data-page-node-id="mZecfJz3aCEZwqgxSLa6pi">说明：</b>本网站内容据邵东村公开村情、村志资料、驻村工作记录及公开报道整理。涉及人口、资产、项目补助标准等数据，须以主管部门正式文件与现场核实为准；民间传说与可考史实已尽量分别标注。镇名"湖㳇镇"亦作"湖父镇"，以官方标准地名为准。<br data-page-node-id="8Uyuv5DzxxsWqNbvAV5G2k">
       © 2026 邵东村 · 仅供文化交流与乡村振兴宣传使用。
+      <div class="busuanzi">访客数 <span id="busuanzi_value_site_uv">—</span> · 总访问 <span id="busuanzi_value_site_pv">—</span></div>
     </div>
   </div>
 </footer>
+
+<!-- 互动浮窗：分享 + 反馈 -->
+<div class="fab-bar" data-page-node-id="fab-bar">
+  <button class="fab alt" id="shareOpen" title="分享" data-page-node-id="fab-share">🔗</button>
+  <button class="fab" id="fbOpen" title="反馈 / 纠错" data-page-node-id="fab-fb">📝</button>
+</div>
+
+<div class="modal-mask" id="fbMask" data-page-node-id="fb-mask">
+  <div class="modal" data-page-node-id="fb-modal">
+    <button class="close" id="fbClose" data-page-node-id="fb-close" aria-label="关闭">×</button>
+    <h3 data-page-node-id="fb-h">发现错漏？欢迎反馈</h3>
+    <div class="sub" data-page-node-id="fb-sub">你的一字一句，都会帮邵东村把故事讲得更准。</div>
+    <div class="fb-row" data-page-node-id="fb-r1">
+      <div class="fb-ic" data-page-node-id="fb-r1ic">📧</div>
+      <div data-page-node-id="fb-r1t">
+        <div data-page-node-id="fb-r1tt" style="font-weight:600;margin-bottom:2px">邮箱反馈（推荐）</div>
+        <a href="mailto:shaodong-feedback@example.com?subject=邵东村网页纠错反馈" id="fbMail" data-page-node-id="fb-mail">点击发送纠错邮件</a>
+        <div class="fb-note" data-page-node-id="fb-r1n">邮箱待填写：请把村委会 / 第一书记反馈邮箱告诉我，我替换占位地址。</div>
+      </div>
+    </div>
+    <div class="fb-row qr-wrap" data-page-node-id="fb-r2">
+      <div data-page-node-id="fb-r2t">
+        <div class="fb-ic" data-page-node-id="fb-r2ic" style="text-align:center">💬</div>
+        <div data-page-node-id="fb-r2tt" style="text-align:center;font-weight:600;margin:6px 0">微信扫码反馈</div>
+        <img class="fb-qr" id="fbQr" src="assets/wechat-feedback-qr.png" alt="微信反馈二维码" data-page-node-id="fb-qr"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="fb-note" style="display:none" data-page-node-id="fb-qr-fallback">二维码待上传：请把微信二维码图片发我，命名为 <b>wechat-feedback-qr.png</b> 放入 assets 文件夹。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="share-pop" id="sharePop" data-page-node-id="share-pop">
+  <a href="#" id="shareWeibo" data-page-node-id="sp-wb">🌐 分享到微博</a>
+  <button id="copyLink" data-page-node-id="sp-copy">📋 复制链接</button>
+  <div data-page-node-id="sp-wx" style="font-size:13px;color:var(--ink2);text-align:center">微信扫码打开</div>
+  <img class="qr" id="wxQr" alt="微信扫码" data-page-node-id="sp-qr">
+</div>
 
 <script>
 // 导航滚动样式
@@ -438,6 +516,41 @@ nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.
 // 滚动揭示动画
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// 反馈弹窗
+const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('fbOpen'),fbClose=document.getElementById('fbClose');
+fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
+fbClose&&fbClose.addEventListener('click',()=>fbMask.classList.remove('show'));
+fbMask&&fbMask.addEventListener('click',e=>{if(e.target===fbMask)fbMask.classList.remove('show')});
+
+// 分享弹窗
+const sharePop=document.getElementById('sharePop'),shareOpen=document.getElementById('shareOpen');
+shareOpen&&shareOpen.addEventListener('click',e=>{e.stopPropagation();sharePop.classList.toggle('show')});
+document.addEventListener('click',e=>{if(sharePop&&!sharePop.contains(e.target)&&e.target!==shareOpen)sharePop.classList.remove('show')});
+const shareWeibo=document.getElementById('shareWeibo');
+if(shareWeibo)shareWeibo.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);
+const copyLink=document.getElementById('copyLink');
+copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.textContent='已复制 ✓';setTimeout(()=>copyLink.textContent='📋 复制链接',1500)});}else{prompt('复制此链接：',u)}});
+const wxQr=document.getElementById('wxQr');
+if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
+
+// 山间古韵卡片：点击展开/收起
+document.querySelectorAll('.legend').forEach(card=>{
+  const t=document.createElement('div');t.className='lg-toggle';t.textContent='收起 ▲';
+  card.appendChild(t);
+  card.addEventListener('click',()=>{card.classList.toggle('collapsed');t.textContent=card.classList.contains('collapsed')?'展开详情 ▼':'收起 ▲'});
+});
+
+// 时间线：展开/收起全部详情
+const tlToggle=document.getElementById('tlToggle');
+if(tlToggle){tlToggle.addEventListener('click',()=>{
+  const rows=[...document.querySelectorAll('.timeline .tl-row')];
+  const allCollapsed=rows.every(r=>r.classList.contains('collapsed'));
+  rows.forEach(r=>r.classList.toggle('collapsed',!allCollapsed));
+  tlToggle.textContent=allCollapsed?'收起详情 ▲':'展开详情 ▼';
+});}
 </script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body></html>
