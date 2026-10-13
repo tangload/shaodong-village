@@ -1,6 +1,6 @@
 # 邵东村 · 文化 IP 与乡村振兴展示网站
 
-一个关于江苏宜兴湖㳇镇邵东村的综合门户单页网站，主打**贡茶古道文化 IP、古琴大师成公亮故事、山间古韵与乡村振兴实践**。纯静态、零依赖、响应式，可直接用 GitHub Pages 免费托管。
+一个关于江苏宜兴湖㳇镇邵东村的综合门户单页网站，主打**贡茶古道文化 IP、古琴大师成公亮故事、山间古韵与乡村振兴实践**。
 
 ## 站点内容
 
@@ -12,7 +12,7 @@
 - **山间古韵**：项羽传说、青隐寺、东岭水库、村史源流
 - **物产与体验**：毛竹、笋干、阳羡茶、山泉 + 徒步溯溪线路
 - **三张王牌 / 三个真问题**：机遇与挑战并陈——资源稀缺性、流量自然性、底蕴厚度，对比有流量没留量、配套薄弱+灾后恢复、人口空心化与人才断档
-- **乡村振兴**：邵东村的振兴实践，两年主线与分步实施路线图（弱化个人署名，聚焦村落行动）
+- **乡村振兴**：邵东村的振兴实践，两年主线与分步实施路线图
 
 ## 本地预览
 
@@ -35,23 +35,6 @@ python3 -m http.server 8123
 │   └── deploy.yml          # 推送到 main 后自动部署到 Pages
 └── README.md
 ```
-
-## 发布到 GitHub Pages（后续步骤）
-
-1. 在 GitHub 新建一个公开仓库（建议名 `shaodong-village` 或 `shaodong-village-site`）。
-2. 将本目录内容推送到 `main` 分支：
-   ```bash
-   git init
-   git add .
-   git commit -m "邵东村网站初版"
-   git branch -M main
-   git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-   git push -u origin main
-   ```
-3. 仓库 → **Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"**。
-4. 推送后 Actions 会自动构建并发布，几分钟即可在 `https://<用户名>.github.io/<仓库名>/` 访问。
-
-> 若不想要 Action 自动部署，也可在 Pages 设置里直接选 "Deploy from a branch → main → /(root)"，无需 `deploy.yml`。
 
 ## 数据说明
 
