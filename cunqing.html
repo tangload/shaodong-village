@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>村情速览 · 邵东村村庄概况</title>
+<style>
+  :root{
+    --tea:#1d6b4f; --tea-d:#14503b; --tea-l:#2e8a66;
+    --paper:#f6f1e7; --paper-d:#ece4d4;
+    --ink:#2b2b28; --ink-soft:#5a5750;
+    --cinnabar:#b23a2e; --line:#d8cdb8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--ink); background:var(--paper); line-height:1.85; letter-spacing:.01em;
+  }
+  a{color:var(--tea);text-decoration:none}
+  a:hover{color:var(--cinnabar)}
+
+  /* ---------- Hero 全屏背景 ---------- */
+  .hero{
+    position:relative; min-height:74vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; color:#fff; padding:80px 24px;
+    background:url('shaodong1_bright.jpg') center/cover no-repeat fixed;
+  }
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(160deg, rgba(12,32,22,.55), rgba(12,32,22,.72));}
+  .hero-back{position:absolute;top:22px;left:24px;z-index:2;
+    color:#fff;font-size:15px;padding:8px 16px;border:1px solid rgba(255,255,255,.5);
+    border-radius:30px;background:rgba(0,0,0,.18);backdrop-filter:blur(6px)}
+  .hero-back:hover{background:rgba(255,255,255,.18);color:#fff}
+  .hero-inner{position:relative;z-index:1;max-width:840px}
+  .hero .tag{display:inline-block;font-size:14px;letter-spacing:.4em;padding:6px 18px;
+    border:1px solid rgba(255,255,255,.55);border-radius:30px;margin-bottom:22px}
+  .hero h1{font-size:clamp(34px,6vw,62px);font-weight:700;letter-spacing:.06em;
+    text-shadow:0 4px 22px rgba(0,0,0,.4)}
+  .hero .en{display:block;font-size:15px;letter-spacing:.3em;opacity:.85;margin-top:12px;text-transform:uppercase}
+  .hero .sub{margin-top:20px;font-size:clamp(15px,2vw,19px);opacity:.92;
+    font-weight:300;letter-spacing:.04em}
+
+  /* ---------- 内容区 ---------- */
+  main{max-width:980px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:none}
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .sec-h .num{font-size:14px;color:var(--cinnabar);font-weight:700;letter-spacing:.1em}
+  .sec-h h2{font-size:clamp(24px,3.4vw,32px);color:var(--tea-d);font-weight:700;letter-spacing:.04em}
+  .sec-h .en{margin-left:auto;font-size:13px;color:var(--ink-soft);letter-spacing:.2em;text-transform:uppercase}
+  p.lead{font-size:17px;color:var(--ink-soft)}
+  .lead b{color:var(--tea-d)}
+
+  /* ---------- 数据卡片 ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 20px;
+    text-align:center;box-shadow:0 2px 14px rgba(60,50,30,.05);transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(60,50,30,.12)}
+  .card .v{font-size:34px;font-weight:700;color:var(--tea);line-height:1.1}
+  .card .v small{font-size:15px;font-weight:600;color:var(--tea-l);margin-left:3px}
+  .card .k{margin-top:8px;font-size:14px;color:var(--ink-soft)}
+  .card.feature{background:var(--tea);border-color:var(--tea)}
+  .card.feature .v{color:#fff;font-size:24px}
+  .card.feature .k{color:rgba(255,255,255,.85)}
+
+  /* ---------- 详情小节 ---------- */
+  .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .blk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+  .blk h3{font-size:19px;color:var(--tea-d);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .blk h3 .dot{width:9px;height:9px;border-radius:50%;background:var(--cinnabar);flex:none}
+  .blk p{font-size:15.5px;color:var(--ink-soft)}
+  .blk p+p{margin-top:10px}
+  .blk .tip{margin-top:14px;font-size:13.5px;color:var(--ink-soft);background:var(--paper-d);
+    border-left:3px solid var(--tea-l);padding:10px 14px;border-radius:0 8px 8px 0}
+  @media(max-width:680px){.detail-grid{grid-template-columns:1fr}}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:var(--tea-d);color:#e8f0ec;text-align:center;padding:48px 24px}
+  footer a{color:#fff;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+  footer .copy{margin-top:16px;font-size:13px;opacity:.7}
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <a class="hero-back" href="index.html">← 返回邵东村首页</a>
+    <div class="hero-inner">
+      <span class="tag">村 情 速 览</span>
+      <h1>邵东村 · 村庄概况</h1>
+      <span class="en">Village Overview</span>
+      <p class="sub">苏浙交界 · 三面环山 · 竹海溪涧间的江南丘陵山村</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 概览 -->
+    <section>
+      <div class="sec-h"><span class="num">01</span><h2>村庄概览</h2><span class="en">Overview</span></div>
+      <p class="lead">
+        邵东村位于<b>江苏省宜兴市湖㳇镇</b>，地处阳羡生态旅游度假区腹地，地处<b>苏浙两省交界</b>、三面环山，是典型的江南丘陵山村。
+        2001 年由原<b>东岭、邵坞</b>两村合并而成。村中竹海成片、溪涧纵横，坐拥阳羡茶千年文脉，也承载着当代乡村振兴的探索。
+        这里既有「江苏唯一茶叶进贡交通遗址」的贡茶古道，也有古琴大师成公亮笔下《走进邵坞》的山水清音。
+      </p>
+    </section>
+
+    <!-- 关键数据 -->
+    <section>
+      <div class="sec-h"><span class="num">02</span><h2>关键数据</h2><span class="en">Key Numbers</span></div>
+      <div class="grid">
+        <div class="card"><div class="v">2105<small>人</small></div><div class="k">户籍人口</div></div>
+        <div class="card"><div class="v">732<small>户</small></div><div class="k">总户数</div></div>
+        <div class="card"><div class="v">17<small>个</small></div><div class="k">村民小组</div></div>
+        <div class="card"><div class="v">≈600<small>人</small></div><div class="k">常住人口</div></div>
+        <div class="card"><div class="v">42<small>%</small></div><div class="k">60岁以上占比</div></div>
+        <div class="card"><div class="v">10.9<small>km²</small></div><div class="k">村域面积</div></div>
+        <div class="card"><div class="v">1.7<small>万亩</small></div><div class="k">竹林面积</div></div>
+        <div class="card"><div class="v">82<small>%+</small></div><div class="k">森林覆盖率</div></div>
+        <div class="card feature"><div class="v">三面环山</div><div class="k">地貌特征 · 群山环抱</div></div>
+        <div class="card feature"><div class="v">溪水纵横</div><div class="k">水网特征 · 溪涧密布</div></div>
+      </div>
+    </section>
+
+    <!-- 详细情况 -->
+    <section>
+      <div class="sec-h"><span class="num">03</span><h2>村庄详情</h2><span class="en">In Detail</span></div>
+      <div class="detail-grid">
+
+        <div class="blk">
+          <h3><span class="dot"></span>地理位置与交通</h3>
+          <p>邵东村隶属宜兴市湖㳇镇，位于阳羡生态旅游度假区核心腹地，地处江苏、浙江两省交界地带，距宜兴市区、无锡市区的通勤半径内。</p>
+          <p>村落三面环山、一面临水，山岭既是生态屏障，也是连通苏浙的古老茶马通道节点。</p>
+          <div class="tip">交通基因：作为原邵东村第一书记派出单位的市级交通平台，正依托交旅融合推动村庄对外联通。</div>
+        </div>
+
+        <div class="blk">
+          <h3><span class="dot"></span>历史沿革</h3>
+          <p>2001 年，原<b>东岭村</b>与<b>邵坞村</b>合并为今邵东村。两村各有鲜明印记：邵坞因古琴大师成公亮《走进邵坞》一文而有了文化之名；东岭则因<b>东岭水库</b>与网红嬉水地为人所知。</p>
+          <p>村名沿用「邵东」，取义于地处邵坞之东、群山之间的一方水土。</p>
+        </div>
+
+        <div class="blk">
+          <h3><span class="dot"></span>人口与村落</h3>
+          <p>全村户籍人口约 2105 人、732 户，划分为 17 个村民小组。实际常住人口仅约 600 人，<b>60 岁以上占比达 42%</b>，老龄化与空心化明显。</p>
+          <p>年轻人外流、运营人才短缺，是村庄产业「有人建、缺人营」的根本制约。</p>
+          <div class="tip">人口结构提示：乡村振兴的关键是引回年轻人、培育本土运营力量。</div>
+        </div>
+
+        <div class="blk">
+          <h3><span class="dot"></span>自然生态</h3>
+          <p>村域面积 10.9 平方公里，拥有<b>1.7 万亩竹林</b>与超过 <b>82%</b> 的森林覆盖率，是名副其实的「竹海山村」。</p>
+          <p>溪涧纵横、水库点缀，东岭水库既可蓄水灌溉，也是夏日亲水去处。整体生态本底优良，是发展生态旅游的底气所在。</p>
+        </div>
+
+        <div class="blk">
+          <h3><span class="dot"></span>产业与物产</h3>
+          <p>以<b>竹</b>为基：竹笋、竹制品与竹海观光构成传统支柱；以<b>茶</b>为魂：阳羡茶承千年贡茶文脉，廿三弯一带为古贡茶产区。</p>
+          <p>新兴方向包括精品民宿、山泉饮品与研学体验——「把山里的好东西带回家」正成为村庄变现的切口。</p>
+        </div>
+
+        <div class="blk">
+          <h3><span class="dot"></span>文化与文脉</h3>
+          <p>这里是<b>阳羡贡茶古道</b>的核心节点（江苏唯一反映古代茶叶进贡史实的交通遗址），白居易、岳珂等文人墨客曾在此留下诗章。</p>
+          <p>古琴大师成公亮曾借住邵坞写下《走进邵坞》；项羽传说、青隐寺、村史源流，共同织成邵东的文化记忆。</p>
+          <div class="tip">想深入了解？返回首页可查看「阳羡贡茶古道」「琴声里的廿三弯」「山间古韵」等板块。</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 回到首页 -->
+    <section style="text-align:center;border-bottom:none">
+      <a href="index.html" style="display:inline-block;padding:14px 34px;background:var(--tea);color:#fff;border-radius:30px;font-size:16px;letter-spacing:.05em">← 返回邵东村首页</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>邵东村 · 村情速览　|　<a href="index.html">返回首页</a></div>
+    <div class="copy">© 2026 邵东村 · 仅供文化交流与乡村振兴宣传使用。</div>
+  </footer>
+
+</body>
+</html>
