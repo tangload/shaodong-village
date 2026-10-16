@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="8B1gHlGFR9mSJ3DUXbFHwJ"><head data-page-node-id="5oguceAYam1wrgJlze6F1A">
+<meta charset="UTF-8" data-page-node-id="AwQNR80SsQbBs01TiIJfMB">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="ETbnt2strHzBjsR0HIOzCq">
+<title data-page-node-id="GTK6LeAw1EwBLXGucypY9o">贡茶历史 · 廿三弯里的千年回响 | 邵东村</title>
+<meta name="description" content="邵东村贡茶历史：从唐代阳羡入贡、陆羽著《茶经》、白居易岳珂赋诗，到清代《茶史》集大成，廿三弯贡茶古道的千年文脉与历史考证。" data-page-node-id="mxKG334RGo429cgf6vz04D">
+<style data-page-node-id="Y6LTgkk7eZ4eViNtxs5j8J">
+  :root{
+    --tea:#1d6b4f; --tea-d:#14503b; --tea-l:#2e8a66;
+    --paper:#f6f1e7; --paper-d:#ece4d4;
+    --ink:#2b2b28; --ink-soft:#5a5750;
+    --cinnabar:#b23a2e; --line:#d8cdb8;
+    --serif:"Songti SC","STSong","SimSun","Noto Serif SC",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.9;letter-spacing:.01em;}
+  a{color:var(--tea);text-decoration:none}
+  a:hover{color:var(--cinnabar)}
+
+  /* ---------- Hero 全屏背景 ---------- */
+  .hero{
+    position:relative;min-height:76vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding:90px 24px;
+    background:url('zhuzitiankong.jpg') center/cover no-repeat fixed;
+  }
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(160deg, rgba(12,32,22,.55), rgba(12,32,22,.74));}
+  .hero-back{position:absolute;top:22px;left:24px;z-index:2;
+    color:#fff;font-size:15px;padding:8px 16px;border:1px solid rgba(255,255,255,.5);
+    border-radius:30px;background:rgba(0,0,0,.18);backdrop-filter:blur(6px)}
+  .hero-back:hover{background:rgba(255,255,255,.18);color:#fff}
+  .hero-inner{position:relative;z-index:1;max-width:880px}
+  .hero .tag{display:inline-block;font-size:14px;letter-spacing:.4em;padding:6px 18px;
+    border:1px solid rgba(255,255,255,.55);border-radius:30px;margin-bottom:22px}
+  .hero h1{font-family:var(--serif);font-size:clamp(32px,5.6vw,60px);font-weight:700;letter-spacing:.05em;
+    text-shadow:0 4px 22px rgba(0,0,0,.4)}
+  .hero .en{display:block;font-size:15px;letter-spacing:.28em;opacity:.85;margin-top:12px;text-transform:uppercase}
+  .hero .sub{margin-top:20px;font-size:clamp(15px,2vw,19px);opacity:.92;font-weight:300;letter-spacing:.04em}
+
+  /* ---------- 内容区 ---------- */
+  main{max-width:980px;margin:0 auto;padding:0 24px}
+  section{padding:66px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:none}
+  .sec-h{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+  .sec-h .num{font-size:14px;color:var(--cinnabar);font-weight:700;letter-spacing:.1em}
+  .sec-h h2{font-family:var(--serif);font-size:clamp(23px,3.4vw,31px);color:var(--tea-d);font-weight:700;letter-spacing:.04em}
+  .sec-h .en{margin-left:auto;font-size:13px;color:var(--ink-soft);letter-spacing:.2em;text-transform:uppercase}
+  p.lead{font-size:17px;color:var(--ink-soft)}
+  .lead b{color:var(--tea-d)}
+  .lead + .lead{margin-top:14px}
+
+  /* ---------- 时间线 ---------- */
+  .timeline{position:relative;margin:6px 0 4px;padding-left:8px}
+  .timeline::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--tea),var(--cinnabar));opacity:.55}
+  .tl{position:relative;padding:0 0 30px 48px}
+  .tl:last-child{padding-bottom:0}
+  .tl .dot{position:absolute;left:6px;top:4px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--tea)}
+  .tl .yr{font-family:var(--serif);font-weight:700;color:var(--tea-d);font-size:15.5px;letter-spacing:.02em}
+  .tl .tt{font-family:var(--serif);font-weight:700;font-size:20px;margin:3px 0 7px;color:var(--ink)}
+  .tl .dd{font-size:15.5px;color:var(--ink-soft);line-height:1.95}
+  .tl .dd b{color:var(--cinnabar);font-weight:700}
+  .tl .dd .note{display:block;margin-top:7px;font-size:13px;color:#8a8478;font-style:italic;line-height:1.8}
+
+  /* ---------- 诗章撷英 ---------- */
+  .poem{background:#fff;border:1px solid var(--line);border-left:5px solid var(--cinnabar);
+    border-radius:0 14px 14px 0;padding:26px 30px;margin-bottom:22px;box-shadow:0 2px 14px rgba(60,50,30,.05)}
+  .poem .ttl{font-family:var(--serif);font-size:19px;color:var(--tea-d);font-weight:700;margin-bottom:12px}
+  .poem .body{font-family:var(--serif);font-size:18px;color:var(--ink);line-height:2.1;letter-spacing:.02em}
+  .poem .by{display:block;margin-top:14px;font-size:13.5px;color:var(--ink-soft);font-family:var(--sans)}
+  .poem.short .body{font-size:19px}
+
+  /* ---------- 名物卡片 ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;
+    box-shadow:0 2px 14px rgba(60,50,30,.05);transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(60,50,30,.12)}
+  .card h3{font-family:var(--serif);font-size:19px;color:var(--tea-d);margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  .card h3 .ic{width:30px;height:30px;border-radius:8px;background:var(--tea);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none}
+  .card p{font-size:15px;color:var(--ink-soft);line-height:1.9}
+  .card p+p{margin-top:9px}
+  .card .tip{margin-top:13px;font-size:13px;color:var(--ink-soft);background:var(--paper-d);
+    border-left:3px solid var(--tea-l);padding:9px 13px;border-radius:0 8px 8px 0}
+
+  /* ---------- 考证说明 ---------- */
+  .doc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px;margin-bottom:24px;
+    box-shadow:0 2px 14px rgba(60,50,30,.05)}
+  .doc h3{font-family:var(--serif);font-size:21px;color:var(--tea-d);margin-bottom:16px}
+  .doc h4{font-family:var(--serif);font-size:17px;color:var(--cinnabar);margin:20px 0 10px}
+  .doc p{font-size:15px;color:var(--ink-soft);line-height:1.95}
+  .doc p+p{margin-top:10px}
+  .doc ul,.doc ol{margin:8px 0 4px 22px}
+  .doc li{font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:6px}
+  .doc b{color:var(--ink)}
+  .doc .hl{color:var(--cinnabar);font-weight:700}
+  .doc .src{font-size:13px;color:#8a8478;font-style:italic}
+  .tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+  .tbl th,.tbl td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;line-height:1.7}
+  .tbl th{background:var(--tea);color:#fff;font-weight:600}
+  .tbl tr:nth-child(even) td{background:var(--paper-d)}
+  .chain{list-style:none;counter-reset:c;margin:6px 0 0;padding:0}
+  .chain li{counter-increment:c;position:relative;padding:14px 0 14px 46px;border-top:1px dashed var(--line)}
+  .chain li:first-child{border-top:none}
+  .chain li::before{content:counter(c);position:absolute;left:0;top:13px;width:30px;height:30px;border-radius:50%;
+    background:var(--cinnabar);color:#fff;font-family:var(--serif);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .chain li b{color:var(--tea-d)}
+
+  /* ---------- 逐条史料 ---------- */
+  .src-item{border-top:1px dashed var(--line);padding-top:20px;margin-top:20px}
+  .src-item:first-of-type{border-top:none;margin-top:6px;padding-top:6px}
+  .src-item h4{font-family:var(--serif);font-size:17px;color:var(--cinnabar);margin:0 0 11px;line-height:1.5}
+  .quote{font-family:var(--serif);font-size:15.5px;line-height:2;color:#3a352c;background:var(--paper-d);
+    border-left:4px solid var(--tea);padding:14px 18px;border-radius:0 10px 10px 0;margin:0 0 13px}
+  .quote b{color:var(--cinnabar)}
+  .quote .pg{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;color:#8a8478;font-style:italic}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:var(--tea-d);color:#e8f0ec;text-align:center;padding:50px 24px}
+  footer a{color:#fff;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
+  footer .copy{margin-top:16px;font-size:13px;opacity:.7}
+  .back-home{display:inline-block;margin-top:18px;padding:13px 32px;background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.4);border-radius:30px;color:#fff;font-size:15px;letter-spacing:.05em;transition:.2s}
+  .back-home:hover{background:rgba(255,255,255,.26);color:#fff}
+
+  @media(max-width:680px){
+    section{padding:50px 0}
+    .poem{padding:22px 20px}
+    .doc{padding:24px 20px}
+  }
+</style>
+<style id="__dm_no_drag_style__" data-page-node-id="Hz6klRhHEU8MP5vnrO4GA7">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="BG6DesgxtkHrNJGBMWO6GA">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="iOnW3KUYc61kVFKRF3qCKP" style="">
+
+  <header class="hero" data-page-node-id="CYdx1DPrjIxUAiOEYJNUi4">
+    <a class="hero-back" href="index.html" data-page-node-id="BDYaa3VAw80gr2u0zo4y2u">← 返回邵东村首页</a>
+    <div class="hero-inner" data-page-node-id="TDmLAQ5NP4yK33LcAXVLlB">
+      <span class="tag" data-page-node-id="H1GvGL2sd9oN4nJ83UMZHj">文 化 I P · 核 心</span>
+      <h1 data-page-node-id="prEQrZmM3e2M4hrQdVDTIQ" style="white-space: pre-wrap;">贡茶历史 · 廿三弯的千年回响​</h1>
+      <span class="en" data-page-node-id="sLRuoPYIBshrREHABzhwML">The Tribute Tea Ancient Trail</span>
+      <p class="sub" data-page-node-id="1LEjAHGcv1bOC6HJzchZTM">一条贡茶古道，半部阳羡茶史 · 江苏唯一的贡茶史源头</p>
+    </div>
+  </header>
+
+  <main data-page-node-id="Yg5C2peDfy2T40j9hUf4iY">
+
+    <!-- 概述 -->
+    <section data-page-node-id="GCf9kv8G2Fp7YZvUVmqFmv">
+      <div class="sec-h" data-page-node-id="I7PzcYQ8jvDvvzNJ9wHyBV"><span class="num" data-page-node-id="ioBBIOylg36WJTgRWCHaHQ">01</span><h2 data-page-node-id="kGQ13nfwsOKgqbHWmL47Bj">古道概述</h2><span class="en" data-page-node-id="o2tbZBlLalMh1cB2hSTTw6">Overview</span></div>
+      <p class="lead" data-page-node-id="2w4SdDMNE6GJpHy1Wb2DLx">
+        邵东村位于江苏宜兴湖㳇镇，地处<b data-page-node-id="DvjcdDSL9SI7NdLDvDYg5j">阳羡生态旅游度假区</b>腹地、苏浙两省交界。村境西北的<b data-page-node-id="Pm2SW0PceK7MZ0kpApGVgO">廿三弯</b>，藏着一条蜿蜒于山岭间的青石古道——<b data-page-node-id="eBU8NBBRGHixNnHnBjm3sf">阳羡贡茶古道</b>。
+        它北接江苏宜兴（阳羡雪芽产地），南连浙江长兴（紫笋茶产地），是古代湖、常两州茶马进贡的咽喉通道。
+      </p>
+      <p class="lead" data-page-node-id="fLICCADogAvlj3zeHGqeYK">
+        自唐代阳羡茶入贡，陆羽在此觅茶、白居易与岳珂在此赋诗、常州湖州两府在此议茶，<b data-page-node-id="Qbe6JgtRyj6VWLEWGHL6f4">千年茶事</b>沿着这道弯那道弯一路铺展。
+        宜兴境内现存约 1000 米古道遗迹，是<b data-page-node-id="uxsx1OJCCPSGWtdvF9dHwC">江苏境内唯一</b>反映古代茶叶进贡史实的交通遗址，邵东村正位于这条文化带的核心节点。本页循历史脉络，将这段千年回响细细道来。
+      </p>
+    </section>
+
+    <!-- 历史脉络 -->
+    <section data-page-node-id="GWF0RGgBBUEArLFXvMtsrJ">
+      <div class="sec-h" data-page-node-id="tYturwfHLNuu185fIGQryJ"><span class="num" data-page-node-id="U4qTwCJUXR09d8iyKFfBcr">02</span><h2 data-page-node-id="PAhZFzqYMncH3AFDltKnDu">历史脉络</h2><span class="en" data-page-node-id="EdZCBEfDMhwiIsBp87qDh0">Chronicle</span></div>
+      <div class="timeline" data-page-node-id="Rq7CbPr3d7371hnx7M6CdH">
+
+        <div class="tl" data-page-node-id="nqPU1fv6a4KQaSHXqG0BRL">
+          <span class="dot" data-page-node-id="86PiTKNg9ehjEWqDBRJ7d5"></span>
+          <div class="yr" data-page-node-id="6ZAuGgSUFNUa4ghllOJJbG">唐 · 代宗永泰年间（765—766）</div>
+          <div class="tt" data-page-node-id="O3bowqul7ARvP9VNvRXFED">阳羡茶入贡</div>
+          <div class="dd" data-page-node-id="9ETIeR1zO7vByVwmqGXHKZ">
+            常州刺史<b data-page-node-id="mx2nx0Ff6ZUV4zCv4vtgGA">李栖筠</b>将阳羡茶进献朝廷，唐代宗品鉴后钦定为"制度性贡茶"。自此阳羡（今宜兴一带）成为唐代最重要的贡茶产区之一，开启了长达数百年的"阳羡紫笋岁贡"传统。
+            <span class="note" data-page-node-id="Gg9jt8a2V9WSjECVO62UfD">※ 据清·刘源长《茶史》转引，南朝宋山谦之《吴兴记》已载湖州"温山出御荈"，湖州进御之茶实早于阳羡入贡；湖、常两州贡茶体系渊源有自。</span>
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="Srm7wcW7v9f9gruo66bw4p">
+          <span class="dot" data-page-node-id="Mb1jUqJwT1dVNoAOTjNVLL"></span>
+          <div class="yr" data-page-node-id="RcMVuDLCr7biEXUVcjx6Up">约唐 · 大历初年（760 前后）</div>
+          <div class="tt" data-page-node-id="EACKQvRe2ET6alexUGEjbe">陆羽《茶经·八之出》著录</div>
+          <div class="dd" data-page-node-id="InM6ZbA8uxfJnuxgCaKi2N">
+            《茶经·八之出》将<b data-page-node-id="Aome19L54fy0PBjHFcwlGZ">啄木岭</b>列为湖州茶产地（与寿州、常州同级），并记"常州次：义兴县生君山悬脚岭北峰下"——义兴即今宜兴，君山悬脚岭北峰下正是邵东村所处的阳羡茶区核心。这是啄木岭作为茶山关隘的<b data-page-node-id="B0Enq1vmK5cLCDH7iGVd7i">最早文献记载</b>，比五代毛文锡《茶谱》（935）早约 175 年。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="3bHj2KGQrwDoNy9ay1wVMP">
+          <span class="dot" data-page-node-id="4BXwTiHmq1rDIkDA3DYHoz"></span>
+          <div class="yr" data-page-node-id="TIotv0oChHxhRyqS4y826C">唐 · 茶圣亲临</div>
+          <div class="tt" data-page-node-id="1xxKw4MfpGoLjsOFQzCPvk">陆羽觅茶廿三湾</div>
+          <div class="dd" data-page-node-id="dTZNw9ivn3ozfPIZu8Buc7">
+            陆羽隐居湖州期间，为考察茶事亲赴顾渚山一带选种种植；顾渚山阴的阳羡茶被其品评为"<b data-page-node-id="F7okKdubNtsnOvuTdIyM3G">冠绝他境</b>"。陆羽曾"往来扬州、常州、信州、洪州等地"，亲历过常州茶区。顾渚山北麓，即今邵东村一带。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="WzhKqTH0FwBs7aoQFIfrcC">
+          <span class="dot" data-page-node-id="FtZblFnvEamO6uNDwleM46"></span>
+          <div class="yr" data-page-node-id="5KowW4Bm9PrGMZCZ1b4FOV">唐 · 两府议茶</div>
+          <div class="tt" data-page-node-id="1oWCk0Azk62DDtlVUXiPFF">境会亭</div>
+          <div class="dd" data-page-node-id="o25HLdS5mfPM7Li1p5nom3">
+            常州、湖州两府在山顶<b data-page-node-id="LAFYFn7P1LBKTEG5yHqLe9">啄木岭</b>设"境会亭"议定贡茶事宜。每至茶季，两州刺史登山会商，成为贡茶叙事中重要的历史载体（2016 年已重建）。境会亭位于今邵东村境内廿三弯山顶，可俯瞰两省山色。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="YFuSAkvTYI0Hx2KKyVBLNa">
+          <span class="dot" data-page-node-id="WjCaF2blzjOJsUkOdOASzC"></span>
+          <div class="yr" data-page-node-id="GL3ECWI3piRq8vswkDXGae">唐 · 宝历二年（826）</div>
+          <div class="tt" data-page-node-id="ejs6Fz2rJNO1r8Msui35Ph">白居易闻宴赋诗</div>
+          <div class="dd" data-page-node-id="yDjOhMYCfSJoFBkU3VbrFi">
+            苏州刺史<b data-page-node-id="YsPbk23CRRc8eD3s8skjFm">白居易</b>受邀赴境会亭，与湖、常两州刺史共襄贡茶盛会，却因坠马伤足未能上山。遥闻茶宴盛况，写下《夜闻贾常州崔湖州茶山境会亭欢宴》，以"遥闻境会茶山夜，珠翠歌钟俱绕身"道尽羡慕与遗憾——一桩缺席，反让千年茶事更见温度。
+            <span class="note" data-page-node-id="PuJ8s2e1DnUt8V5YS9M7uQ">※ 与《茶史》"紫筍生湖常間，當茶時兩郡太守畢至，為盛集"互为印证。</span>
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="ujcj2NOYCCdD1uCwDXa1tD">
+          <span class="dot" data-page-node-id="FEdkeeVvPE5qSgtNTWVQh0"></span>
+          <div class="yr" data-page-node-id="GaOxeg2vzwcwS46KRE1cQH">五代 · 后蜀（935）</div>
+          <div class="tt" data-page-node-id="Ibd8Yw5ZDNHDEigkb0NRxW">毛文锡《茶谱》记啄木岭</div>
+          <div class="dd" data-page-node-id="vh8LBFi4573lLIPl39b8oP">
+            茶学典籍《茶谱》（毛文锡撰）明载"湖、常二郡，接界于此。厥土有境会亭，每茶节，二牧皆至焉"——将境会亭系于啄木岭（今邵东村廿三弯景区山顶），常州、湖州两州牧山中会商贡茶的历史坐实。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="KAjLsVwNQhJE8Thy1OLo8o">
+          <span class="dot" data-page-node-id="d3hDFZQVGRiDuGEFQvbBLO"></span>
+          <div class="yr" data-page-node-id="CGBODB4POVZzcTVELQ1Lve">南宋 · 绍定年间（1228—1233）</div>
+          <div class="tt" data-page-node-id="cLA7IXSkVCJPwtjHCy4qeh">岳珂过啄木岭赋诗</div>
+          <div class="dd" data-page-node-id="CW7tR5quBPXwJw11RWp4C6">
+            岳飞之孙、南宋文学家<b data-page-node-id="5ZvfkcKht2EdntYPT6hcQj">岳珂</b>途经廿三弯山岭，暑天中暑憩于道旁，写下《过啄木岭暑暍憩道傍移时始行三首》五言律诗。"多愧北窗翁"恰与白居易"自叹花时北窗下"遥相呼应。啄木岭北峰下山，便是今日邵东村之境。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="TcPVolkrjM4oRN4F3CGQRQ">
+          <span class="dot" data-page-node-id="SWaJmVpFZOdFCy3E8fGWC8"></span>
+          <div class="yr" data-page-node-id="f3i01SPdhvZwmJiA7NdIbq">清 · 康熙丁巳（1677）</div>
+          <div class="tt" data-page-node-id="Cn4m9GedmzM7dF6JWxm7xF">刘源长《茶史》集大成</div>
+          <div class="dd" data-page-node-id="IGXyEfc3ZwZBbVE6eRbFYO">
+            刘源长《介翁茶史》汇辑历代茶事，于"茶之分产"明言"<b data-page-node-id="4fwmYi1LJjKcZUwK1KWE7j">義興紫筍 即 陽羨茶 即 羅岕</b>"，并记"唐時入貢，即名其山為唐貢山"——湖㳇"唐贡山""唐贡茶"地名典故由此坐实；又载"<b data-page-node-id="gGvwahNgqydTmTgjPM1Mw7">紫者上，綠者次；筍者上，芽者次</b>"的紫笋贡茶品级标准。
+          </div>
+        </div>
+
+        <div class="tl" data-page-node-id="U6rFKsYF0DiVxXLI79Drfr">
+          <span class="dot" data-page-node-id="LyeeS1McA0iqTFTynWFLjO"></span>
+          <div class="yr" data-page-node-id="0H2GoehU7P3lJGfaGZHCUZ">今 · 古道遗存</div>
+          <div class="tt" data-page-node-id="6DGqbLSGpXsGMDFsXgcncy">廿三弯贡茶古道</div>
+          <div class="dd" data-page-node-id="BaDahYsYmgNiBg6kYqXZ1U">
+            宜兴境内现存约 <b data-page-node-id="VKFGbFPXHkEIh9K5DxiNIP">1000 米</b>古道遗迹，是江苏境内唯一反映古代茶叶进贡史实的交通遗址。邵东村正位于这条文化带的核心节点，陆羽觅茶、白岳赋诗、两府议茶的千年回响，仍在廿三弯的青石上回荡。
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 诗章撷英 -->
+    <section data-page-node-id="EZmHjjZ6DsUBJxZ19SNL4w">
+      <div class="sec-h" data-page-node-id="V8B7MMICou45nJstEJOQ0R"><span class="num" data-page-node-id="R1sXETdq0sgtlr17GiF8D4">03</span><h2 data-page-node-id="pErTTgs6ulXWhHFprVaSTe">诗章撷英</h2><span class="en" data-page-node-id="MmyEgBMQkpjRM0chOop8Xj">Verses</span></div>
+
+      <div class="poem short" data-page-node-id="2dXGyaLCy5xTQHSrUL9ZAE">
+        <div class="ttl" data-page-node-id="xo94NBvR4GKHVxvHwLv3yH">卢仝《走笔谢孟谏议寄新茶》</div>
+        <div class="body" data-page-node-id="6q978EI8GRb4THO33bQOhO">"天子未尝阳羡茶，百草不敢先开花。"</div>
+        <span class="by" data-page-node-id="XBUe5pbEIE9WGCaLMaKYjB">—— 唐 · 卢仝（句，见清·刘源长《茶史》转引）</span>
+      </div>
+
+      <div class="poem" data-page-node-id="VKERS5IB0kqrapCzXa9UNa">
+        <div class="ttl" data-page-node-id="kdX9gD6oMQtcexKCngWah2">白居易《夜闻贾常州崔湖州茶山境会亭欢宴》</div>
+        <div class="body" data-page-node-id="naYLhHmu4bUAGQMTCC04Ve">遥闻境会茶山夜，珠翠歌钟俱绕身。<br data-page-node-id="fIDHXrF6QYRxYhhBK1QDTO">盘下中分两州界，灯前合作一家春。<br data-page-node-id="JNqqMhsedmACcFUoqWtRGP">青娥递舞应争妙，紫笋齐尝各斗新。<br data-page-node-id="UdRA3b1UAKNbYVpxahMh6V">自叹花时北窗下，蒲黄酒对病眠人。</div>
+        <span class="by" data-page-node-id="d88HeRyTw4bJB88eVfflZJ">—— 唐 · 白居易（宝历二年，826 年；受邀赴境会亭却因坠马伤足未能上山，遥闻茶宴而作）</span>
+      </div>
+
+      <div class="poem" data-page-node-id="CKXz0X4LKhxR8qrFbBYArY">
+        <div class="ttl" data-page-node-id="kTVAUBaX2eY9CxPL1Ov0tg">岳珂《过啄木岭暑暍憩道傍移时始行三首·其一》</div>
+        <div class="body" data-page-node-id="qCnDQr9FpYiWWqYBBDe8S2">啄木侵云起，流金正日中。<br data-page-node-id="FydBd7dwWOe0bMfHHaFA6i">涧深犹断港，山崦略无风。<br data-page-node-id="GYGT3T9FlwQwYcrY8Ay5ua">自是人来去，何关暑蕴隆。<br data-page-node-id="txnEOznKt0SqM7S7ANmDGL">羲皇正高卧，多愧北窗翁。</div>
+        <span class="by" data-page-node-id="CG6NDYKTPU3CkwehNPAZqV">—— 南宋 · 岳珂（岳飞之孙；"多愧北窗翁"遥应白居易"自叹花时北窗下"）</span>
+      </div>
+    </section>
+
+    <!-- 名物考 -->
+    <section data-page-node-id="HBFGTFvvlMj0Tehsmg6ml6">
+      <div class="sec-h" data-page-node-id="YPROIxVwtPs4QzxEwXFKlB"><span class="num" data-page-node-id="d66XDKlAiPAg8wTRODAJwg">04</span><h2 data-page-node-id="Zn2GGMyIEbwFLVvSAZkUMP">名物考</h2><span class="en" data-page-node-id="ya1oolx1J7vC5yMBNYYaFq">Sites &amp; Terms</span></div>
+      <div class="grid" data-page-node-id="nsJPxbEszJxKv9CPh3XicZ">
+
+        <div class="card" data-page-node-id="sREjiv2oxsbsmL9WAaPKVK">
+          <h3 data-page-node-id="C3cjfgFn4XNB6OdyavjRpK"><span class="ic" data-page-node-id="BAwiKttv10wk3FJD3VsLis">⛰</span>廿三弯古道</h3>
+          <p data-page-node-id="sBBJjgR3jBEpDOfZwdm8l8">一道弯一道弯的青石古道，是古代茶马运输的进贡通道，也是今日的网红徒步线。北侧连江苏宜兴（阳羡雪芽产地），南端接浙江长兴（紫笋茶产地）。</p>
+          <div class="tip" data-page-node-id="OLPMsyWxL8Y7PSqTp4z2ru">苏浙两省、湖常两州的茶马咽喉，一岭分两味茶。</div>
+        </div>
+
+        <div class="card" data-page-node-id="H9L7V2yB8ZYIW3T4GhKpjc">
+          <h3 data-page-node-id="CJ1TNoUtqEZheHj9S2gcQ0"><span class="ic" data-page-node-id="4qJSvsAPzstLJZBnSaI5f3">⛩</span>境会亭</h3>
+          <p data-page-node-id="8JEB4m49mKLApqHxGAOiIC">当年常州、湖州两府议定贡茶的草亭遗址，2016 年重建，今立于廿三弯山顶，可俯瞰两省山色，是贡茶故事的"历史坐标"。</p>
+          <div class="tip" data-page-node-id="LMJneV8JxdsQzX668uOUrV">《茶谱》"每茶节，二牧皆至焉"的实物承载。</div>
+        </div>
+
+        <div class="card" data-page-node-id="a7fbXIajmWatQxUxJSWUxq">
+          <h3 data-page-node-id="Kby21cg8mGCuebORJAwY4u"><span class="ic" data-page-node-id="19pa00HZ7PA4D1q9t5fvX9">🛕</span>赐福寺</h3>
+          <p data-page-node-id="0j4sEleUQa3xCM3Qg4cgon">坐落于山间的古刹，与项羽翻越长岗岭的传说相邻，登山途中可访古、可静心，是"古道 + 古刹"徒步体验的重要一环。</p>
+        </div>
+
+        <div class="card" data-page-node-id="e6L2HkG0peCjm5KaZtrapZ">
+          <h3 data-page-node-id="JOPhqchjph8TjtSKC6vYid"><span class="ic" data-page-node-id="aBVf6GRGhDEUnmYD4TJGd4">🍵</span>紫笋茶</h3>
+          <p data-page-node-id="OyKSNA1nG8JbuzzuhHgc8A">阳羡—顾渚贡茶的核心名品。据《茶史》："<b data-page-node-id="eIZ4I5csq6yZ7Md70Et1OA">紫者上，綠者次；筍者上，芽者次</b>，故称紫笋。"色紫、形笋者为上品，岁清明日抵京，是唐代贡茶验收的硬标准。</p>
+          <div class="tip" data-page-node-id="1sGTtRwOsTjEwuvojwhCXK">义兴紫笋 ＝ 阳羡茶 ＝ 罗岕，唐宋紫笋与明清岕茶一脉相承。</div>
+        </div>
+
+        <div class="card" data-page-node-id="SdHPofO6NyAloaaDDGz7jX">
+          <h3 data-page-node-id="yYVEvm2VpC2pPxRvY4R5YR"><span class="ic" data-page-node-id="LY7oqyGp0SwTFkv8rhEWC0">📍</span>唐贡山</h3>
+          <p data-page-node-id="Kpgw3lJGopoCDmjWRrlccC">"唐時入貢，即名其山為唐貢山"——阳羡茶唐代入贡，遂有"唐贡山""唐贡茶"之地名典故（见《茶史》）。湖㳇镇唐贡山、唐贡茶之名，由此而来。</p>
+          <div class="tip" data-page-node-id="aQRdPBwiX5c9bLM8fBbnjx">地名即史：一座因茶入贡而得名的山。</div>
+        </div>
+
+        <div class="card" data-page-node-id="eG3BDZi7FzgwtYi6ARInpL">
+          <h3 data-page-node-id="YXpgjMHHKitY0Yv2UEvsRP"><span class="ic" data-page-node-id="jWdMTjQ7zItkejgdfA9ni5">📜</span>罗岕（岕茶）</h3>
+          <p data-page-node-id="pjQmJ98CSAx4ALPHQAeOi4">明人所谓"罗岕"，即宜兴、长兴交界的湖㳇山区所产之茶。《茶史》径以"義興紫筍 即 陽羨茶 即 羅岕"贯通唐宋紫笋与明清岕茶，邵东村正处此带。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 历史考证说明 -->
+    <section data-page-node-id="jZDzjBFsepdoMbhIdsEN59">
+      <div class="sec-h" data-page-node-id="UYxhIlKomrO6RcKH5rhnxr"><span class="num" data-page-node-id="CnZGTnXAse7HmcwOsDfenC">05</span><h2 data-page-node-id="6kDOwa6Kb3M3u5JDcLnj37">历史考证说明</h2><span class="en" data-page-node-id="68USRPQKm7VzvjrO4XeoMx">Source Notes</span></div>
+      <p class="lead" style="margin-bottom: 24px;" data-page-node-id="vRWonJVUXfL4N7MpBy3FdG">
+        本页所述史实，依据邵东村公开村情、村志资料与驻村工作记录，并系统核对《<b data-page-node-id="apu5GbbQRZeOcs8CLlaQRk">茶经</b>》《<b data-page-node-id="6CwORA8tFfH0QHSmjVBOda">茶史</b>》《<b data-page-node-id="ndGC06qEkKQBE1rjhKyviE">茶书</b>》资料整理，供读者与村志续修参证。
+      </p>
+
+      <div class="doc" data-page-node-id="9fjju3CwkMnfkVSLI9APHX">
+        <h3 data-page-node-id="jn2c2nS7D7A4H1G5xlDCxR" style="">一、三册书的基本情况​</h3>
+        <table class="tbl" data-page-node-id="yw32gweQ63ihbk32XOOjsU">
+          <tbody data-page-node-id="Du3Wbhfw7IdwFTFijMF66Z"><tr data-page-node-id="3cz83iYFIHChXdqKm665eU"><th data-page-node-id="7Wy3nfBlb8GWqUKd5cJGiH">书名</th><th data-page-node-id="pAjtINWqpJQhs283yivfLF">实体</th><th data-page-node-id="Twh5N1DJg1n2oYkNWLNqFf">性质</th><th data-page-node-id="Awae49yFRC019EbxPn4kLY">对邵东村的价值</th></tr>
+          <tr data-page-node-id="FAVAqWwiHvKn6K0HqLbf5g"><td data-page-node-id="c7mrl10bsvDuDuVKXOpz4o"><b data-page-node-id="6NkMOyOdO2pJu35r8mlzXk">茶经</b></td><td data-page-node-id="HrpRFCI8YZm4zeckqPxiSq">陆羽原著，张则桐注译本（原文 + 白话 + 陆文学自传 + 新唐书·陆羽传 + 四库提要）</td><td data-page-node-id="fb1QktpQd0DmnSlvoZyzlo">文本型</td><td data-page-node-id="qFVGy75ukG8Q58zdjUpVtn">★★★ 一手权威史料</td></tr>
+          <tr data-page-node-id="xmCzQsBLmtK2cUkYkiB9Tg"><td data-page-node-id="cSfgBDIBBE1apHJAVA6iWD"><b data-page-node-id="8Hh9j1VgivALq4UTIvAfSw">茶史</b></td><td data-page-node-id="HIzViRy66EwOqaLPA6gsAI">清·刘源长《介翁茶史》，康熙丁巳（1677）序刻本影印</td><td data-page-node-id="JwVHsY8jh7iH8w3G1HrfeX">竖排古籍影印 · 类书汇编</td><td data-page-node-id="H7ItdHFfOF10AWW3cuGU3Y">★★★ 多条独立记载</td></tr>
+          <tr data-page-node-id="yLTKsaMZNlGyqvskZEiVHp"><td data-page-node-id="g48c1Xqd5qUyDjpE10TfzK"><b data-page-node-id="CnxReoLaQD2yp1DURprHzB">茶书</b></td><td data-page-node-id="CaU5kEUn69RAg6aKH4GDPk">明·喻政辑《茶书》丛书，万历癸丑（1613）刊，17 种茶书合刊</td><td data-page-node-id="lOm3lV9ZzRjHlJBUVWEF31">竖排手抄影印</td><td data-page-node-id="AykZSZA9a05ootS5bKoZoB">★★ 明代茶书丛编</td></tr>
+        </tbody></table>
+        <p class="src" data-page-node-id="A6pSs5WMPqTas1y9wFZvFE">注：《茶书》（喻政辑）分仁义礼智信五部，收《茶经》《茶谱》《茶录》《煎茶水记》《煮泉小品》等 17 种。</p>
+      </div>
+
+      <div class="doc" data-page-node-id="6wykmZA0ZIwC97pkluzWCY">
+        <h3 data-page-node-id="qkqs6Q0GzBgJkYjuazJIHY">二、阳羡贡茶的文献证据链（由早及晚）</h3>
+        <ol class="chain" data-page-node-id="d2j3nMo54bwadjBrhKbXiK">
+          <li data-page-node-id="Rb6LRyZFZr8nDhCMTxzCAH"><b data-page-node-id="rNxZkFLJA5DceBVjuRXEDy">南朝宋 · 山谦之《吴兴记》</b>——"乌程县西二十里有温山，出御荈"，湖州进御之茶之始，早于阳羡入贡。</li>
+          <li data-page-node-id="mNoXCDcHnVcmIzaFXPrCwq"><b data-page-node-id="OBZCTt0TDxzd1yyq1h0xNq">唐 · 陆羽《茶经·八之出》（约 760）</b>——啄木岭、君山悬脚岭北峰下、顾渚山谷入列茶产区；中唐湖、常二州为贡茶产地。</li>
+          <li data-page-node-id="bYYHbUIXcsOxVmEOg3GA4S"><b data-page-node-id="l6rKBHhfCZ9Lju91QAVKvs">唐 · 卢仝</b>——"天子未尝阳羡茶，百草不敢先开花"。</li>
+          <li data-page-node-id="URQFENXBAGMVegB90Xd953"><b data-page-node-id="yA2OR8vkowncf1r4nnR0Id">唐 · 白居易《夜闻贾常州崔湖州茶山境会亭欢宴》（826）</b>——境会亭茶宴的亲历者之诗。</li>
+          <li data-page-node-id="DzDuZiFQZIkk8EGx17ANp7"><b data-page-node-id="pMXROcBxmRtKgrglnJF2mL">五代 · 毛文锡《茶谱》（935）</b>——境会亭系于啄木岭，"每茶节，二牧皆至焉"。</li>
+          <li data-page-node-id="bm6vDdRN3Yncd4PdnbKs98"><b data-page-node-id="fE4yEZDpGXrxiVeow9yMJH">南宋 · 岳珂</b>——过啄木岭（约 1228—1233）赋《过啄木岭暑暍憩道傍移时始行三首》。</li>
+          <li data-page-node-id="VGy1I9CFzoqyZtUxupL3cZ"><b data-page-node-id="66An8RVWArozihz5SieUTk">清 · 刘源长《茶史》（1677）</b>——唐贡山得名、义兴紫笋＝阳羡茶＝罗岕、"两郡太守毕至为盛集"。</li>
+        </ol>
+      </div>
+
+      <div class="doc" data-page-node-id="7v3t9fosJFX706tvHqM2OI">
+        <h3 data-page-node-id="IOhDw45f7rc9MYSzKYkPkX">三、核心史料（按文献年代排序）</h3>
+        <p class="lead" style="margin-bottom:18px" data-page-node-id="a96qPbSkwinGCZ0KFHF7zA">
+          以下为茶学三典中与邵东村相关者（阳羡、顾渚、贡茶、紫笋、义兴/宜兴、境会亭、啄木岭、悬脚岭、岕茶等）的逐条史料，均注明出处与页码，供村志续修与文旅叙事直接取用。
+        </p>
+
+        <div class="src-item" data-page-node-id="xmLL9HMHbZg98b1QCk1uHu">
+          <h4 data-page-node-id="Puzm3rRSOvlWqj5kiSMagn">1. 《茶经·八之出》——目前所见最早记载（陆羽，约 760 年前后）</h4>
+          <blockquote class="quote" data-page-node-id="WzXQFw11JkaQCoSxDWkPC6">
+            「浙西，以湖州上……生凤亭山伏翼阁，飞云、曲水二寺，<b data-page-node-id="9lp2VLMU5t4SInmsDEWvMS">啄木岭</b>，与寿州、常州同……<b data-page-node-id="qLYSSZVNrnP5KYnz85F0Qv">常州次（常州，义兴县生君山悬脚岭北峰下</b>，与荆州、义阳郡同）……」
+            <span class="pg" data-page-node-id="akmlxYieEMfJ6ODZPRrnx3">——茶经 PDF 第 142 页原文、143–144 页白话译文</span>
+          </blockquote>
+          <ul data-page-node-id="ZfHuBolJ3dpiUP3yNhNOLP">
+            <li data-page-node-id="wx4xtRZKVRBWKYXsTlc5CE">陆羽把<b data-page-node-id="5rQhDbp4RYGNiADxn3bo2r">啄木岭</b>记为湖州茶产地（品质与寿州、常州同级）——比毛文锡《茶谱》（935 年）早约 175 年，是啄木岭作为茶山关隘的<b data-page-node-id="Ps2Nel7mobesPCxwOutlJh">最早文献</b>。</li>
+            <li data-page-node-id="T9I2c6dM0vsydG9zKqzrNz"><b data-page-node-id="0BkJ5YckH5Hnv45wCBTVEk">义兴县君山悬脚岭北峰下</b>——义兴即今宜兴，正是邵东村所处的阳羡茶区核心。</li>
+            <li data-page-node-id="MynVAsvtqcfV6Xn89GqKya">注译者明确：中唐时期，湖州、常州成为朝廷贡茶产地；唐代名茶首推<b data-page-node-id="BCoVUgv1BUrZ1Hv00Fh2C0">顾渚紫笋</b>（并称"唐代的顾渚紫笋、宋代的北苑茶、明代的岕茶、清代的武夷茶"——岕茶产地即宜兴长兴交界的湖㳇山区）。</li>
+            <li data-page-node-id="OClgbFLikKCxMbDXrcqK66">人物背景：陆羽隐居湖州后"往来扬州、常州、信州、洪州等地"，亲历过常州茶区。</li>
+          </ul>
+        </div>
+
+        <div class="src-item" data-page-node-id="fkVuHVR1dqS00Cs94nG9Q9">
+          <h4 data-page-node-id="qGgoq0jXZOwXCdgLl4q8Gf">2. 《茶经·七之事》——陆羽亲引的贡茶文献</h4>
+          <blockquote class="quote" data-page-node-id="30n1rTsgGuFyKdprrPtlU9">
+            「山谦之《吴兴记》：<b data-page-node-id="H39AhwFHYrQfosr7UH1vft">乌程县西二十里有温山，出御荈。</b>」（白话："乌程县西二十里有温山，出产进贡皇上的茶。"）
+            <span class="pg" data-page-node-id="qTgFQVpISwfPaFzjlTNwPG">——茶经 PDF 第 131–132 页</span>
+          </blockquote>
+          <ul data-page-node-id="oB147REz6iFMHRuCtRAbSb">
+            <li data-page-node-id="wfM5CuGqz1VFxppCcpa8av">刘宋（南朝）山谦之《吴兴记》已记湖州<b data-page-node-id="EAvAUhhW2qEg2o6hbrpRCT">温山御荈</b>——湖州地区进御之茶早于唐代阳羡入贡一百余年，可与阳羡贡茶互证湖常贡茶体系之早。</li>
+            <li data-page-node-id="0F6N9ZznZLVpsiQOl4pdow">《茶史》P36 亦转引此条，足见其为后世公认之早期贡茶记载。</li>
+          </ul>
+        </div>
+
+        <div class="src-item" data-page-node-id="CieY9UF4NX0DRyUu4hMk8i">
+          <h4 data-page-node-id="TJIpHY8pXO9kMFZVTZHiMP">3. 《茶史·卷一·茶之分产》「江南」条——清·刘源长（1677）</h4>
+          <blockquote class="quote" data-page-node-id="ORNlMxSFTJDAizsyHyVRWe">
+            「<b data-page-node-id="W0YlyOLhZtHb4wWtvZb3Go">義興紫筍　陽羨茶　即羅岕</b>。<br data-page-node-id="YcLbtjGAWZSnuFEvOzVhoG">
+            <b data-page-node-id="7Xdh0B6Gw2iUqBknPHdHOA">義興縣</b>　即今宜興縣，秦曰陽羨。<b data-page-node-id="1Avh9viSTAFsNCcfdDEZNj">紫筍出義興君山懸腳（嶺北峰下）</b>。<br data-page-node-id="8qSAKZmBCIGr8DrvQr8DMw">
+            <b data-page-node-id="C4A1OA8N8dtTRbX9EvgvHs">紫筍生湖（州）常（州）間，當茶時兩郡太守畢至，為盛集。</b><br data-page-node-id="f5ywYGnMDDWu2MR3d4H78F">
+            宜興銅棺山即古陽羨。荆溪有南北之分，陽羨居荆溪之北，故云陽羨。<b data-page-node-id="AInzV32QGznLIwWdLuyDGI">唐時入貢，即名其山為唐貢山</b>。茶極為唐所重。<br data-page-node-id="mshdRcdo2F0GIvGZU7nOzn">
+            盧仝歌云：<b data-page-node-id="V4lSoZ6cvJdlT2Jg5eZzYN">"天子未嘗陽羨茶，百草不敢先開花。"</b>」
+            <span class="pg" data-page-node-id="HJdoarnrYVEq509KJaEG7f">——茶史 PDF 第 33 页左页</span>
+          </blockquote>
+          <ul data-page-node-id="YAdUaDpcho7a4KzNWObBa3">
+            <li data-page-node-id="mB3MW4IE11tpBEn43LAHCK"><b data-page-node-id="OSQfxoktDvBYsc2nWaGsOP">义兴紫笋＝阳羡茶＝罗岕</b>——把唐宋紫笋与明清岕茶（罗岕）串成一线；岕茶正产于宜兴长兴交界的湖㳇山区，邵东村正在这一带。</li>
+            <li data-page-node-id="uFrME6TiZAJaX0pNqaOE5l"><b data-page-node-id="obVvJlMrP0xXkuxHkIHfar">「唐贡山」地名由来的一手文献</b>：阳羡茶唐时入贡，"即名其山为唐贡山"——湖㳇镇唐贡山、唐贡茶的地名典故由此坐实。</li>
+            <li data-page-node-id="aZApdaArHBsFGJywpvssDv"><b data-page-node-id="Sv2iCL8IvsV5mlUPhDaPWi">「两郡太守毕至，为盛集」</b>——与境会亭茶山盛会（白居易诗、毛文锡《茶谱》"每茶节，二牧皆至焉"）互为印证。</li>
+            <li data-page-node-id="qzMAk631K9qpv8073KzNhb">悬脚岭北峰下与《茶经》原文完全一致，文献链条完整。</li>
+          </ul>
+        </div>
+
+        <div class="src-item" data-page-node-id="GvV6D9MLCh6THsIs3erX43">
+          <h4 data-page-node-id="iJjWOBzGfTRgXAtbySStkK">4. 《茶史·茶之分产》「浙江」条——顾渚紫笋（同书第 35–36 页）</h4>
+          <blockquote class="quote" data-page-node-id="Eav2F7xJH3Yl3uQxlQB2Tc">
+            「<b data-page-node-id="SuHnwWuesdolhQ4PEFy8jZ">顧渚紫筍</b>　吳興志：產浙江湖州長興顧渚。昔夫差顧其渚平衍可都，故名顧渚。<br data-page-node-id="HRBGOFgZym3NkCZ1JlNIis">
+            茶經云：浙西以顧渚茶為上。<b data-page-node-id="BxFmlFFrVw0GNysWi9ihcq">唐時充貢，歲清明日抵京。紫者上，綠者次；筍者上，芽者次，故稱紫筍。</b><br data-page-node-id="bx9qCTl1JtJLpzcHKTAHpz">
+            語云：顧渚之紫筍，標英雲垂線腳。<br data-page-node-id="kN8rEBjsDRCN9nCZ3DgbXm">
+            陸羽顧渚山記：豫章王子尚訪曇濟道人於八公山，道人設茶，子尚味之云：此甘露也。<br data-page-node-id="eRFKWJXEqsBsDrDqbkwrrZ">
+            陸龜蒙嗜茶，治園於顧渚山下，自號江湖散人、天隨子……與皮日休茶唱和。<br data-page-node-id="xsoIpmzTYhlffVcmso5VTm">
+            <b data-page-node-id="4eOqLE6dmnRR4I4iEx9z7G">明月峯（峽）</b>在長興，旁顧渚山側，二山相對，石壁峭立，大澗中流乳石飛走，<b data-page-node-id="KTnCX6f0y9Dk31ewlZenNc">茶生其間，尤為絕品</b>。張文規所謂"明月峽前茶始生"是也。……姚伯道云：明月之峽，厥有佳茗，是為上乘。<br data-page-node-id="rA2BK8WNMr5vs6H4kQn6c8">
+            又：張文規以吳興筍、白蘋洲、明月峽中茶為三絕。」
+            <span class="pg" data-page-node-id="mvpLrMqdEIyPJ75z8JrApw">——茶史 PDF 第 35–36 页</span>
+          </blockquote>
+          <ul data-page-node-id="kKfoE1T3o9wNteLQlUinM2">
+            <li data-page-node-id="YSFrfQmFH4UG5bALpPOa3I"><b data-page-node-id="BlEDnGqAKvM1YYyvAKNQXI">紫笋的得名与贡茶验收标准</b>："紫者上，绿者次；笋者上，芽者次"——色紫、形笋为上品，故名"紫笋"。这一贡茶品级标准可直接用于网页/村志叙事。</li>
+            <li data-page-node-id="R0UMAYacDuRncNqKBD6DH8"><b data-page-node-id="KEuWiUN3iUQhj88PW7895g">顾渚得名</b>：夫差"顾其渚"——顾渚山名典故。</li>
+            <li data-page-node-id="au3O2zShDEx48uH4bFSU1L"><b data-page-node-id="brurv45BWq7XwdFG8fIB0T">明月峡绝品</b>：长兴顾渚山侧的明月峡为紫笋最核心产地；张文规"三绝"。</li>
+            <li data-page-node-id="6S5xFlYfFdgUBHqHqiIPlO">陆羽有《顾渚山记》、陆龟蒙治园顾渚山下——顾渚山茶事人物群像。</li>
+          </ul>
+        </div>
+
+        <div class="src-item" data-page-node-id="mZghFX3lwQfZyCOMmYQzi9">
+          <h4 data-page-node-id="t3DlalwcR1HGoZQe818cwN">5. 《茶史》P32「茶之别名」辅证</h4>
+          <blockquote class="quote" data-page-node-id="7Fmz2aYP29vhcwuwqbIG4j">
+            「已太史梅詢試之，謂<b data-page-node-id="eDy6BCHKkq7hcA783CRs5E">建溪、顧渚不能過也</b>。」
+            <span class="pg" data-page-node-id="hPcqIIRzbpYovYw0dWBmQe">——茶史 PDF 第 32 页</span>
+          </blockquote>
+          <ul data-page-node-id="4zv4rGEnWQvw9OwSGYkKjM">
+            <li data-page-node-id="KczHB8o4wg5RUTGYnEB2hx">名茶比较中以<b data-page-node-id="AKPMPjOUTVD8nGYYceRvw2">顾渚</b>为标杆，可见顾渚紫笋在宋人心目中的地位，亦反衬阳羡—顾渚贡茶体系之尊。</li>
+          </ul>
+        </div>
+
+        <div class="src-item" data-page-node-id="wkweqN7XiKjQBkywvI02IS">
+          <h4 data-page-node-id="EkV6g8xAUOkrALAENsWEIk">6. 《茶书》（喻政辑）辅证</h4>
+          <ul data-page-node-id="ELn6ZqtHGmEUWi6EuH6P4L">
+            <li data-page-node-id="xDLzYuV5ifEh7Jg289rcrN">谢肇淛序（PDF 第 16 页）："<b data-page-node-id="pxEUoT4DG3rhVNaU9HF5LB">芳液輙溢，無煮陽羨孰（熟？）中泠之迹</b>"——明人仍在煮阳羡茶并以中泠泉相配，说明阳羡茶在明代的品牌延续。</li>
+            <li data-page-node-id="GcGj9n23qrdDgkse7IBDoL">丛书收录《北苑贡茶录》《煎茶水记》《煮泉小品》等，凡论贡茶、水品者皆可与阳羡—顾渚体系参看（金沙泉条按此前考证在长兴侧，宜兴湖㳇唐贡山下同名泉为借名，引用需区分）。</li>
+          </ul>
+        </div>
+      </div>
+
+      
+
+      <div class="doc" data-page-node-id="gG6pXaa7KsD3vsInicDwjb">
+        <h3 data-page-node-id="JmETyvKYXf97YSSjfySa9Y" style="">四、使用提示​</h3>
+        <h4 data-page-node-id="eVlZ4fIEe7Xfa3Bb83awfG">1. 金沙泉方位须区分</h4>
+        <p data-page-node-id="twww41B1nvSyJQ2kCsb5OA" style="">作贡之<b data-page-node-id="m2SIoqYGLZ7Z2kuf1mWVf8">金沙泉</b>在长兴（顾渚 / 啄木岭侧），宜兴湖㳇唐贡山下的金沙泉为<font color="#2b2b28"><b>同名泉</b></font>。本页及村史引用时应注意不混同，涉及泉水仅取借名典故，不作贡泉实证。</p>
+        <h4 data-page-node-id="mYbWqRt4fROSKeiQXtvkIW">2. 古籍转引须核原典</h4>
+        <p data-page-node-id="uyW5dOfH0tpkmGqw9NvlT6" style="">《茶史》为清人汇编类书，个别条目转引时经改写，可能有疏漏，如"嶺北岸下"等行有漫漶。</p>
+        <h4 data-page-node-id="I8d7pszQXlO9OXZMnZNYOt">3. 传说与史实分标注</h4>
+        <p data-page-node-id="IN3JitrCqR3ktzcBwJJAhA" style="">本页为可考史实（陆羽、白居易、岳珂、境会亭、唐贡山），项羽翻越长岗岭、青隐寺乾隆传说等属民间记忆，引用时勿混为一谈。</p>
+      </div>
+    </section>
+
+    <!-- 回到首页 -->
+    <section style="text-align:center;border-bottom:none" data-page-node-id="2fWNqmrY59JGH4aUIHTJD6">
+      <a href="index.html" class="back-home" data-page-node-id="ohHvp472riDXBTVnKbzC3W">← 返回邵东村首页</a>
+    </section>
+
+  </main>
+
+  <footer data-page-node-id="2bMmMuXb3MAuDnO7C2qOnU">
+    <div data-page-node-id="RlMknzJf40xevwkiHn5lYW">邵东村 · 贡茶历史　|　<a href="index.html" data-page-node-id="fyuGUGDJj8eDilHf09M1hv">返回首页</a>　|　<a href="cunqing.html" data-page-node-id="wG1i119E3VSKpSOQGTPW4P">村情速览</a></div>
+    <div class="copy" data-page-node-id="8o6kLUMsQrwX2dju1rFCFf">© 2026 邵东村 · 内容据村情、村志、驻村工作记录及茶学三典整理，仅供文化交流与乡村振兴宣传使用。</div>
+  </footer>
+
+
+
+</body></html>
