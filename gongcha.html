@@ -138,13 +138,15 @@
   @media(max-width:680px){
     section{padding:48px 0}
     main{padding:0 18px}
-    .poem{padding:20px 16px}
-    .doc{padding:22px 16px}
-    .card{padding:20px 16px}
-    .pgroup{padding:8px 0 8px 14px}
-    .quote{padding:14px 16px}
     .hero{padding:84px 18px}
     footer{padding:46px 18px}
+    /* 手机端：去白底、改通栏 */
+    .poem,.doc,.card{
+      background:transparent;border:none;border-radius:0;box-shadow:none;padding:22px 0;
+    }
+    .poem.key{background:transparent}
+    .pgroup{padding:8px 0 8px 14px}
+    .quote{padding:14px 16px}
   }
 </style>
 <style id="__dm_no_drag_style__" data-page-node-id="Hz6klRhHEU8MP5vnrO4GA7">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="BG6DesgxtkHrNJGBMWO6GA">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>

@@ -73,7 +73,19 @@
   .blk p+p{margin-top:10px}
   .blk .tip{margin-top:14px;font-size:13.5px;color:var(--ink-soft);background:var(--paper-d);
     border-left:3px solid var(--tea-l);padding:10px 14px;border-radius:0 8px 8px 0}
-  @media(max-width:680px){.detail-grid{grid-template-columns:1fr}}
+  @media(max-width:680px){
+    section{padding:48px 0}
+    main{padding:0 18px}
+    .hero{padding:70px 18px}
+    footer{padding:42px 18px}
+    /* 数据方框：手机端强制两列（参考主页 stats 风格） */
+    .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .card{padding:16px 12px}
+    .card .v{font-size:25px}
+    .card .v small{font-size:12px}
+    .card.feature .v{font-size:17px;line-height:1.25}
+    .detail-grid{grid-template-columns:1fr}
+  }
 
   /* ---------- 页脚 ---------- */
   footer{background:var(--tea-d);color:#e8f0ec;text-align:center;padding:48px 24px}
