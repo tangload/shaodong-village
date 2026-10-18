@@ -91,6 +91,38 @@
   footer{background:var(--tea-d);color:#e8f0ec;text-align:center;padding:48px 24px}
   footer a{color:#fff;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:2px}
   footer .copy{margin-top:16px;font-size:13px;opacity:.7}
+
+  /* ---------- 互动浮窗：分享 + 反馈 ---------- */
+  .fab-bar{position:fixed;right:18px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
+  .fab{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;
+    box-shadow:0 8px 22px rgba(40,34,24,.22);background:var(--tea);color:#fff;font-size:22px;
+    display:flex;align-items:center;justify-content:center;transition:.2s}
+  .fab:hover{transform:translateY(-3px);background:var(--tea-d)}
+  .fab.alt{background:#b8860b}
+  .fab.alt:hover{background:#9c6f2e}
+  .modal-mask{position:fixed;inset:0;background:rgba(20,16,10,.5);z-index:70;display:none;
+    align-items:center;justify-content:center;padding:20px}
+  .modal-mask.show{display:flex}
+  .modal{background:var(--paper);max-width:430px;width:100%;border-radius:16px;padding:26px 24px;
+    box-shadow:0 8px 22px rgba(40,34,24,.22);position:relative;max-height:88vh;overflow:auto}
+  .modal h3{font-family:var(--serif,serif);color:var(--tea-d);font-size:21px;margin-bottom:4px}
+  .modal .sub{font-size:13px;color:var(--ink-soft);margin-bottom:14px}
+  .modal .close{position:absolute;top:12px;right:16px;border:none;background:none;font-size:24px;
+    color:var(--ink-soft);cursor:pointer;line-height:1}
+  .modal .fb-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+  .modal .fb-row:first-of-type{border-top:none}
+  .modal .fb-row a{color:var(--tea);font-weight:600;word-break:break-all}
+  .modal .fb-qr{width:150px;height:150px;object-fit:cover;border-radius:10px;border:1px solid var(--line);
+    background:#fff;display:block;margin:0 auto}
+  .modal .qr-wrap{text-align:center}
+  .share-pop{position:fixed;right:18px;bottom:90px;z-index:60;background:var(--paper);border-radius:14px;
+    box-shadow:0 8px 22px rgba(40,34,24,.22);padding:12px;display:none;flex-direction:column;gap:6px;width:210px}
+  .share-pop.show{display:flex}
+  .share-pop a,.share-pop button{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);
+    background:none;border:none;cursor:pointer;padding:8px 10px;border-radius:8px;text-align:left;transition:.15s}
+  .share-pop a:hover,.share-pop button:hover{background:var(--paper-d)}
+  .share-pop .qr{width:170px;height:170px;align-self:center;border-radius:8px;margin-top:4px}
+  @media(max-width:520px){.fab-bar{right:12px;bottom:16px}.fab{width:48px;height:48px;font-size:20px}}
 </style>
 </head>
 <body>
@@ -192,6 +224,53 @@
     <div>邵东村 · 村情速览　|　<a href="index.html">返回首页</a></div>
     <div class="copy">© 2026 邵东村 · 仅供文化交流与乡村振兴宣传使用。</div>
   </footer>
+
+
+<!-- 互动浮窗：分享 + 反馈 -->
+<div class="fab-bar">
+  <button class="fab alt" id="shareOpen" title="分享">🔗</button>
+  <button class="fab" id="fbOpen" title="反馈 / 纠错">📝</button>
+</div>
+
+<div class="modal-mask" id="fbMask">
+  <div class="modal">
+    <button class="close" id="fbClose" aria-label="关闭">×</button>
+    <h3>欢迎反馈你的想法</h3>
+    <div class="sub">发现内容错漏、想补充村史故事、或有建议——欢迎填写反馈问卷，你的一字一句，都会帮邵东村把故事讲得更准。</div>
+    <div class="fb-row qr-wrap">
+      <div>
+        <div style="text-align:center;font-weight:600;margin:6px 0">扫二维码，填写问卷</div>
+        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码">
+        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener">点击这里，直接打开 ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="share-pop" id="sharePop">
+  <a href="#" id="shareWeibo">🌐 分享到微博</a>
+  <button id="copyLink">📋 复制链接</button>
+  <div style="font-size:13px;color:var(--ink-soft);text-align:center">微信扫码打开</div>
+  <img class="qr" id="wxQr" alt="微信扫码">
+</div>
+
+<script>
+// 反馈弹窗
+const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('fbOpen'),fbClose=document.getElementById('fbClose');
+fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
+fbClose&&fbClose.addEventListener('click',()=>fbMask.classList.remove('show'));
+fbMask&&fbMask.addEventListener('click',e=>{if(e.target===fbMask)fbMask.classList.remove('show')});
+// 分享弹窗
+const sharePop=document.getElementById('sharePop'),shareOpen=document.getElementById('shareOpen');
+shareOpen&&shareOpen.addEventListener('click',e=>{e.stopPropagation();sharePop.classList.toggle('show')});
+document.addEventListener('click',e=>{if(sharePop&&!sharePop.contains(e.target)&&e.target!==shareOpen)sharePop.classList.remove('show')});
+const shareWeibo=document.getElementById('shareWeibo');
+if(shareWeibo)shareWeibo.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);
+const copyLink=document.getElementById('copyLink');
+copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.textContent='已复制 ✓';setTimeout(()=>copyLink.textContent='📋 复制链接',1500)});}else{prompt('复制此链接：',u)}});
+const wxQr=document.getElementById('wxQr');
+if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
+</script>
 
 </body>
 </html>
