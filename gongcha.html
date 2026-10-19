@@ -93,6 +93,15 @@
   .poem .src{display:inline-block;font-family:var(--sans);font-size:11.5px;font-weight:600;color:#fff;
     background:var(--tea);padding:1px 9px;border-radius:20px;margin-left:8px;vertical-align:middle}
 
+  /* 诗文撷英 · 折叠（加载时由 JS 将 .poem 包成 <details>） */
+  .poem > summary.ttl{list-style:none;cursor:pointer;position:relative;padding-right:32px;margin-bottom:0}
+  .poem > summary::-webkit-details-marker{display:none}
+  .poem > summary::after{content:'＋';position:absolute;right:2px;top:50%;transform:translateY(-50%);
+    font-family:var(--sans);font-size:20px;font-weight:700;color:var(--cinnabar);transition:.15s}
+  .poem > summary:hover{color:var(--cinnabar)}
+  .poem[open] > summary::after{content:'－'}
+  .poem[open] > .body{margin-top:14px}
+
   /* ---------- 名物卡片 ---------- */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 22px;
@@ -334,18 +343,7 @@
         <p class="src" data-page-node-id="A6pSs5WMPqTas1y9wFZvFE">注：《茶书》（喻政辑）分仁义礼智信五部，收《茶经》《茶谱》《茶录》《煎茶水记》《煮泉小品》等 17 种。</p>
       </div>
 
-      <div class="doc" data-page-node-id="6wykmZA0ZIwC97pkluzWCY">
-        <h3 data-page-node-id="qkqs6Q0GzBgJkYjuazJIHY" style="">阳羡贡茶的文献（由早及晚）​</h3>
-        <ol class="chain" data-page-node-id="d2j3nMo54bwadjBrhKbXiK">
-          <li data-page-node-id="Rb6LRyZFZr8nDhCMTxzCAH"><b data-page-node-id="rNxZkFLJA5DceBVjuRXEDy">南朝宋 · 山谦之《吴兴记》</b>——"乌程县西二十里有温山，出御荈"，湖州进御之茶之始，早于阳羡入贡。</li>
-          <li data-page-node-id="mNoXCDcHnVcmIzaFXPrCwq"><b data-page-node-id="OBZCTt0TDxzd1yyq1h0xNq">唐 · 陆羽《茶经·八之出》（约 760）</b>——啄木岭、君山悬脚岭北峰下、顾渚山谷入列茶产区；中唐湖、常二州为贡茶产地。</li>
-          <li data-page-node-id="bYYHbUIXcsOxVmEOg3GA4S"><b data-page-node-id="l6rKBHhfCZ9Lju91QAVKvs">唐 · 卢仝</b>——"天子未尝阳羡茶，百草不敢先开花"。</li>
-          <li data-page-node-id="URQFENXBAGMVegB90Xd953"><b data-page-node-id="yA2OR8vkowncf1r4nnR0Id">唐 · 白居易《夜闻贾常州崔湖州茶山境会亭欢宴》（826）</b>——境会亭茶宴的亲历者之诗。</li>
-          <li data-page-node-id="DzDuZiFQZIkk8EGx17ANp7"><b data-page-node-id="pMXROcBxmRtKgrglnJF2mL">五代 · 毛文锡《茶谱》（935）</b>——境会亭系于啄木岭，"每茶节，二牧皆至焉"。</li>
-          <li data-page-node-id="bm6vDdRN3Yncd4PdnbKs98"><b data-page-node-id="fE4yEZDpGXrxiVeow9yMJH">南宋 · 岳珂</b>——过啄木岭（约 1228—1233）赋《过啄木岭暑暍憩道傍移时始行三首》。</li>
-          <li data-page-node-id="VGy1I9CFzoqyZtUxupL3cZ"><b data-page-node-id="66An8RVWArozihz5SieUTk">清 · 刘源长《茶史》（1677）</b>——唐贡山得名、义兴紫笋＝阳羡茶＝罗岕、"两郡太守毕至为盛集"。</li>
-        </ol>
-      </div>
+      
 
       <div class="doc" data-page-node-id="7v3t9fosJFX706tvHqM2OI">
         <h3 data-page-node-id="IOhDw45f7rc9MYSzKYkPkX" style="">核心史料（按文献年代排序）​</h3>
@@ -604,39 +602,39 @@
 
 
 <!-- 互动浮窗：分享 + 反馈 -->
-<div class="fab-bar">
-  <button class="fab alt" id="shareOpen" title="分享">🔗</button>
-  <button class="fab" id="fbOpen" title="反馈 / 纠错">📝</button>
+<div class="fab-bar" data-page-node-id="0aHLkuGWk0SScXu1N65snP">
+  <button class="fab alt" id="shareOpen" title="分享" data-page-node-id="r3Fd5gNe1NVXVhCaaARzAl">🔗</button>
+  <button class="fab" id="fbOpen" title="反馈 / 纠错" data-page-node-id="mh7cfaIUpDKjvqSPGZrjG8">📝</button>
 </div>
 
-<div class="modal-mask" id="fbMask">
-  <div class="modal">
-    <button class="close" id="fbClose" aria-label="关闭">×</button>
-    <h3>欢迎反馈你的想法</h3>
-    <div class="sub">发现内容错漏、想补充村史故事、或有建议——欢迎填写反馈问卷，你的一字一句，都会帮邵东村把故事讲得更准。</div>
-    <div class="fb-row qr-wrap">
-      <div>
-        <div style="text-align:center;font-weight:600;margin:6px 0">扫二维码，填写问卷</div>
-        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码">
-        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener">点击这里，直接打开 ↗</a>
+<div class="modal-mask" id="fbMask" data-page-node-id="QCHzuwxmdFWeAzB7VOmezu">
+  <div class="modal" data-page-node-id="Z2euGMNS4VA7r2ZMKQaTc4">
+    <button class="close" id="fbClose" aria-label="关闭" data-page-node-id="8e6j4SBnxDw0sOvcRrlb70">×</button>
+    <h3 data-page-node-id="UrzDb8boj8QjSjblyFHV2M">欢迎反馈你的想法</h3>
+    <div class="sub" data-page-node-id="8gBiNxQhnpYMpzYpsCDRtT">发现内容错漏、想补充村史故事、或有建议——欢迎填写反馈问卷，你的一字一句，都会帮邵东村把故事讲得更准。</div>
+    <div class="fb-row qr-wrap" data-page-node-id="ZFWRE36KbysxKqD02e4MMF">
+      <div data-page-node-id="YUFjRCsF2JsIPwWBxgtfMS">
+        <div style="text-align:center;font-weight:600;margin:6px 0" data-page-node-id="VvBb7khBrBlis4SiGu7gLG">扫二维码，填写问卷</div>
+        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码" data-page-node-id="7zcfwGw8nX2dLq55IgF6pU">
+        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener" data-page-node-id="2zJzP4cviTGscpMCB2Y1to">点击这里，直接打开 ↗</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal-mask" id="shareMask">
-  <div class="modal">
-    <button class="close" id="shareClose" aria-label="关闭">×</button>
-    <h3>分享这个页面</h3>
-    <div class="sub">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
-    <a class="share-opt" id="shareWeibo"><span class="ic">🌐</span>分享到微博</a>
-    <button class="share-opt" id="copyLink"><span class="ic">📋</span>复制链接</button>
-    <div class="share-qr-tip">微信扫码打开</div>
-    <img class="share-qr" id="wxQr" alt="微信扫码">
+<div class="modal-mask" id="shareMask" data-page-node-id="B9qAQ63LdA1neDDx4HFVKq">
+  <div class="modal" data-page-node-id="vPmEJogwfT4LisFyn2KhKH">
+    <button class="close" id="shareClose" aria-label="关闭" data-page-node-id="gYm8OaKAc0JKXB2jjQHGSp">×</button>
+    <h3 data-page-node-id="hat7vgjYIAp5RQMhCy5me7">分享这个页面</h3>
+    <div class="sub" data-page-node-id="wP92MGP9868ub0NS4FP3D3">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
+    <a class="share-opt" id="shareWeibo" href="http://service.weibo.com/share/share.php?url=about%3Asrcdoc&amp;title=%E8%B4%A1%E8%8C%B6%E5%8E%86%E5%8F%B2%20%C2%B7%20%E5%BB%BF%E4%B8%89%E5%BC%AF%E9%87%8C%E7%9A%84%E5%8D%83%E5%B9%B4%E5%9B%9E%E5%93%8D%20%7C%20%E9%82%B5%E4%B8%9C%E6%9D%91" data-page-node-id="AufSGeB98FKG6pCfsB4SOa"><span class="ic" data-page-node-id="kvOt2gHoCNJLNClIfqsiBp">🌐</span>分享到微博</a>
+    <button class="share-opt" id="copyLink" data-page-node-id="BdJ750hBK7WcKXQd0WsfiA"><span class="ic" data-page-node-id="cFSKtA4UWHHlHSZDKjObgw">📋</span>复制链接</button>
+    <div class="share-qr-tip" data-page-node-id="AdPbTVs5ZXAAZdLXNzQKNQ">微信扫码打开</div>
+    <img class="share-qr" id="wxQr" alt="微信扫码" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&amp;data=about%3Asrcdoc" data-page-node-id="7D9dQuUsQ9AKgc7KiD6Nvk">
   </div>
 </div>
 
-<script>
+<script data-page-node-id="Tw9JgMPPCEadgkNRU0llfu">
 // 反馈弹窗
 const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('fbOpen'),fbClose=document.getElementById('fbClose');
 fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
@@ -653,6 +651,27 @@ const copyLink=document.getElementById('copyLink');
 copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.innerHTML='<span class="ic">📋</span>已复制 ✓';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1500)});}else{prompt('复制此链接：',u)}});
 const wxQr=document.getElementById('wxQr');
 if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
+// 诗文撷英 · 诗块折叠（将每个 .poem 转为 <details>，诗题为摘要，诗句与作者注可展开）
+(function(){
+  var poems=document.querySelectorAll('.poem');
+  for(var i=0;i<poems.length;i++){
+    var poem=poems[i];
+    var ttl=poem.querySelector(':scope > .ttl');
+    if(!ttl) continue;
+    var det=document.createElement('details');
+    det.className=poem.className;
+    var pid=poem.getAttribute('data-page-node-id'); if(pid) det.setAttribute('data-page-node-id',pid);
+    var sum=document.createElement('summary');
+    sum.className='ttl';
+    var tid=ttl.getAttribute('data-page-node-id'); if(tid) sum.setAttribute('data-page-node-id',tid);
+    var st=ttl.getAttribute('style'); if(st) sum.setAttribute('style',st);
+    sum.textContent=ttl.textContent;
+    det.appendChild(sum);
+    var kids=Array.prototype.slice.call(poem.children);
+    for(var j=0;j<kids.length;j++){ if(kids[j]!==ttl) det.appendChild(kids[j]); }
+    poem.parentNode.replaceChild(det,poem);
+  }
+})();
 </script>
 
 </body></html>
