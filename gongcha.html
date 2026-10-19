@@ -141,6 +141,14 @@
   .src-item{border-top:1px dashed var(--line);padding-top:20px;margin-top:20px}
   .src-item:first-of-type{border-top:none;margin-top:6px;padding-top:6px}
   .src-item h4{font-family:var(--serif);font-size:17px;color:var(--cinnabar);margin:0 0 11px;line-height:1.5}
+  /* 核心史料 · 折叠（加载时由 JS 将 .src-item 包成 <details>） */
+  .src-item > summary.h4{list-style:none;cursor:pointer;position:relative;padding-right:30px;margin:0}
+  .src-item > summary.h4::-webkit-details-marker{display:none}
+  .src-item > summary.h4::after{content:'＋';position:absolute;right:0;top:50%;transform:translateY(-50%);
+    font-family:var(--sans);font-size:19px;font-weight:700;color:var(--cinnabar);transition:.15s}
+  .src-item > summary.h4:hover{color:var(--ink)}
+  .src-item[open] > summary.h4::after{content:'－'}
+  .src-item[open] > .quote{margin-top:14px}
   .quote{font-family:var(--serif);font-size:15.5px;line-height:2;color:#3a352c;background:var(--paper-d);
     border-left:4px solid var(--tea);padding:14px 18px;border-radius:0 10px 10px 0;margin:0 0 13px}
   .quote b{color:var(--cinnabar)}
@@ -670,6 +678,27 @@ if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=
     var kids=Array.prototype.slice.call(poem.children);
     for(var j=0;j<kids.length;j++){ if(kids[j]!==ttl) det.appendChild(kids[j]); }
     poem.parentNode.replaceChild(det,poem);
+  }
+})();
+// 核心史料 · 条目折叠（将每个 .src-item 转为 <details>，h4 为摘要，引文与解析可展开）
+(function(){
+  var items=document.querySelectorAll('.src-item');
+  for(var i=0;i<items.length;i++){
+    var item=items[i];
+    var h=item.querySelector(':scope > h4');
+    if(!h) continue;
+    var det=document.createElement('details');
+    det.className=item.className;
+    var pid=item.getAttribute('data-page-node-id'); if(pid) det.setAttribute('data-page-node-id',pid);
+    var sum=document.createElement('summary');
+    sum.className='h4';
+    var hid=h.getAttribute('data-page-node-id'); if(hid) sum.setAttribute('data-page-node-id',hid);
+    var hs=h.getAttribute('style'); if(hs) sum.setAttribute('style',hs);
+    sum.textContent=h.textContent;
+    det.appendChild(sum);
+    var kids=Array.prototype.slice.call(item.children);
+    for(var j=0;j<kids.length;j++){ if(kids[j]!==h) det.appendChild(kids[j]); }
+    item.parentNode.replaceChild(det,item);
   }
 })();
 </script>
