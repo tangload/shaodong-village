@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" data-page-node-id="pXmZAHCCrx3CuHSILM0Cnr"><head data-page-node-id="SidMM9P051mz1XeocXegHW">
 <meta charset="UTF-8" data-page-node-id="yYqo3FqcQR9hGBxDeF3kHO">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="qK8qbAADhD5qLrqGVRaTiT">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="qK8qbAADhD5qLrqGVRaTiT">
 <title data-page-node-id="Ini1nMsCb69tXFytdWLxw4">廿三弯里的琴声 · 古琴大师成公亮与邵坞 | 邵东村</title>
 <meta name="description" content="邵东村名人文化资源：古琴大师成公亮与邵坞的两周。2000 年盛夏，成公亮长住邵坞，写下传世散文《走进邵坞》，把山村傍晚听成“一首远古的琴曲”。" data-page-node-id="apFuIHdjZMjqZNbaSgIRBo">
 <style data-page-node-id="XkzWBaE1BMbDICHmsJtfDo">
@@ -148,14 +148,15 @@
   .modal .fb-qr{width:150px;height:150px;object-fit:cover;border-radius:10px;border:1px solid var(--line);
     background:#fff;display:block;margin:0 auto}
   .modal .qr-wrap{text-align:center}
-  .share-pop{position:fixed;right:18px;bottom:90px;z-index:60;background:var(--paper);border-radius:14px;
-    box-shadow:0 8px 22px rgba(40,34,24,.22);padding:12px;display:none;flex-direction:column;gap:6px;width:210px}
-  .share-pop.show{display:flex}
-  .share-pop a,.share-pop button{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink);
-    background:none;border:none;cursor:pointer;padding:8px 10px;border-radius:8px;text-align:left;transition:.15s}
-  .share-pop a:hover,.share-pop button:hover{background:var(--paper-d)}
-  .share-pop .qr{width:170px;height:170px;align-self:center;border-radius:8px;margin-top:4px}
-  @media(max-width:520px){.fab-bar{right:12px;bottom:16px}.fab{width:48px;height:48px;font-size:20px}}
+  .modal .share-opt{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;margin-top:10px;
+    border:1px solid var(--line,#e6ded2);border-radius:12px;background:var(--paper,#fff);color:var(--ink,#2b2620);
+    font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:.15s}
+  .modal .share-opt:hover{background:var(--paper-d,var(--tea-soft,#f4efe6));border-color:var(--tea,#1d6b4f)}
+  .modal .share-opt .ic{font-size:20px;line-height:1}
+  .modal .share-qr{width:170px;height:170px;object-fit:cover;border-radius:10px;border:1px solid var(--line,#e6ded2);
+    background:#fff;display:block;margin:14px auto 4px}
+  .modal .share-qr-tip{font-size:13px;color:var(--ink-soft,var(--ink3,#7a7066));text-align:center;margin-bottom:2px}
+  @media(max-width:520px){.fab-bar{right:14px;bottom:calc(64px + env(safe-area-inset-bottom,0px))}.fab{width:48px;height:48px;font-size:20px}}
   /* ---------- 原典下载区 ---------- */
   .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
   .dl-card{display:flex;flex-direction:column;gap:7px;padding:18px 18px 16px;border:1px solid var(--line);
@@ -445,11 +446,16 @@
   </div>
 </div>
 
-<div class="share-pop" id="sharePop" data-page-node-id="0dMYMCQatAboFLYLKvOBRh">
-  <a href="http://service.weibo.com/share/share.php?url=about%3Asrcdoc&amp;title=%E5%BB%BF%E4%B8%89%E5%BC%AF%E9%87%8C%E7%9A%84%E7%90%B4%E5%A3%B0%20%C2%B7%20%E5%8F%A4%E7%90%B4%E5%A4%A7%E5%B8%88%E6%88%90%E5%85%AC%E4%BA%AE%E4%B8%8E%E9%82%B5%E5%9D%9E%20%7C%20%E9%82%B5%E4%B8%9C%E6%9D%91" id="shareWeibo" data-page-node-id="NBetUzS5UEOd7nf8MbGq6a">🌐 分享到微博</a>
-  <button id="copyLink" data-page-node-id="eKL12zgA7qmdq2kyJgdipz">📋 复制链接</button>
-  <div style="font-size:13px;color:var(--ink-soft);text-align:center" data-page-node-id="ulQxrM8AUyHispYVHogzlb">微信扫码打开</div>
-  <img class="qr" id="wxQr" alt="微信扫码" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&amp;data=about%3Asrcdoc" data-page-node-id="VTxp2eu2hjNBppikNGqCRR">
+<div class="modal-mask" id="shareMask">
+  <div class="modal">
+    <button class="close" id="shareClose" aria-label="关闭">×</button>
+    <h3>分享这个页面</h3>
+    <div class="sub">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
+    <a class="share-opt" id="shareWeibo"><span class="ic">🌐</span>分享到微博</a>
+    <button class="share-opt" id="copyLink"><span class="ic">📋</span>复制链接</button>
+    <div class="share-qr-tip">微信扫码打开</div>
+    <img class="share-qr" id="wxQr" alt="微信扫码">
+  </div>
 </div>
 
 <script data-page-node-id="SAaxsgaTV1zpTFCKCq2sK8">
@@ -458,14 +464,15 @@ const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('f
 fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
 fbClose&&fbClose.addEventListener('click',()=>fbMask.classList.remove('show'));
 fbMask&&fbMask.addEventListener('click',e=>{if(e.target===fbMask)fbMask.classList.remove('show')});
-// 分享弹窗
-const sharePop=document.getElementById('sharePop'),shareOpen=document.getElementById('shareOpen');
-shareOpen&&shareOpen.addEventListener('click',e=>{e.stopPropagation();sharePop.classList.toggle('show')});
-document.addEventListener('click',e=>{if(sharePop&&!sharePop.contains(e.target)&&e.target!==shareOpen)sharePop.classList.remove('show')});
+// 分享弹窗（居中模态，与反馈一致）
+const shareMask=document.getElementById('shareMask'),shareOpen=document.getElementById('shareOpen'),shareClose=document.getElementById('shareClose');
+shareOpen&&shareOpen.addEventListener('click',()=>shareMask.classList.add('show'));
+shareClose&&shareClose.addEventListener('click',()=>shareMask.classList.remove('show'));
+shareMask&&shareMask.addEventListener('click',e=>{if(e.target===shareMask)shareMask.classList.remove('show')});
 const shareWeibo=document.getElementById('shareWeibo');
 if(shareWeibo)shareWeibo.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title);
 const copyLink=document.getElementById('copyLink');
-copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.textContent='已复制 ✓';setTimeout(()=>copyLink.textContent='📋 复制链接',1500)});}else{prompt('复制此链接：',u)}});
+copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.innerHTML='<span class="ic">📋</span>已复制 ✓';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1500)});}else{prompt('复制此链接：',u)}});
 const wxQr=document.getElementById('wxQr');
 if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
 </script>
