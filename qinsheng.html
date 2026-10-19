@@ -170,6 +170,43 @@
     margin:32px 0 16px;padding:8px 0 8px 16px;border-left:4px solid var(--cinnabar);
     background:linear-gradient(90deg,rgba(178,34,34,.06),rgba(178,34,34,0));border-radius:0 8px 8px 0}
   .pgroup .sub{display:block;font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink-soft);margin-top:4px}
+
+  /* ---------- CD 播放器：播放廿三湾的琴声 ---------- */
+  .player{display:flex;align-items:center;gap:14px;max-width:560px;margin:34px auto 6px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 16px;
+    box-shadow:0 5px 18px rgba(60,50,30,.08)}
+  .player .ph{display:none}
+  .player h3{font-family:var(--serif);color:var(--cinnabar);font-size:12px;letter-spacing:.2em;margin:0 0 4px}
+  .cd-wrap{flex:0 0 auto;display:flex}
+  .cd{width:62px;height:62px;border-radius:50%;position:relative;
+    background:
+      repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.05) 0 2px, rgba(0,0,0,.05) 2px 4px),
+      radial-gradient(circle at 36% 30%, rgba(255,255,255,.42), rgba(255,255,255,0) 42%),
+      radial-gradient(circle at 50% 50%, #2e8a66 0 58%, #14503b 58% 100%);
+    box-shadow:0 4px 12px rgba(20,80,59,.28), inset 0 0 0 4px rgba(255,255,255,.06)}
+  .cd.spin{animation:cdSpin 6s linear infinite}
+  @keyframes cdSpin{to{transform:rotate(360deg)}}
+  .disc-label{position:absolute;left:50%;top:50%;width:26px;height:26px;transform:translate(-50%,-50%);
+    border-radius:50%;background:radial-gradient(circle at 50% 50%, var(--paper) 0 72%, var(--paper-d) 100%);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;
+    font-weight:700;color:var(--cinnabar);box-shadow:0 0 0 2px var(--line), inset 0 0 0 3px rgba(178,58,46,.12)}
+  .player .info{flex:1 1 auto;min-width:0}
+  .track{font-family:var(--serif);font-size:15px;color:var(--tea-d);margin:0 0 6px;display:flex;
+    align-items:baseline;gap:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .track .idx{font-family:var(--sans);color:var(--ink-soft);font-size:11.5px;flex:0 0 auto;letter-spacing:.04em}
+  .bar{height:5px;background:var(--paper-d);border-radius:6px;overflow:hidden;cursor:pointer}
+  .bar .fill{height:100%;width:0;background:linear-gradient(90deg,var(--tea),var(--cinnabar))}
+  .time{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);margin-top:3px;font-variant-numeric:tabular-nums}
+  .controls{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+  .ctrl{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;background:var(--tea);color:#fff;
+    font-size:15px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(20,80,59,.22);transition:.2s}
+  .ctrl:hover{background:var(--tea-d)}
+  .ctrl.play{width:46px;height:46px;font-size:18px;background:var(--cinnabar)}
+  .ctrl.play:hover{background:#9c3026}
+  .pl-tip{display:none}
+  @media(max-width:520px){.player{gap:10px;padding:9px 12px}.cd{width:52px;height:52px}
+    .disc-label{width:22px;height:22px;font-size:10px}.ctrl{width:34px;height:34px;font-size:13px}
+    .ctrl.play{width:40px;height:40px;font-size:16px}.player h3{font-size:11px}}
 </style>
 <style id="__dm_no_drag_style__" data-page-node-id="dfeXNQF2rN3ut3W6bn7R7q">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="TO4JDc3XwlqaFAOOxsonyH">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
 <body data-page-node-id="8UKGpQoX8lL4EbInQyHuQz" style="">
@@ -195,6 +232,26 @@
       <p class="lead" data-page-node-id="j9dkFCQx8k3mNAbYL6N1q9" style="">白天走贡茶古道，傍晚听千年琴声。一位琴人，一段往事，让邵东村与古琴艺术、与一种人文山水精神，从此有了一段温柔的羁绊。本页据《秋籁居闲话》之《走进邵坞》整理（中华书局 2014 年出版），将这段"琴声里的廿三弯"细细道来。</p>
       <div class="quote" data-page-node-id="jwy0To6zlDlDXkakmoryN3">
         "邵坞的傍晚，母亲的呼唤声在山谷里回荡，像听一首远古的琴曲。"<span class="pg" data-page-node-id="ASWKFHUVD1tSODzTk7lr4t">—— 成公亮《走进邵坞》</span>
+      </div>
+
+      <!-- 听琴 · 廿三湾的琴声 -->
+      <div class="player">
+        <div class="cd-wrap">
+          <div class="cd" id="plCd">
+            <div class="disc-label" id="plLabel">风</div>
+          </div>
+        </div>
+        <div class="info">
+          <h3>播放廿三湾的琴声</h3>
+          <div class="track"><span class="idx" id="plIdx">01 / 04</span><span id="plName">成公亮 ·《风》</span></div>
+          <div class="bar" id="plBar"><div class="fill" id="plFill"></div></div>
+          <div class="time"><span id="plCur">00:00</span><span id="plDur">00:00</span></div>
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="plPrev" title="上一首" aria-label="上一首">⏮</button>
+          <button class="ctrl play" id="plPlay" title="播放 / 暂停" aria-label="播放">▶</button>
+          <button class="ctrl" id="plNext" title="下一首" aria-label="下一首">⏭</button>
+        </div>
       </div>
     </section>
 
@@ -473,6 +530,44 @@ const copyLink=document.getElementById('copyLink');
 copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.innerHTML='<span class="ic">📋</span>已复制 ✓';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1500)});}else{prompt('复制此链接：',u)}});
 const wxQr=document.getElementById('wxQr');
 if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
+
+// ---------- CD 播放器：播放廿三湾的琴声 ----------
+(function(){
+  const tracks=[
+    {n:'成公亮 ·《风》', c:'风', f:'assets/audio/成公亮-风.mp3'},
+    {n:'成公亮 ·《火》', c:'火', f:'assets/audio/成公亮-火.mp3'},
+    {n:'成公亮 ·《空》', c:'空', f:'assets/audio/成公亮-空.mp3'},
+    {n:'成公亮 ·《水》', c:'水', f:'assets/audio/成公亮-水.mp3'}
+  ];
+  const audio=new Audio(); audio.preload='metadata';
+  let idx=0, playing=false;
+  const cd=document.getElementById('plCd'), label=document.getElementById('plLabel'),
+        nameEl=document.getElementById('plName'), idxEl=document.getElementById('plIdx'),
+        playBtn=document.getElementById('plPlay'), prevBtn=document.getElementById('plPrev'),
+        nextBtn=document.getElementById('plNext'), bar=document.getElementById('plBar'),
+        fill=document.getElementById('plFill'), curEl=document.getElementById('plCur'),
+        durEl=document.getElementById('plDur');
+  const fmt=s=>{s=Math.floor(s||0);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+  function render(){const t=tracks[idx];label.textContent=t.c;nameEl.textContent=t.n;
+    idxEl.textContent=String(idx+1).padStart(2,'0')+' / '+String(tracks.length).padStart(2,'0');
+    fill.style.width='0%';curEl.textContent='00:00';}
+  function setPlay(state){playing=state;cd.classList.toggle('spin',playing);
+    playBtn.textContent=playing?'⏸':'▶';playBtn.setAttribute('aria-label',playing?'暂停':'播放');}
+  function load(i,auto){idx=(i+tracks.length)%tracks.length;audio.src=tracks[idx].f;render();
+    if(auto){audio.play().then(()=>setPlay(true)).catch(()=>setPlay(false));}else setPlay(false);}
+  function toggle(){if(playing){audio.pause();setPlay(false);}
+    else{audio.play().then(()=>setPlay(true)).catch(()=>setPlay(false));}}
+  playBtn.addEventListener('click',toggle);
+  prevBtn.addEventListener('click',()=>load(idx-1,playing));
+  nextBtn.addEventListener('click',()=>load(idx+1,playing));
+  audio.addEventListener('ended',()=>load(idx+1,true));
+  audio.addEventListener('timeupdate',()=>{if(audio.duration){fill.style.width=(audio.currentTime/audio.duration*100)+'%';
+    curEl.textContent=fmt(audio.currentTime);durEl.textContent=fmt(audio.duration);}});
+  audio.addEventListener('loadedmetadata',()=>{durEl.textContent=fmt(audio.duration);});
+  bar.addEventListener('click',e=>{if(!audio.duration)return;const r=bar.getBoundingClientRect();
+    audio.currentTime=(e.clientX-r.left)/r.width*audio.duration;});
+  load(0,false);
+})();
 </script>
 
 
