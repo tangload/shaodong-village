@@ -1,0 +1,35 @@
+# robots.txt — 邵东村文化宣传与乡村振兴展示站
+#
+# 站点主域名（迁移到国内托管 / 备案域名后，请把下方所有
+#   tangload.github.io/shaodong-village
+#   替换为你的新主域名，例如 https://shaodong.example.com）
+#
+# 默认：允许所有爬虫抓取全站
+User-agent: *
+Allow: /
+
+# 国内搜索引擎与主流 AI 语料爬虫显式放行
+# （防止被 CDN/WAF 的 Bot 防护误判拦截，确保能被百度、字节、360、
+#  搜狗、腾讯/阿里等国内引擎与 AI 语料库抓取）
+User-agent: Baiduspider
+User-agent: Baiduspider-render
+User-agent: Bytespider
+User-agent: 360Spider
+User-agent: Sogou web spider
+User-agent: Sogou inst spider
+User-agent: YisouSpider
+User-agent: Googlebot
+User-agent: GoogleOther
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: CCBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Applebot
+User-agent: meta-externalagent
+User-agent: meta-externalFetcher
+User-agent: Diffbot
+User-agent: facebookexternalhit
+Allow: /
+
+Sitemap: https://tangload.github.io/shaodong-village/sitemap.xml
