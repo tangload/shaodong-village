@@ -1,8 +1,8 @@
 # robots.txt — 邵东村文化宣传与乡村振兴展示站
 #
-# 站点主域名（迁移到国内托管 / 备案域名后，请把下方所有
-#   tangload.github.io/shaodong-village
-#   替换为你的新主域名，例如 https://shaodong.example.com）
+# 站点主域名（当前为 Cloudflare 永久镜像：
+#   shaodong-village.tangload.workers.dev
+#   若日后改用备案自定义域名，请把下方所有 workers.dev 地址替换为新域名）
 #
 # 默认：允许所有爬虫抓取全站
 User-agent: *
@@ -32,4 +32,4 @@ User-agent: Diffbot
 User-agent: facebookexternalhit
 Allow: /
 
-Sitemap: https://tangload.github.io/shaodong-village/sitemap.xml
+Sitemap: https://shaodong-village.tangload.workers.dev/sitemap.xml

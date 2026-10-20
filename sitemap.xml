@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 邵东村站点地图。迁移到国内托管 / 备案域名后，请把下方所有
-     https://tangload.github.io/shaodong-village 替换为新主域名 -->
+     https://shaodong-village.tangload.workers.dev 替换为新主域名 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tangload.github.io/shaodong-village/</loc>
+    <loc>https://shaodong-village.tangload.workers.dev/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tangload.github.io/shaodong-village/cunqing.html</loc>
+    <loc>https://shaodong-village.tangload.workers.dev/cunqing.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tangload.github.io/shaodong-village/gongcha.html</loc>
+    <loc>https://shaodong-village.tangload.workers.dev/gongcha.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tangload.github.io/shaodong-village/qinsheng.html</loc>
+    <loc>https://shaodong-village.tangload.workers.dev/qinsheng.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
