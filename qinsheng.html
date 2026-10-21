@@ -96,6 +96,11 @@
   /* ---------- 考证 / 说明 ---------- */
   .doc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 28px;margin-bottom:24px;
     box-shadow:0 2px 14px rgba(60,50,30,.05)}
+  .doc.portrait-bg{position:relative;overflow:hidden}
+  .doc.portrait-bg::before{content:"";position:absolute;top:14px;right:12px;
+    width:360px;height:315px;background:url('assets/chenggongliang.png') center/contain no-repeat;
+    opacity:.22;z-index:0;pointer-events:none}
+  .doc.portrait-bg>*{position:relative;z-index:1}
   .doc h3{font-family:var(--serif);font-size:21px;color:var(--tea-d);margin-bottom:16px}
   .doc h4{font-family:var(--serif);font-size:17px;color:var(--cinnabar);margin:20px 0 10px}
   .doc p{font-size:15px;color:var(--ink-soft);line-height:1.95}
@@ -311,7 +316,7 @@
     <section data-page-node-id="xWsyhnvn0bRn5VRCCULSkR">
       <div class="sec-h" data-page-node-id="QWdABxOAIflMWWsSbJ7nxh"><span class="num" data-page-node-id="VVWAtg8tD3v2zZEPABZZ64">02</span><h2 data-page-node-id="3AUyo0Oaq4cFAMVpNuFFVF">成公亮 · 古琴大师小传</h2><span class="en" data-page-node-id="sxs41TVocQtGEATkzqBA1D">The Master</span></div>
 
-      <div class="doc" data-page-node-id="BJKEg6nGLoI3VcTSOhBoCF">
+      <div class="doc portrait-bg" data-page-node-id="BJKEg6nGLoI3VcTSOhBoCF">
         <h3 data-page-node-id="9pYDp3VlDirgUoCijiRAFC">成公亮（1940—2015）</h3>
         <p data-page-node-id="oWumrMGGOAw4TEQci6iSGj" style="font-weight: 400;">
           江苏省宜兴县人，自称"<b data-page-node-id="8WZ0qcsYmAHAzk6myktKZu">丁山人</b>"，我国当代著名古琴演奏家、作曲家、琴学理论家，国家级非遗古琴艺术代表性传承人，是当代极少数同时集「演奏家、打谱家、古琴原创作曲家、琴学著述者」于一身的宗师。</p>
