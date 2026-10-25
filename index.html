@@ -185,11 +185,10 @@ section[id]{scroll-margin-top:72px}
 .guide .gv{font-size:12px;color:var(--ink2);line-height:1.5;margin-top:4px}
 .vid-stage{margin-top:6px}
 .vid-stage video{width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;display:block;box-shadow:var(--shadow)}
-.vid-chapters{display:flex;gap:10px;margin-top:10px}
-.vid-chapters .vchap{flex:1;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:10px;padding:11px 8px;font-family:var(--serif);font-size:14px;color:var(--ink2);box-shadow:var(--shadow);transition:.2s}
-.vid-chapters .vchap:hover{border-color:var(--tea);color:var(--tea)}
-.vid-chapters .vchap.active{color:#fff;background:var(--tea);border-color:var(--tea)}
-@media(max-width:760px){.vid-chapters{flex-wrap:wrap}.vid-chapters .vchap{flex:1 1 45%}}
+.vid-chapters{display:flex;flex-wrap:nowrap;gap:8px;margin-top:12px}
+.vid-chapters .vchap{flex:1;height:14px;padding:0;border:1px solid var(--line);background:#fff;border-radius:0;cursor:pointer;transition:.2s}
+.vid-chapters .vchap:hover{border-color:var(--tea)}
+.vid-chapters .vchap.active{background:var(--tea);border-color:var(--tea)}
 
 
 /* ---------- 第一书记 ---------- */
@@ -480,10 +479,10 @@ footer a:hover{text-decoration:underline}
     <div class="vid-stage">
       <video id="yunyouMain" controls preload="metadata" playsinline poster="assets/video/yunyou-poster.jpg" src="assets/video/yunyou1.MP4"></video>
       <div class="vid-chapters">
-        <button class="vchap active" data-src="assets/video/yunyou1.MP4">第 1 段</button>
-        <button class="vchap" data-src="assets/video/yunyou2.MP4">第 2 段</button>
-        <button class="vchap" data-src="assets/video/yunyou3.MP4">第 3 段</button>
-        <button class="vchap" data-src="assets/video/yunyou4.MP4">第 4 段</button>
+        <button class="vchap active" aria-label="第 1 段" data-src="assets/video/yunyou1.MP4"></button>
+        <button class="vchap" aria-label="第 2 段" data-src="assets/video/yunyou2.MP4"></button>
+        <button class="vchap" aria-label="第 3 段" data-src="assets/video/yunyou3.MP4"></button>
+        <button class="vchap" aria-label="第 4 段" data-src="assets/video/yunyou4.MP4"></button>
       </div>
     </div>
 
