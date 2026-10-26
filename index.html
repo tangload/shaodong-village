@@ -656,18 +656,13 @@ if(yunMain){
     const n=yunCards[yunIdx+1];
     if(n)n.click();
   });
-  // 视频顺序整段预加载（规则：4s 起逐段全量下载；第一段需播放+加载完才启第二段；段间避让图片加载）
+  // 视频顺序整段预加载（规则：3s 起逐段全量下载；第一段需播放+加载完才启第二段；段间避让图片加载）
   const yunSegs=yunCards.map(c=>c.dataset.src); // yunyou1~4，按 DOM 次序
   let yunPos=0;             // 下一段待加载序号
   let yunBusy=false;        // 当前是否正在下载某段
   const yunLoaded=new Set(); // 已完整下载的段 url
   let yunEngaged=false;     // 用户是否已开始播放（规则3 闸门：首次播放后才允许启第二段）
 
-  // 弱网/省流量：暂停预加载（省流量保护；若要求弱网也照拉，删掉此判断即可）
-  function yunWeakNet(){
-    const c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
-    return !!c && (c.saveData || ['slow-2g','2g','3g'].includes(c.effectiveType));
-  }
   // “没有图片加载需求”：首屏图片加载完毕（window.load / readyState=complete）
   function yunImageBusy(){ return document.readyState!=='complete'; }
 
@@ -683,7 +678,6 @@ if(yunMain){
   async function yunLoadNext(){
     if(yunBusy) return;
     if(yunPos>=yunSegs.length) return;
-    if(yunWeakNet()) return;                                  // 弱网暂停
     if(yunLoaded.size>0 && yunImageBusy()){ setTimeout(yunLoadNext,800); return; } // 后续段避让首屏图片
     const url=yunSegs[yunPos];
     if(yunLoaded.has(url)){ yunPos++; return yunLoadNext(); }
@@ -706,8 +700,8 @@ if(yunMain){
     yunEngaged=true;
     if(yunPos===1 && !yunBusy) yunLoadNext();
   });
-  // 规则1：网页打开 4 秒后，开始自动加载第一段（不间断完整下载）
-  setTimeout(yunLoadNext,4000);
+  // 规则1：网页打开 3 秒后，开始自动加载第一段（不间断完整下载）
+  setTimeout(yunLoadNext,3000);
 }
 
 </script>
