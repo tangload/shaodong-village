@@ -3,6 +3,7 @@
 <meta charset="UTF-8" data-page-node-id="SxhevclP5csRFDcufDwcHz">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="mpKVZKmHB1PVCPuxzLQk63">
 <meta name="theme-color" content="#1d4a36" data-page-node-id="ZFseEHFLImH1QiBYWZJt0z">
+  <link rel="preconnect" href="https://events.vercount.one" crossorigin>
 <title data-page-node-id="x7ayWUqgEF70Hj0jZIirrn">邵东村 · 阳羡贡茶古道上的村落 | 江苏宜兴湖㳇镇</title>
 <meta name="robots" content="index, follow" data-page-node-id="sYkANJkpjZ8VkZJZnvGlhE">
 <link rel="canonical" href="https://tangload.github.io/shaodong-village/" data-page-node-id="kEn37kz6n8oARCbTGFRggo">
@@ -555,6 +556,40 @@ footer a:hover{text-decoration:underline}
       <b data-page-node-id="mZecfJz3aCEZwqgxSLa6pi">说明：</b>本网站内容据邵东村公开村情、村志资料、驻村工作记录及公开报道整理。涉及人口、资产、项目补助标准等数据，须以主管部门正式文件与现场核实为准；民间传说与可考史实已尽量分别标注。镇名"湖㳇镇"亦作"湖父镇"，以官方标准地名为准。<br data-page-node-id="8Uyuv5DzxxsWqNbvAV5G2k">
       © 2026 邵东村 · 仅供文化交流与乡村振兴宣传使用。
       <div class="busuanzi" data-page-node-id="w8DyBeDrXORgSjpy36mMLV">访客数 <span id="busuanzi_value_site_uv" data-page-node-id="vWXAn1DXydP6OBWWEOpygr">—</span> · 总访问 <span id="busuanzi_value_site_pv" data-page-node-id="iPknpkssmPpFJmtAAUFt7E">—</span></div>
+      <script>
+      (function(){
+        var OFF = {site_uv:300, site_pv:500};            // 补偿丢失历史：访客+300 / 总访问+500
+        var proto = Object.getOwnPropertyDescriptor(Node.prototype,'textContent');
+        function hook(el,key){
+          if(!el) return;
+          el.__raw = null;
+          Object.defineProperty(el,'textContent',{
+            configurable:true,
+            get:function(){ return proto.get.call(this); },
+            set:function(v){
+              var n = Number(v);
+              if(isNaN(n)){ proto.set.call(this, v); return; }   // 保持 "—" 等非数字
+              if(el.__raw === n) return;                         // 同一原始值已处理，防重复加
+              el.__raw = n;
+              proto.set.call(this, String(n + OFF[key]));         // 写入即自动加偏移
+            }
+          });
+        }
+        ['site_uv','site_pv'].forEach(function(k){
+          hook(document.getElementById('busuanzi_value_'+k), k);
+        });
+        // 页面一解析就用 localStorage 缓存把计数填出来（已含偏移），免去几十秒空白
+        try{
+          var d = JSON.parse(localStorage.getItem('visitorCountData')||'null');
+          if(d){
+            var uv = document.getElementById('busuanzi_value_site_uv');
+            var pv = document.getElementById('busuanzi_value_site_pv');
+            if(d.site_uv!=null && uv) uv.textContent = d.site_uv;
+            if(d.site_pv!=null && pv) pv.textContent = d.site_pv;
+          }
+        }catch(e){}
+      })();
+      </script>
     </div>
   </div>
 </footer>
