@@ -655,6 +655,25 @@ if(yunMain){
     const n=yunCards[yunIdx+1];
     if(n)n.click();
   });
+  // 播放优化：当前段可播后，后台按次序预加载其余三段（低优先级、一段接一段，不打断播放）
+  let yunPreloaded=false;
+  function yunPrefetch(list){
+    if(!list.length)return;
+    const url=list.shift();
+    const link=document.createElement('link');
+    link.rel='prefetch';
+    link.as='video';
+    link.href=url;
+    link.onload=()=>yunPrefetch(list);
+    link.onerror=()=>yunPrefetch(list);
+    document.head.appendChild(link);
+  }
+  yunMain.addEventListener('canplaythrough',()=>{
+    if(yunPreloaded)return;
+    yunPreloaded=true;
+    const others=yunCards.filter((_,i)=>i!==yunIdx).map(c=>c.dataset.src);
+    yunPrefetch(others);
+  });
 }
 
 </script>
