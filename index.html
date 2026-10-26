@@ -169,8 +169,8 @@ section[id]{scroll-margin-top:72px}
 .blk-head:first-of-type{margin-top:16px}
 .ph-grid{display:grid;gap:14px}
 .ph-grid.exp{grid-template-columns:repeat(2,1fr)}
-.ph-grid.svc{grid-template-columns:repeat(3,1fr)}
-@media(max-width:760px){.ph-grid.exp,.ph-grid.svc{grid-template-columns:1fr}}
+.ph-grid.svc{grid-template-columns:repeat(4,1fr)}
+@media(max-width:760px){.ph-grid.exp{grid-template-columns:1fr}.ph-grid.svc{grid-template-columns:repeat(2,1fr)}}
 .ph-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
 .ph-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(40,34,24,.12)}
 .ph-card .pic{height:130px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;color:var(--ink3);font-size:13px;border-bottom:1px solid var(--line)}
@@ -461,6 +461,7 @@ footer a:hover{text-decoration:underline}
     <!-- 2 乡村服务 -->
     <div class="blk-head reveal in" data-page-node-id="WEIgZHrcLJsaLXvZNSUyx8" style="">特别的物产​​</div>
     <div class="ph-grid svc" data-page-node-id="M2gABv9pbR83WsWOrmlRkc">
+      <figure class="ph-card reveal in"><div class="pic"><img src="assets/shuiyuan.jpg" alt="竹海山涧清泉瀑布" loading="lazy" decoding="async" width="800" height="450"></div><div class="body"><h4>纯天然山泉水</h4><p>取自村中山泉的天然好水，清冽甘甜，村民世代饮用，2018年检测列为优质储备水源，泡茶煮饭皆相宜，是带得走的山野馈赠。</p></div></figure>
       <figure class="ph-card reveal in" data-page-node-id="V4rGoVuBywdmWGKxZmpEk2"><div class="pic" data-page-node-id="gxVnh8JZCRANVwPMIhbVX9"><img src="assets/yangxian.jpg" alt="阳羡茶干茶" loading="lazy" decoding="async" width="800" height="339" data-page-node-id="4raMCBRIcRiQZCWB1hDGm2"></div><div class="body" data-page-node-id="RSSHshG2iOTpQXZ65nytnK"><h4 data-page-node-id="jdSl8rXa2loPH70m9BVtrD">阳羡茶</h4><p data-page-node-id="31nhl0BcMzXXOuf6DHW8B3" style="">千年贡茶文脉的延续，野山茶桩林，无肥料无农药，生态管护与茶事体验成为新的体验热点。​​</p></div></figure>
       <figure class="ph-card reveal in" data-page-node-id="MDIWuiGAegkOAV9VJUXHu8"><div class="pic" data-page-node-id="3BJUpPQGEZdkxWG5JeF0OS"><img src="assets/shanhuo.jpg" alt="冬笋山货" loading="lazy" decoding="async" width="616" height="250" data-page-node-id="XzPWR4Jv4osnH67SIInDd4"></div><div class="body" data-page-node-id="T2ZWmc9wDnaA63Uove25hv"><h4 data-page-node-id="rK2F0gLsPT3nZWXu8SFf0A">山货</h4><p data-page-node-id="3ofEsit8P4xGjJiRASKMH2" style="">深山冬笋春笋制成的笋干、黄精等招牌山货，是带得走的山野美味。​</p></div></figure>
       <figure class="ph-card reveal in" data-page-node-id="sqMDBjCGkI4vuEOnxnAioH"><div class="pic" data-page-node-id="y2iQiDyZ9YgJzNOmjB5cSx"><img src="assets/minsu.jpg" alt="山间民宿夜景" loading="lazy" decoding="async" width="800" height="450" data-page-node-id="bFzdvuk7HC1DOnKJ1DX4d5"></div><div class="body" data-page-node-id="iZQD3ojseC2pfMjcH4VAXq"><h4 data-page-node-id="Z2AJsEB0UCtrD9Xy0qtNKS">民宿</h4><p data-page-node-id="4dy1z8uMfhK7nYazlUHCCE" style="white-space: pre-wrap;">原生态村落中，点缀着几家轻奢民宿，让你慢下来、坐下来，在山乡夜色中享受舒适一夜。​​</p></div></figure>
@@ -655,8 +656,9 @@ if(yunMain){
     const n=yunCards[yunIdx+1];
     if(n)n.click();
   });
-  // 播放优化：当前段可播后，后台按次序预加载其余三段（低优先级、一段接一段，不打断播放）
+  // 播放/预加载优化
   let yunPreloaded=false;
+  const yunAll=yunCards.map(c=>c.dataset.src); // 按 DOM 次序：yunyou1~4
   function yunPrefetch(list){
     if(!list.length)return;
     const url=list.shift();
@@ -664,16 +666,25 @@ if(yunMain){
     link.rel='prefetch';
     link.as='video';
     link.href=url;
-    link.onload=()=>yunPrefetch(list);
-    link.onerror=()=>yunPrefetch(list);
+    let done=false;
+    const next=()=>{ if(done)return; done=true; yunPrefetch(list); };
+    link.onload=next;
+    link.onerror=next;
     document.head.appendChild(link);
+    setTimeout(next,12000); // 兜底：浏览器不回报 onload/onerror 时，12s 后也继续下一段，避免链卡死
   }
-  yunMain.addEventListener('canplaythrough',()=>{
-    if(yunPreloaded)return;
+  function yunStartPreload(list){
+    if(yunPreloaded)return; // 已启动（5s 定时器或提前播放）则不重复
     yunPreloaded=true;
+    yunPrefetch(list);
+  }
+  // 用户点播放、当前段可播后，后台预加载其余三段
+  yunMain.addEventListener('canplaythrough',()=>{
     const others=yunCards.filter((_,i)=>i!==yunIdx).map(c=>c.dataset.src);
-    yunPrefetch(others);
+    yunStartPreload(others);
   });
+  // 网页打开 5 秒后，后台按次序预加载全部四段（低优先级 prefetch，不抢占文字/图片加载）
+  setTimeout(()=>yunStartPreload(yunAll),3000);
 }
 
 </script>
