@@ -186,10 +186,6 @@ section[id]{scroll-margin-top:72px}
 .vid-stage{margin-top:6px}
 .vid-credit{font-size:12px;color:var(--ink3);margin-top:10px;line-height:1.6;text-align:center}
 .vid-stage video{width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;display:block;box-shadow:var(--shadow)}
-.vid-chapters{display:flex;flex-wrap:nowrap;gap:8px;margin-top:12px}
-.vid-chapters .vchap{flex:1;height:10px;padding:0;border:1px solid var(--line);background:#fff;border-radius:0;cursor:pointer;transition:.2s}
-.vid-chapters .vchap:hover{border-color:var(--tea)}
-.vid-chapters .vchap.active{background:var(--tea);border-color:var(--tea)}
 
 
 /* ---------- 第一书记 ---------- */
@@ -479,13 +475,7 @@ footer a:hover{text-decoration:underline}
     <!-- 4 云游邵东村 · 本地视频（主播放器 + 章节切换） -->
     <div class="blk-head reveal in" data-page-node-id="wS6IunOShpgcrrL7WUfm8i" style="white-space: pre-wrap;">云游邵东村​</div>
     <div class="vid-stage" data-page-node-id="HYqCCJq0hYzkfWuykinYzx">
-      <video id="yunyouMain" controls="" preload="metadata" playsinline="" poster="assets/video/yunyou-poster.jpg" src="assets/video/yunyou1.MP4" data-page-node-id="eBPc2aVsnMUDuzI04C8YYq"></video>
-      <div class="vid-chapters" data-page-node-id="FKkdLSXbhZVVRCvAmsJGH5">
-        <button class="vchap active" aria-label="第 1 段" data-src="assets/video/yunyou1.MP4" data-page-node-id="330IU4Mp0LtLZnkWCJkmEt"></button>
-        <button class="vchap" aria-label="第 2 段" data-src="assets/video/yunyou2.MP4" data-page-node-id="nvFkQvUQldn37CutH4V4q5"></button>
-        <button class="vchap" aria-label="第 3 段" data-src="assets/video/yunyou3.MP4" data-page-node-id="04EWAqf6s7Wj7GmYXOnL1W"></button>
-        <button class="vchap" aria-label="第 4 段" data-src="assets/video/yunyou4.MP4" data-page-node-id="1I9Lmfr4fNBWF9ZxXbg8xx"></button>
-      </div>
+      <video id="yunyouMain" controls="" preload="metadata" playsinline="" poster="assets/video/yunyou-poster.jpg" src="assets/video/yunyou.MP4" data-page-node-id="eBPc2aVsnMUDuzI04C8YYq"></video>
     </div>
     <p class="vid-credit" data-page-node-id="GVdkjFEJDYPFssHRbeh7MI">感谢“吉利姑姑”提供视频素材，如果喜欢请关注视频号“吉利姑姑”。</p>
 
@@ -638,35 +628,13 @@ copyLink&&copyLink.addEventListener('click',()=>{const u=location.href;if(naviga
 const wxQr=document.getElementById('wxQr');
 if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(location.href);
 
-// 云游邵东村：章节切换（4 段同一视频，点章节卡替换主播放器源；播完自动续播下一段并同步高亮）
+// 云游邵东村：整段视频（打开 3 秒后，后台整段写入缓存，点播即播）
 const yunMain=document.getElementById('yunyouMain');
 if(yunMain){
-  const yunCards=[...document.querySelectorAll('.vid-chapters .vchap')];
-  let yunIdx=0;
-  yunCards.forEach((b,i)=>{
-    b.addEventListener('click',()=>{
-      yunIdx=i;
-      yunMain.src=b.dataset.src;
-      yunMain.play().catch(()=>{});
-      yunCards.forEach(x=>x.classList.remove('active'));
-      b.classList.add('active');
-    });
-  });
-  yunMain.addEventListener('ended',()=>{
-    const n=yunCards[yunIdx+1];
-    if(n)n.click();
-  });
-  // 视频顺序整段预加载（规则：3s 起逐段全量下载；第一段需播放+加载完才启第二段；段间避让图片加载）
-  const yunSegs=yunCards.map(c=>c.dataset.src); // yunyou1~4，按 DOM 次序
-  let yunPos=0;             // 下一段待加载序号
-  let yunBusy=false;        // 当前是否正在下载某段
-  const yunLoaded=new Set(); // 已完整下载的段 url
-  let yunEngaged=false;     // 用户是否已开始播放（规则3 闸门：首次播放后才允许启第二段）
-
-  // “没有图片加载需求”：首屏图片加载完毕（window.load / readyState=complete）
-  function yunImageBusy(){ return document.readyState!=='complete'; }
-
-  // 完整下载一段：读取整个响应体写入 HTTP 缓存（丢弃分片，不保留大 blob 占内存），拿到明确的“下载完毕”回调
+  const yunUrl=yunMain.getAttribute('src');
+  let yunBusy=false;
+  let yunLoaded=false;
+  // 完整下载整段：读取整个响应体写入 HTTP 缓存（丢弃分片，不保留大 blob 占内存），拿到明确的“下载完毕”回调
   async function yunFetchFull(url){
     const r=await fetch(url);
     if(!r.ok) throw new Error('HTTP '+r.status);
@@ -674,34 +642,15 @@ if(yunMain){
     const reader=r.body.getReader();
     while(true){ const {done}=await reader.read(); if(done) break; }
   }
-
-  async function yunLoadNext(){
-    if(yunBusy) return;
-    if(yunPos>=yunSegs.length) return;
-    if(yunLoaded.size>0 && yunImageBusy()){ setTimeout(yunLoadNext,800); return; } // 后续段避让首屏图片
-    const url=yunSegs[yunPos];
-    if(yunLoaded.has(url)){ yunPos++; return yunLoadNext(); }
+  async function yunPreload(){
+    if(yunBusy||yunLoaded) return;
     yunBusy=true;
-    try{
-      await yunFetchFull(url);
-      yunLoaded.add(url);
-      yunPos++;
-      if(yunPos===1 && !yunEngaged){ yunBusy=false; return; }  // 规则3：第一段加载完且已播放，才启第二段；否则停下等播放
-      yunBusy=false;
-      yunLoadNext();                                           // 规则4：继续下一段（整段全量）
-    }catch(e){
-      yunBusy=false;
-      setTimeout(yunLoadNext,3000);                            // 失败 3s 重试
-    }
+    try{ await yunFetchFull(yunUrl); yunLoaded=true; }
+    catch(e){ /* 失败不阻塞：浏览器点播时仍会按需求流式加载 */ }
+    finally{ yunBusy=false; }
   }
-
-  // 用户开始播放 → 解锁（首段播放且已加载完则立即启第二段）
-  yunMain.addEventListener('play',()=>{
-    yunEngaged=true;
-    if(yunPos===1 && !yunBusy) yunLoadNext();
-  });
-  // 规则1：网页打开 3 秒后，开始自动加载第一段（不间断完整下载）
-  setTimeout(yunLoadNext,3000);
+  // 网页打开 3 秒后，开始整段预加载（不间断完整下载；低优先级，不抢占首屏文字/图片）
+  setTimeout(yunPreload,3000);
 }
 
 </script>
