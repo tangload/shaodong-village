@@ -656,35 +656,58 @@ if(yunMain){
     const n=yunCards[yunIdx+1];
     if(n)n.click();
   });
-  // 播放/预加载优化
-  let yunPreloaded=false;
-  const yunAll=yunCards.map(c=>c.dataset.src); // 按 DOM 次序：yunyou1~4
-  function yunPrefetch(list){
-    if(!list.length)return;
-    const url=list.shift();
-    const link=document.createElement('link');
-    link.rel='prefetch';
-    link.as='video';
-    link.href=url;
-    let done=false;
-    const next=()=>{ if(done)return; done=true; yunPrefetch(list); };
-    link.onload=next;
-    link.onerror=next;
-    document.head.appendChild(link);
-    setTimeout(next,12000); // 兜底：浏览器不回报 onload/onerror 时，12s 后也继续下一段，避免链卡死
+  // 视频顺序整段预加载（规则：4s 起逐段全量下载；第一段需播放+加载完才启第二段；段间避让图片加载）
+  const yunSegs=yunCards.map(c=>c.dataset.src); // yunyou1~4，按 DOM 次序
+  let yunPos=0;             // 下一段待加载序号
+  let yunBusy=false;        // 当前是否正在下载某段
+  const yunLoaded=new Set(); // 已完整下载的段 url
+  let yunEngaged=false;     // 用户是否已开始播放（规则3 闸门：首次播放后才允许启第二段）
+
+  // 弱网/省流量：暂停预加载（省流量保护；若要求弱网也照拉，删掉此判断即可）
+  function yunWeakNet(){
+    const c=navigator.connection||navigator.mozConnection||navigator.webkitConnection;
+    return !!c && (c.saveData || ['slow-2g','2g','3g'].includes(c.effectiveType));
   }
-  function yunStartPreload(list){
-    if(yunPreloaded)return; // 已启动（5s 定时器或提前播放）则不重复
-    yunPreloaded=true;
-    yunPrefetch(list);
+  // “没有图片加载需求”：首屏图片加载完毕（window.load / readyState=complete）
+  function yunImageBusy(){ return document.readyState!=='complete'; }
+
+  // 完整下载一段：读取整个响应体写入 HTTP 缓存（丢弃分片，不保留大 blob 占内存），拿到明确的“下载完毕”回调
+  async function yunFetchFull(url){
+    const r=await fetch(url);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    if(!r.body) return;
+    const reader=r.body.getReader();
+    while(true){ const {done}=await reader.read(); if(done) break; }
   }
-  // 用户点播放、当前段可播后，后台预加载其余三段
-  yunMain.addEventListener('canplaythrough',()=>{
-    const others=yunCards.filter((_,i)=>i!==yunIdx).map(c=>c.dataset.src);
-    yunStartPreload(others);
+
+  async function yunLoadNext(){
+    if(yunBusy) return;
+    if(yunPos>=yunSegs.length) return;
+    if(yunWeakNet()) return;                                  // 弱网暂停
+    if(yunLoaded.size>0 && yunImageBusy()){ setTimeout(yunLoadNext,800); return; } // 后续段避让首屏图片
+    const url=yunSegs[yunPos];
+    if(yunLoaded.has(url)){ yunPos++; return yunLoadNext(); }
+    yunBusy=true;
+    try{
+      await yunFetchFull(url);
+      yunLoaded.add(url);
+      yunPos++;
+      if(yunPos===1 && !yunEngaged){ yunBusy=false; return; }  // 规则3：第一段加载完且已播放，才启第二段；否则停下等播放
+      yunBusy=false;
+      yunLoadNext();                                           // 规则4：继续下一段（整段全量）
+    }catch(e){
+      yunBusy=false;
+      setTimeout(yunLoadNext,3000);                            // 失败 3s 重试
+    }
+  }
+
+  // 用户开始播放 → 解锁（首段播放且已加载完则立即启第二段）
+  yunMain.addEventListener('play',()=>{
+    yunEngaged=true;
+    if(yunPos===1 && !yunBusy) yunLoadNext();
   });
-  // 网页打开 5 秒后，后台按次序预加载全部四段（低优先级 prefetch，不抢占文字/图片加载）
-  setTimeout(()=>yunStartPreload(yunAll),3000);
+  // 规则1：网页打开 4 秒后，开始自动加载第一段（不间断完整下载）
+  setTimeout(yunLoadNext,4000);
 }
 
 </script>
