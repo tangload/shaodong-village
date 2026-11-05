@@ -217,6 +217,16 @@ section[id]{scroll-margin-top:72px}
 .step .st{font-family:var(--serif);font-size:19px;color:var(--tea-deep);font-weight:700;margin:8px 0 10px}
 .step p{font-size:14px;color:var(--ink2);line-height:1.8}
 .step .when{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--gold);background:var(--gold-soft);padding:3px 10px;border-radius:20px}
+.fcard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+@media(max-width:860px){.fcard-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.fcard-grid{grid-template-columns:1fr}}
+.fcard{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 16px;text-align:center;box-shadow:0 2px 14px rgba(60,50,30,.06);transition:transform .15s,border-color .15s,color .15s}
+.fcard:hover{transform:translateY(-3px);border-color:var(--tea);color:var(--cinnabar)}
+.fcard .ic{font-size:30px;display:block;margin-bottom:10px;line-height:1}
+.fcard .t{display:block;font-family:var(--serif);font-size:19px;color:var(--tea-d);font-weight:700}
+.fcard .d{display:block;font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.7}
+.fcard-note{margin-top:24px;font-size:14.5px;color:var(--ink-soft);line-height:1.95}
+.fcard-note b{color:var(--tea-d)}
 
 /* ---------- 页脚 ---------- */
 footer{background:#26211b;color:#c9c0b0;padding:54px 0 30px}
@@ -306,14 +316,14 @@ footer a:hover{text-decoration:underline}
 <nav class="nav scrolled" id="nav" data-page-node-id="yK3gx2jPYREHnuBzRN3PKk">
   <div class="wrap nav-in" data-page-node-id="31zeWy5zw15L0xZbGgPvGe">
     <a href="#top" class="brand" data-page-node-id="inaKFpLyDWDjqrxO9B3U3K"><img class="seal-img" src="assets/shao.jpg" alt="邵" data-page-node-id="U1Hq5jWb4ErkqpMtUC1lit">邵东村</a>
-    <button class="menu-btn" id="menuBtn" aria-label="菜单" data-page-node-id="ECzYyvpB7mE9Bc6XxLXN5c">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单" data-page-node-id="ECzYyvpB7mE9Bc6XxLXN5c" aria-expanded="false">☰</button>
     <div class="nav-links" id="navLinks" data-page-node-id="Xf9xZrDR26UTc2yRVMzrZx">
       <a href="#about" data-page-node-id="gPwReOIZpgrPxnB2jOjfov" style="white-space: pre-wrap;" class="">村情速览​</a>
-      <a href="#tea" data-page-node-id="XpHlrq8oywFoeuAceRqFf3" style="white-space: pre-wrap;" class="active">贡茶历史​</a>
+      <a href="#tea" data-page-node-id="XpHlrq8oywFoeuAceRqFf3" style="white-space: pre-wrap;" class="">贡茶历史​</a>
       <a href="#cheng" data-page-node-id="b4RB6fetDlbTyi4FaiNXWa" style="white-space: pre-wrap;" class="">琴声山弯​</a>
       <a href="#legend" data-page-node-id="9MTZciHlguZdtuxkkXJGHX" style="" class="">民间记忆</a>
       <a href="#prod" data-page-node-id="tyjav2iYh60kLnNeKuabn4" style="" class="">好吃好玩</a>
-      <a href="#first" data-page-node-id="nDJk3lwXc6Ynv3vGBuqmd1" class="">乡村振兴</a>
+      <a href="#first" data-page-node-id="nDJk3lwXc6Ynv3vGBuqmd1" class="active">乡村振兴</a>
     </div>
   </div>
 </nav>
@@ -495,25 +505,19 @@ footer a:hover{text-decoration:underline}
       <div class="deco" data-page-node-id="Zq18MfMDEIZrKBcKwCAEML"></div>
     </div>
     
-    <!-- 并入：机遇与挑战（原独立板块"三张王牌，三个问题"） -->
-    <div class="sec-head reveal in" style="margin-bottom:28px" data-page-node-id="jOR6OXxiggyHJHFlcuaxz1">
-      
-      
-      
-    </div>
-    <div class="cols" data-page-node-id="oquPAnHIBvEp7pkJ26oNA6">
-      
-      
-    </div>
+
 
     <div class="main-line reveal in" data-page-node-id="qDIIAnrP3eJRFYsOydMBNl">
       <div class="lbl" data-page-node-id="v4GYZVQUQvQt7nl5n7CYeL" style=""> 主 线​</div>
-      <div class="v" data-page-node-id="4ktR2cT0Nqq2vsKsJTeSOH" style="white-space: pre-wrap;">灾后恢复提信心 · 贡茶古道树 IP · 文旅服务促发展​​​</div>
-    </div><div class="sec-head reveal in" style="margin-bottom:28px" data-page-node-id="Vtz2WtkItxQDbMpgSyNNYB"><h2 style="font-size: 24px; white-space: pre-wrap; cursor: text;" data-page-node-id="cCTTSNmmoiNJBUHJXvjr9I">分步实施：设想路线图​</h2></div>
-    <div class="steps" data-page-node-id="wVXt8JMolv45QbOVbjZ1RD">
-      <div class="step reveal in" data-page-node-id="QUzQVMQASh92upiG34022h"><div class="sno" data-page-node-id="AkklIxJYHIAYZPFXKn7M5L">壹</div><div class="st" data-page-node-id="2eAPhQP79wig7nvHdIbC52" style="">夯实地基​</div><p data-page-node-id="zJ3Q0cNhc20TquY5AgtzHt" style="white-space: pre-wrap;">借灾后修复连通廿三湾步道断点、增设古道标识与境会亭解说牌；同步开展文化资源普查建档，采访亲历者留存口述史，让"传说"与"史实"相得益彰。​</p><span class="when" data-page-node-id="rea2ItOjmWBDEmbv8zthHG" style="">2026 - 2027年​</span></div>
-      <div class="step reveal in" data-page-node-id="m6MWJwx3bff2NRhvdpemgc"><div class="sno" data-page-node-id="RxgHoWn7vfb9EHkG9jBLtb">贰</div><div class="st" data-page-node-id="DZMlwHFlCuFrt5VEaHhAvl" style="white-space: pre-wrap;">试点推进​​</div><p data-page-node-id="ZtKqhVKJexAYEqPrkH3OL4" style="">推出"重走廿三湾"示范徒步线，策划举办"琴声里的廿三湾"春茶琴会；落地 2—3 户民宿示范户，让贡茶古道与成公亮 IP 真正可体验。​​</p><span class="when" data-page-node-id="i1jO0wO2Lk0Fc096WV4POU" style="white-space: pre-wrap;">2027 - 2028年​</span></div>
-      <div class="step reveal in" data-page-node-id="HmYxVR5Egn5NtptP8QsTO7"><div class="sno" data-page-node-id="484UzBuDuJoYK9YhmErgJG">叁</div><div class="st" data-page-node-id="B88ZCGjg1S3r1CfEsXK5Gw" style="">长效运营​​</div><p data-page-node-id="kpOFZGE7VtH88jQ05yzI9u" style="white-space: pre-wrap; cursor: text;">引入专业运营主体，注册"廿三湾"伴手礼品牌，推动节事常态化；借邵家段传统村落基础启动名村提升与申报，让文化 IP 成为村发展的魂。​</p><span class="when" data-page-node-id="Fla7a9CSnzCW4IAnpm0dub" style="white-space: pre-wrap;">长期持续​</span></div>
+      <div class="v" data-page-node-id="4ktR2cT0Nqq2vsKsJTeSOH" style="white-space: pre-wrap;">贡茶古道续文脉 · 绿水青山焕新颜 · 文旅融合促共富​​​</div>
+    </div>
+    <p class="fcard-note reveal in" data-page-node-id="zxFirstNote" style="">乡村振兴由多方力量共同推动——村支书、返乡创业者、文艺工作者、高校师生，以及结对帮扶的驻村工作队。他们共同奏响乡村振兴的美丽乐章：</p>
+
+    <div class="fcard-grid reveal in" data-page-node-id="zxFcardGrid">
+      <a class="fcard" href="zhenxing.html#baodao" data-page-node-id="zxFC1"><span class="ic" data-page-node-id="zxFC1i">📰</span><span class="t" data-page-node-id="zxFC1t">媒体报道</span><span class="d" data-page-node-id="zxFC1d">近年关于邵东村、廿三湾的公开报道</span></a>
+      <a class="fcard" href="zhenxing.html#wenxue" data-page-node-id="zxFC2"><span class="ic" data-page-node-id="zxFC2i">🖋️</span><span class="t" data-page-node-id="zxFC2t">笔墨邵东</span><span class="d" data-page-node-id="zxFC2d">写进散文、诗歌与游记的山水</span></a>
+      <a class="fcard" href="zhenxing.html#huodong" data-page-node-id="zxFC3"><span class="ic" data-page-node-id="zxFC3i">📣</span><span class="t" data-page-node-id="zxFC3t">活动纪实</span><span class="d" data-page-node-id="zxFC3d">村里办过的事与近期发布</span></a>
+      <a class="fcard" href="zhenxing.html#renwu" data-page-node-id="zxFC4"><span class="ic" data-page-node-id="zxFC4i">👥</span><span class="t" data-page-node-id="zxFC4t">人物志</span><span class="d" data-page-node-id="zxFC4d">推动村庄改变的人</span></a>
     </div>
   </div>
 </section>
@@ -535,6 +539,7 @@ footer a:hover{text-decoration:underline}
           <li data-page-node-id="PC6hkGN9NNlG8204glYBBB"><a href="#legend" data-page-node-id="A0lzss0G4pYzWYMYYEluGW" style="white-space: pre-wrap;">民间记忆​</a></li>
           <li data-page-node-id="7EfzR457DH7FwzxbyQ25xJ"><a href="#prod" data-page-node-id="W1VDfHj6aN1huZAtDCv5X8">物产体验</a></li>
           <li data-page-node-id="u2fUmAnx31qjLRqyPVo4UN"><a href="#first" data-page-node-id="8oA1oaD50gFQ5FyhdHC7yK">乡村振兴</a></li>
+          <li data-page-node-id="zxFootZX"><a href="zhenxing.html" data-page-node-id="zxFootZXa">当代篇章</a></li>
         </ul>
       </div>
       <div data-page-node-id="JLJO17uwa1IQwyftkb95UN">
