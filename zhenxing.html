@@ -149,6 +149,27 @@
   .share-opt:hover{background:#f1e9d8;color:var(--cinnabar)}
   .share-opt .ic{margin-right:10px}
   .share-qr-tip{margin-top:14px;font-size:13px;color:var(--ink-soft)}
+
+  /* 游客游记 · 自媒体链接索引 2018—2026 */
+  .linkidx{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px 22px;box-shadow:0 2px 14px rgba(60,50,30,.05);margin-top:22px}
+  .linkidx .li-h{font-family:var(--serif);font-size:20px;color:var(--tea-d);font-weight:700;line-height:1.5}
+  .linkidx .li-h em{font-family:var(--sans);font-style:normal;font-size:13px;color:#8a8478;font-weight:400;margin-left:12px;letter-spacing:.02em}
+  .linkidx .li-note{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin:8px 0 16px}
+  .li-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+  .li-list li{display:flex;align-items:baseline;gap:9px;padding:8px 0;border-bottom:1px dashed #e8e0d1;font-size:14px;line-height:1.6;min-width:0}
+  .li-list li:last-child{border-bottom:none}
+  .li-list .yr{flex:none;width:52px;font-size:12.5px;color:var(--cinnabar);font-weight:700;font-variant-numeric:tabular-nums}
+  .li-list a{flex:1;min-width:0;color:var(--tea-d);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .li-list a:hover{color:var(--cinnabar);text-decoration:underline}
+  .li-list .pf{flex:none;font-size:12px;color:#9a9284;white-space:nowrap}
+  .linkidx .li-foot{margin-top:14px;font-size:12.5px;color:#9a9284;line-height:1.7}
+  @media(max-width:760px){.li-list{grid-template-columns:1fr}.linkidx{padding:20px 18px}}
+  @media(max-width:520px){.linkidx .li-h em{display:block;margin:4px 0 0}
+    .li-list li{flex-wrap:nowrap;gap:8px;align-items:baseline}
+    .li-list .yr{width:54px;font-size:12px}
+    .li-list a{flex:1;order:0;white-space:normal;line-height:1.55}
+    .li-list .pf{display:none}}
+  .pp .src{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);font-size:12.5px;color:#8a8478;line-height:1.7}
 </style>
 <style id="__dm_no_drag_style__" data-page-node-id="AtYB3fGTGGUfCcxPCUB8es" style="box-sizing: border-box; margin: 0px; padding: 0px;">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="le2G2jrfkKWf7inMXtEpwT" style="box-sizing: border-box; margin: 0px; padding: 0px;">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
 <body data-page-node-id="kjgIjIq5EHiqEitMEZnJcF" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif; color: rgb(43, 43, 40); background: rgb(246, 241, 231); line-height: 1.9; letter-spacing: 0.01em;">
@@ -254,7 +275,7 @@
       <h2 data-page-node-id="ZXwx004" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: clamp(23px, 3.4vw, 31px); color: rgb(20, 80, 59); font-weight: 700; letter-spacing: 0.04em;">笔墨邵东</h2>
       <span class="en" data-page-node-id="ZXwx005" style="box-sizing: border-box; margin: 0px 0px 0px auto; padding: 0px; font-size: 13px; color: rgb(90, 87, 80); letter-spacing: 0.2em; text-transform: uppercase;">In Literature</span>
     </div>
-    <p class="sec-intro" data-page-node-id="ZXwx006" style="box-sizing: border-box; margin: 0px 0px 26px; padding: 0px; font-size: 15.5px; color: rgb(90, 87, 80); max-width: 760px; line-height: 1.95;">这片山水，也被写进散文、诗歌与游记。以下为关于邵东村、廿三湾的部分文学创作与书写。</p>
+    <p class="sec-intro" data-page-node-id="ZXwx006" style="box-sizing: border-box; margin: 0px 0px 26px; padding: 0px; font-size: 15.5px; color: rgb(90, 87, 80); max-width: 760px; line-height: 1.95;">这片山水，也被写进散文、诗歌与游记。以下既有书写邵东、廿三湾的作品，也有在村里发生的文学活动与书籍捐赠。</p>
     <div class="lit-grid" data-page-node-id="ZXwx007" style="box-sizing: border-box; margin: 0px; padding: 0px; display: grid; grid-template-columns: 1fr; gap: 18px;">
 
       <div class="lit" data-page-node-id="ZXwx008" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
@@ -264,10 +285,13 @@
         <a class="lk" href="qinsheng.html" data-page-node-id="ZXwx012" style="box-sizing: border-box; margin: 11px 0px 0px; padding: 0px; color: rgb(29, 107, 79); text-decoration: none; display: inline-block; font-size: 13.5px; font-weight: 600;">阅读：琴声山弯 →</a>
       </div>
 
-      <div class="lit" data-page-node-id="ZXwx013" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
-        <div class="au" data-page-node-id="ZXwx014" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 13px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.04em;">王顺法 · 散文集</div>
-        <div class="ti" data-page-node-id="ZXwx015" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 19px; color: rgb(20, 80, 59); font-weight: 700; line-height: 1.5;">《凰川湾里的中国》</div>
-        <div class="de" data-page-node-id="ZXwx016" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">湖㳇本土作家的冰心散文奖获奖作品。2024 年"民间文艺家走进邵东村"活动中，多家单位与个人认购 1300 册，以文化消费反哺乡村书写。</div>
+      
+
+      <div class="lit" data-page-node-id="ZXwx025" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
+        <div class="au" data-page-node-id="ZXwx026" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 13px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.04em;">王顺法 · 图文长诗（2018）</div>
+        <div class="ti" data-page-node-id="ZXwx027" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 19px; color: rgb(20, 80, 59); font-weight: 700; line-height: 1.5;">《神奇·廿三湾》</div>
+        <div class="de" data-page-node-id="ZXwx028" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">2018 年 4 月 26 日发在美篇的图文长诗，一路写廿三湾的水、竹、石道与山民挖笋，写到山顶新修的境会亭、白居易"盘下中分两州界"，也把项羽的传说织进竹林。<span class="q" title="按原诗分行，／表示换行；首字「可」承接上句" style="box-sizing: border-box; margin: 0px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; color: rgb(43, 43, 40); font-style: italic;" data-page-node-id="HczJB1ND1m9gmYGcWW44Xq">"可廿三湾的竹／是项公的士兵灵魂附着的／能顶石生，能卧水生"</span></div>
+        <a class="lk" href="https://www.meipian.cn/19fcb6r2" target="_blank" rel="noopener" title="图文：王顺法，2018-04-26；原题作「神奇．廿三湾」（站外链接）" style="box-sizing: border-box; margin: 11px 0px 0px; padding: 0px; color: rgb(29, 107, 79); text-decoration: none; display: inline-block; font-size: 13.5px; font-weight: 600;" data-page-node-id="GQTe0g00b3mgsy7p8Kcysm">原文：美篇《神奇·廿三湾》2018-04-26 →</a>
       </div>
 
       <div class="lit" data-page-node-id="ZXwx017" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
@@ -283,11 +307,7 @@
         <div class="de" data-page-node-id="ZXwx024" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">宜兴市"文学家走进湖㳇邵东村书写'醉美廿三湾'"创作组于 2024 年 5 月成立，组织作家驻村采风，把邵东的山水茶事写进当代文学。</div>
       </div>
 
-      <div class="lit" data-page-node-id="ZXwx025" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
-        <div class="au" data-page-node-id="ZXwx026" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 13px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.04em;">游客游记 · 自媒体</div>
-        <div class="ti" data-page-node-id="ZXwx027" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 19px; color: rgb(20, 80, 59); font-weight: 700; line-height: 1.5;">廿三湾徒步游记</div>
-        <div class="de" data-page-node-id="ZXwx028" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">自 2018 年新浪旅游《在这个茶旅风情小镇，深深深呼吸》，到 2025 年携程《清明寻山访古赏春品茶》，无数游客以脚步与文字记录廿三湾——"古道幽幽今犹在，岁月匆匆越千年"。</div>
-      </div>
+      
 
       <div class="lit" data-page-node-id="ZXwx029" style="box-sizing: border-box; margin: 0px; padding: 22px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px; position: relative; overflow: hidden;">
         <div class="au" data-page-node-id="ZXwx030" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 13px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.04em;">本站 · 民间记忆</div>
@@ -296,6 +316,31 @@
         <a class="lk" href="minjian.html" data-page-node-id="ZXwx033" style="box-sizing: border-box; margin: 11px 0px 0px; padding: 0px; color: rgb(29, 107, 79); text-decoration: none; display: inline-block; font-size: 13.5px; font-weight: 600;">阅读：民间记忆 →</a>
       </div>
 
+    </div>
+
+    <!-- 游客游记 · 自媒体：2018—2026 公开链接索引 -->
+    <div class="linkidx" data-page-node-id="ZXwx034">
+      <div class="li-h" data-page-node-id="6k3YQHQkGiWws3gy8ouVd0" style="">游客笔下的廿三湾 · 游记链接<em data-page-node-id="SehKeflPg7jJzYOftvwjpf">2018—2026</em></div>
+      <p class="li-note" data-page-node-id="iSmh6TW5fCr9aEOddrk68w">按发表时间排列，都是站外公开文章，这里只列链接与出处，不转载原文；微信公众号文章需在微信内打开。</p>
+      <ul class="li-list" data-page-node-id="2wQSz0A7jtBPFynhXA1lu8">
+          <li data-page-node-id="E5CQj92RhUVSz4nRMwzfVz"><span class="yr" data-page-node-id="shmXBWDofZak6IAEddmucF">2018.03</span><a href="https://jiangsu.sina.cn/travel/g/2018-03-20/detail-ifyskeuc7980410.d.html" target="_blank" rel="noopener" title="《在这个茶旅风情小镇，深～深～深～呼吸》· 江苏微旅游，含「茶马古道，二十三弯」一节｜新浪江苏（站外链接）" data-page-node-id="o3k9wWENpCoYdj6uP3CAr3">在这个茶旅风情小镇，深深深呼吸</a><span class="pf" data-page-node-id="wKAQHOGeHIK7wGYdyFREHt">新浪江苏</span></li>
+          <li data-page-node-id="sYd5GQrc8uFy8jddMu5iTq"><span class="yr" data-page-node-id="bJYAIupdCmfQk9A7lLBsbA">2018.09</span><a href="http://mp.weixin.qq.com/s?__biz=MzAxMjk4Mzk1MQ==&amp;mid=2247490663&amp;idx=2&amp;sn=1a0c2e47b73414cb646bc7901c3135ca" target="_blank" rel="noopener" title="沙洲户外 2018-09-16，43 人队伍 18 公里环线穿越｜微信公众号（站外链接）" data-page-node-id="9ZZLw4bHL2qYfmgqGHxbt3">队员游记：廿三湾霸王潭环线穿越</a><span class="pf" data-page-node-id="obiPeeTN9ysOe3Wah3Omo0">微信公众号</span></li>
+          <li data-page-node-id="4WJwmLVHdKevN3thW0NvEb"><span class="yr" data-page-node-id="oEv9zFG2Kxp5HhTlnXUszp">2019.12</span><a href="http://mp.weixin.qq.com/s?__biz=MzU3MDA1OTIzOA==&amp;mid=2247488569&amp;idx=1&amp;sn=50d9a0bc0833c9686f81ad7d24ec38b5" target="_blank" rel="noopener" title="爱旅者 2019-12-29，二十三湾、贡茶古道、慈云古道、霸王潭环线｜微信公众号（站外链接）" data-page-node-id="aGE9ocgG25bYFpG1DiNfV6">收官之行：廿三湾·贡茶古道</a><span class="pf" data-page-node-id="WtvjIdL1ZC9ZBcUZVfBmTL">微信公众号</span></li>
+          <li data-page-node-id="rsHYFQqkcD1ZDGBGc8g0DP"><span class="yr" data-page-node-id="HWFDsbs8Nuorxbw4TSOw3w">2020.06</span><a href="https://www.meipian.cn/30s0e38h" target="_blank" rel="noopener" title="美篇·背包客 2020-06-24｜美篇（站外链接）" data-page-node-id="zlFHOhplRHV8g82fenR0QA">宜兴二十三湾</a><span class="pf" data-page-node-id="x9E2Wd7s84dC3yuTSMZwQD">美篇</span></li>
+          <li data-page-node-id="IgP5DE64jxFbzgS63vzt6u"><span class="yr" data-page-node-id="x8KKs944NpuYr3RKXVWZfF">2020.07</span><a href="https://www.meipian.cn/321fa2ib" target="_blank" rel="noopener" title="美篇·常州蜗牛户外 AB 队拉练记｜美篇（站外链接）" data-page-node-id="mFujsR4olEBUOQoC4gv5Uo">宜兴二十三湾拉练</a><span class="pf" data-page-node-id="AAvF3n28FowEjYjbBSc3q3">美篇</span></li>
+          <li data-page-node-id="kct8ShaeOqrTsGS3hbZ7kQ"><span class="yr" data-page-node-id="BM3kAhMcs3Vt0Kqmcdendf">2021.07</span><a href="https://bbs.8264.com/thread-5654880-1-40664015.html" target="_blank" rel="noopener" title="8264 户外网 2021-07-19，12 公里环线三段走法｜8264（站外链接）" data-page-node-id="YAGvBcygoVacG55RLADUqz">宜兴贡茶古道一日徒步攻略</a><span class="pf" data-page-node-id="nY6jsOqZwiJMDXxplR2vq6">8264</span></li>
+          <li data-page-node-id="9tqa1BDPlqnZCekxTdxFy0"><span class="yr" data-page-node-id="iFsVEqY6Udc8IE7wXtTrtA">2022.03</span><a href="https://xyyhww.com/thread-22751-1-1.html" target="_blank" rel="noopener" title="逍遥游户外网 2022-03-07，一岭两侧两个「二十三湾」｜逍遥游户外（站外链接）" data-page-node-id="qb70blxkHwQopCHoE10mg0">贡茶古道：陆羽紫笋茶的古驿道</a><span class="pf" data-page-node-id="LGr0GgTwECvZgUHPtFhQZJ">逍遥游户外</span></li>
+          <li data-page-node-id="P4iDm3AgBG7loF2SDlNnPo"><span class="yr" data-page-node-id="3m24qf9tXFJzSBT9iw7uh0">2023.09</span><a href="https://www.meipian.cn/4wiymxqj" target="_blank" rel="noopener" title="美篇，含慈云古道与邵坞野山红茶｜美篇（站外链接）" data-page-node-id="4pnkLCgHnb0TkBVE3HiIiN">徒步廿三湾·贡茶古道·霸王湖</a><span class="pf" data-page-node-id="6eISCgSYq1uuMVWg4uKrvT">美篇</span></li>
+          <li data-page-node-id="NssyuFASQkVUH4pHj6ocG9"><span class="yr" data-page-node-id="aXBNIM5iCZO1MSQ2TeOC6I">2023.10</span><a href="https://www.meipian.cn/4xht1x2y" target="_blank" rel="noopener" title="美篇·从廿三湾邵东村翻山至霸王潭｜美篇（站外链接）" data-page-node-id="TzopTSJB7HPs5sk5uDtlW5">翻山越岭 · 霸王潭</a><span class="pf" data-page-node-id="jHuqTGiUkZdlbzVAw7ill2">美篇</span></li>
+          <li data-page-node-id="7whYTyB9DhaixjVnmWvNhS"><span class="yr" data-page-node-id="eiVGvpdHzJ44AgCNPFEQsy">2024.06</span><a href="https://www.2bulu.com/mc/spaceindex/personal_dynamic_new.htm?did=9248024" target="_blank" rel="noopener" title="两步路 2024-06-08，15 公里小环线｜两步路（站外链接）" data-page-node-id="9JFiZCGDPA2LxbZYotQWt1">上坝乌峰岭—廿三湾环线</a><span class="pf" data-page-node-id="0PLLyXTXgDLVU1UrojdGy2">两步路</span></li>
+          <li data-page-node-id="KDyPNIxqLQkH3N5C5GbLBE"><span class="yr" data-page-node-id="B6gJXikwbh8wOvLzL4Swhu">2024.07</span><a href="https://m.dutenews.com/n/ctmedia/544972" target="_blank" rel="noopener" title="读特新闻 2024-07-19，整合小红书网友溯溪笔记｜读特新闻（站外链接）" data-page-node-id="5lPZ6bhQvla5QlpmoTHUyH">水清人少能徒步：邵东村溯溪</a><span class="pf" data-page-node-id="hqtGGVvyAHuXttCsz29pCS">读特新闻</span></li>
+          <li data-page-node-id="ljaIKc0kdMSnYFeChCzB9F"><span class="yr" data-page-node-id="WI4GtbTuaTK0HcdZfgEb3D">2024.12</span><a href="https://www.toutiao.com/article/7447803463951483443/" target="_blank" rel="noopener" title="今日头条 2024-12-13，两次走访廿三湾的散文｜今日头条（站外链接）" data-page-node-id="XUH5ZG5kZ2WWWDMaaHk4zl">刘志福：难忘廿三湾</a><span class="pf" data-page-node-id="WGcVhpAZ3AGDsXFzLAynth">今日头条</span></li>
+          <li data-page-node-id="p7LZ7BZZylrEwPCGJsgLlc"><span class="yr" data-page-node-id="fC8IJnz11FhwPV97KGxftY">2025.02</span><a href="http://mp.weixin.qq.com/s?__biz=MzI5MDc0ODc5MQ==&amp;mid=2247516204&amp;idx=1&amp;sn=7b960ff74f2769b012d4bb907ff10603" target="_blank" rel="noopener" title="公众号个人游记，2025-02-02 春节休闲徒步｜微信公众号（站外链接）" data-page-node-id="uJQ8AQhmsXusEUoFIiy6Gp">徒步廿三湾（春节）</a><span class="pf" data-page-node-id="rFsPpZnNqCQ3rraJlIz5Rk">微信公众号</span></li>
+          <li data-page-node-id="dUuXQIKHaCV9aJSp9advz9"><span class="yr" data-page-node-id="2uBnKdQFZnZiw5AspEvF8A">2025.04</span><a href="https://you.ctrip.com/travels/changxing1832/4161241.html" target="_blank" rel="noopener" title="携程游记，邵东村—境会亭环线约 4 公里｜携程游记（站外链接）" data-page-node-id="6IRPLL9v35uOQklgq2fUw8">清明寻山访古赏春品茶</a><span class="pf" data-page-node-id="3mbvpXPUegw4eHdMQr923p">携程游记</span></li>
+          <li data-page-node-id="i84yQTppzUhX8solGtphGK"><span class="yr" data-page-node-id="HrFcEs1pNhdLtMqQy3tSAd">2026.01</span><a href="https://www.meipian.cn/5jiqmvbn" target="_blank" rel="noopener" title="美篇，节气指示牌与「23 BAY YOUNG+」沿途记录｜美篇（站外链接）" data-page-node-id="PUtuOlDHbbpLjgp30TDU7i">廿三湾乌峰岭连环线</a><span class="pf" data-page-node-id="NruT0bcjH2r2LY5UIeELrn">美篇</span></li>
+          <li data-page-node-id="oUUhq4hcHvv5Nejk7jdluZ"><span class="yr" data-page-node-id="mIfHNGBWUGlPXPYBcqT9iE">2026</span><a href="http://www.sina.cn/news/detail/5308767931466493.html" target="_blank" rel="noopener" title="新浪新闻，15.5 公里组合环线、补给与打卡点实录｜新浪新闻（站外链接）" data-page-node-id="t2TIBtSzb5dyZFAS1dmNMz">廿三湾环线徒步（南风户外）</a><span class="pf" data-page-node-id="0htQGdWYUsmhxCMQEIt2vb">新浪新闻</span></li>
+      </ul>
+      <p class="li-foot" data-page-node-id="q9vHKS2NYq6NkUvyw27eOb">检索整理：2026 年 11 月。链接可能随平台调整失效，若有遗漏或打不开，可在页脚「分享 / 反馈」告诉我们。</p>
     </div>
   </section>
 
@@ -374,10 +419,24 @@
     <p class="sec-intro" data-page-node-id="ZXrw006" style="box-sizing: border-box; margin: 0px 0px 26px; padding: 0px; font-size: 15.5px; color: rgb(90, 87, 80); max-width: 760px; line-height: 1.95;">乡村振兴由人推动。以下记录与当代邵东村发展密切相关的部分人物。</p>
     <div class="ppl" data-page-node-id="ZXrw007" style="box-sizing: border-box; margin: 0px; padding: 0px; display: grid; grid-template-columns: 1fr; gap: 18px;">
 
-      <div class="pp" data-page-node-id="ZXrw008" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
-        <div class="role" data-page-node-id="ZXrw009" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">村党总支书记 · 头雁</div>
-        <div class="nm" data-page-node-id="ZXrw010" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">谢鸣</div>
-        <div class="ds" data-page-node-id="ZXrw011" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">宜兴市湖㳇镇人大代表。带领邵东村从经济薄弱村变为网红村，以"三条路径"（寻出路、优环境、融业态）把绿水青山变成致富靠山；2025 年村集体总收入达 697.43 万元。</div>
+      <div class="pp" data-page-node-id="ZXrw043" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
+        <div class="role" data-page-node-id="ZXrw044" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">乡贤 · 教育家 · 书法家</div>
+        <div class="nm" data-page-node-id="ZXrw045" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">史可风（史克方）</div>
+        <div class="ds" data-page-node-id="ZXrw046" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">湖㳇镇东岭村人（今属邵东村），1920—2005，字岕夫，号可风。毕业于北京教育行政学院，长期从事教育工作，历任无锡辅仁中学、市二中、无锡师范教导主任、校长；1984 年创建江南书画院并任院长，曾任无锡市书法家协会名誉主席、无锡市书画院顾问。尤擅草书，具北宋黄庭坚神韵；教学之余作诗数千首，著有《可风书法选》《晚风集》《追远斋存稿》等。其东岭村故居留存在村中，是邵东村走出的人文乡贤之一。</div>
+      </div>
+
+      <div class="pp" data-page-node-id="ZXrw047" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
+        <div class="role" data-page-node-id="ZXrw048" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">乡贤 · 高级工程师</div>
+        <div class="nm" data-page-node-id="ZXrw049" style="white-space: pre-wrap; box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">应金芳</div>
+        <div class="ds" data-page-node-id="ZXrw050" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">1939 年 3 月生，湖㳇镇邵东村人，中共党员，大学本科学历、高级工程师。1959 年 9 月进入浙江大学电机系电机专业学习；1964 年 9 月后在江苏省机械科学研究所、江苏冶金机修厂工作；1972 年 5 月后在浙江湖州农机厂、湖州联合收割机厂、湖州第一毛纺厂工作。1981、1982 年连续获湖州市先进生产者称号，1989 年由湖州市委授予"优秀共产党员"称号，1996 年被浙江省计经委评为设备管理先进个人。1999 年 2 月后在湖州申湖电机厂、浙江喜盈盈、浙江湖州富顺公司工作。主要著作有《小型电机双面密封轴承维修频次的思考和实践》《关于高压隔离开关直接操作变载变压器的容量问题》《花键孔电解光整加工工艺试验》。</div>
+        <div class="src" data-page-node-id="ZXrw051">据《湖㳇镇志（1997—2018）》「历史名人」</div>
+      </div>
+
+      <div class="pp" data-page-node-id="ZXrw052" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
+        <div class="role" data-page-node-id="ZXrw053" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">乡贤 · 大学教授</div>
+        <div class="nm" data-page-node-id="ZXrw054" style="white-space: pre-wrap; box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">应士君</div>
+        <div class="ds" data-page-node-id="ZXrw055" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">1966 年 4 月生，湖㳇镇邵东村人。湖㳇中学毕业后进入大连海运学院电子技术专业学习，后于上海海运学院通信与信息系统专业硕士研究生毕业，并赴日本神户商船大学航海系学习；上海海事大学载运工具运用工程专业博士研究生毕业，后任商船学院研究室主任，2012 年任教授。参与《海难搜救机器视觉系统技术研究》《机器视觉增强技术研究、开发及应用示范》等 3 项国家级科研项目，在国内外核心刊物发表论文 20 余篇，获发明专利 1 项和实用新型专利多项。曾获交通部科技进步奖三等奖、上海市科学技术进步奖二等奖、上海市优秀发明选拔赛一等奖和中国国际工业博览会创新奖。</div>
+        <div class="src" data-page-node-id="ZXrw056">据《湖㳇镇志（1997—2018）》「历史名人」</div>
       </div>
 
       <div class="pp" data-page-node-id="ZXrw012" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
@@ -395,9 +454,9 @@
       </div>
 
       <div class="pp" data-page-node-id="ZXrw022" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
-        <div class="role" data-page-node-id="ZXrw023" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">本土作家</div>
+        <div class="role" data-page-node-id="ZXrw023" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">宜兴本土作家</div>
         <div class="nm" data-page-node-id="ZXrw024" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">王顺法</div>
-        <div class="ds" data-page-node-id="ZXrw025" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">湖㳇本土作家，冰心散文奖获奖作品《凰川湾里的中国》作者，以文学书写家乡山水。</div>
+        <div class="ds" data-page-node-id="ZXrw025" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">宜兴丁蜀镇上坝村（凰川湾）人，冰心散文奖获奖散文集《凰川湾里的中国》作者，写的是家乡凰川湾的山民往事；另作《神奇·廿三湾》，专咏廿三湾。</div>
       </div>
 
       <div class="pp" data-page-node-id="ZXrw026" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
@@ -410,30 +469,6 @@
         <div class="role" data-page-node-id="ZXrw031" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">赛事主理人</div>
         <div class="nm" data-page-node-id="ZXrw032" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">陈立功</div>
         <div class="ds" data-page-node-id="ZXrw033" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">"无锡遇见山"主理人，2024 年发起第一届廿三湾茶香登山活动，开启廿三湾体旅 IP。</div>
-      </div>
-
-      <div class="pp" data-page-node-id="ZXrw034" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
-        <div class="role" data-page-node-id="ZXrw035" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">妇联主席</div>
-        <div class="nm" data-page-node-id="ZXrw036" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">邵丽琴</div>
-        <div class="ds" data-page-node-id="ZXrw037" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">湖㳇镇邵东村妇联主席，组织种植、民宿等实用技能培训，动员妇女参与村级治理与志愿服务，让女性力量在乡村振兴中绽放。</div>
-      </div>
-
-      <div class="pp" data-page-node-id="ZXrw043" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: rgb(255, 255, 255); border: 1px solid rgb(216, 205, 184); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
-        <div class="role" data-page-node-id="ZXrw044" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">乡贤 · 教育家 · 书法家</div>
-        <div class="nm" data-page-node-id="ZXrw045" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">史可风（史克方）</div>
-        <div class="ds" data-page-node-id="ZXrw046" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">湖㳿镇东岭村人（今属邵东村），1920—2005，字岕夫，号可风。毕业于北京教育行政学院，长期从事教育工作，历任无锡辅仁中学、市二中、无锡师范教导主任、校长；1984 年创建江南书画院并任院长，曾任无锡市书法家协会名誉主席、无锡市书画院顾问。尤擅草书，具北宋黄庭坚神韵；教学之余作诗数千首，著有《可风书法选》《晚风集》《追远斋存稿》等。其东岭村故居留存在村中，是邵东村走出的人文乡贤之一。</div>
-      </div>
-
-      <div class="pp first" data-page-node-id="ZXrw038" style="box-sizing: border-box; margin: 0px; padding: 22px 20px; background: linear-gradient(rgb(255, 255, 255), rgb(243, 248, 244)); border: 1px solid rgb(191, 224, 207); border-radius: 16px; box-shadow: rgba(60, 50, 30, 0.05) 0px 2px 14px;">
-        <div class="role" data-page-node-id="ZXrw039" style="box-sizing: border-box; margin: 0px 0px 6px; padding: 0px; font-size: 12.5px; color: rgb(29, 107, 79); font-weight: 700; letter-spacing: 0.06em;">驻村帮扶 · 第一书记</div>
-        <div class="nm" data-page-node-id="ZXrw040" style="box-sizing: border-box; margin: 0px 0px 9px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 20px; color: rgb(20, 80, 59); font-weight: 700;">驻村第一书记</div>
-        <div class="ds" data-page-node-id="ZXrw041" style="box-sizing: border-box; margin: 0px; padding: 0px; font-size: 14.5px; color: rgb(90, 87, 80); line-height: 1.85;">结对帮扶力量之一，与村"两委"协同推进灾后恢复、贡茶古道 IP 打造与文旅服务提升。作为外部赋能的一支，与村支书、村民、乡贤、创业者共同构成邵东振兴的合力。</div>
-        <div class="road" data-page-node-id="ZXrw042" style="box-sizing: border-box; margin: 10px 0px 0px; padding: 10px 0px 0px; border-top: 1px dashed rgb(216, 205, 184); font-size: 13px; color: rgb(90, 87, 80); line-height: 1.8;">
-          <b data-page-node-id="WwRGpCJ0HkKsYxAJU12ksG" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(20, 80, 59);">设想路线图</b><br data-page-node-id="2uL69t0cKSrCrxEQrss7Fn" style="box-sizing: border-box; margin: 0px; padding: 0px;">
-          壹 · 夯实地基（2026–2027）：连通步道断点、增设古道标识与解说牌，开展文化资源普查与口述史采集。<br data-page-node-id="YAdnSmf3TeEtvYNHAAjrAY" style="box-sizing: border-box; margin: 0px; padding: 0px;">
-          贰 · 试点推进（2027–2028）：推出"重走廿三湾"示范线、举办"琴声里的廿三湾"春茶琴会，落地民宿示范户。<br data-page-node-id="nfLQ0Lzx5zl9AUlY6XvQQ5" style="box-sizing: border-box; margin: 0px; padding: 0px;">
-          叁 · 长效运营（长期）：引入专业运营、注册"廿三湾"伴手礼品牌，推动名村提升与申报。
-        </div>
       </div>
 
     </div>
