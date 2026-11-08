@@ -157,7 +157,42 @@
     .hero{min-height:52vh}
   }
 </style>
-<style id="__dm_no_drag_style__" data-page-node-id="2QMH15P02UG7RlWFCYY7fL">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="SBsL172YulheDTSuQAsewH">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<style id="__dm_no_drag_style__" data-page-node-id="2QMH15P02UG7RlWFCYY7fL">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__" data-page-node-id="SBsL172YulheDTSuQAsewH">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style>
+<style id="tubu-fab-style">
+/* 与站内其余页面共用同一套浮窗样式；以下为 tubu 页变量名到标准变量名的映射 */
+:root{--tea-deep:#14503b;--gold:#b8860b;--ink3:#5a5750;
+  --shadow:0 8px 22px rgba(40,34,24,.22)}
+/* ---------- 互动：反馈 / 分享 / 展开 ---------- */
+.fab-bar{position:fixed;right:18px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(40,34,24,.22);
+  background:var(--tea);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.fab:hover{transform:translateY(-3px);background:var(--tea-deep)}
+.fab.alt{background:var(--gold)}
+.fab.alt:hover{background:#9c6f2e}
+.modal-mask{position:fixed;inset:0;background:rgba(20,16,10,.5);z-index:70;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-mask.show{display:flex!important}
+.modal{background:var(--paper);max-width:430px;width:100%;border-radius:16px;padding:26px 24px;box-shadow:var(--shadow);position:relative;max-height:88vh;overflow:auto}
+.modal h3{font-family:var(--serif);color:var(--tea-deep);font-size:21px;margin-bottom:4px}
+.modal .sub{font-size:13px;color:var(--ink3);margin-bottom:14px}
+.modal .close{position:absolute;top:12px;right:16px;border:none;background:none;font-size:24px;color:var(--ink3);cursor:pointer;line-height:1}
+.modal .fb-row{display:block;text-align:center;padding:14px 0;border-top:1px solid var(--line)}
+.modal .fb-row:first-of-type{border-top:none}
+.modal .fb-ic{font-size:24px;line-height:1.2}
+.modal .fb-row a{color:var(--tea);font-weight:600;word-break:break-all}
+.modal .fb-qr{width:150px;height:150px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff;display:block;margin:14px auto 8px}
+.modal .fb-note{font-size:12.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.modal .qr-wrap{text-align:center}
+.modal .share-opt{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;margin-top:10px;
+  border:1px solid var(--line,#e6ded2);border-radius:12px;background:var(--paper,#fff);color:var(--ink,#2b2620);
+  font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:.15s}
+.modal .share-opt:hover{background:var(--paper-d,var(--tea-soft,#f4efe6));border-color:var(--tea,#1d6b4f)}
+.modal .share-opt .ic{font-size:20px;line-height:1}
+.modal .share-qr{width:170px;height:170px;object-fit:cover;border-radius:10px;border:1px solid var(--line,#e6ded2);
+  background:#fff;display:block;margin:14px auto 4px}
+.modal .share-qr-tip{font-size:13px;color:var(--ink-soft,var(--ink3,#7a7066));text-align:center;margin-bottom:2px}
+@media(max-width:520px){.fab-bar{right:14px;bottom:calc(64px + env(safe-area-inset-bottom,0px))}.fab{width:48px;height:48px;font-size:20px}}
+</style>
+</head>
 <body data-page-node-id="fDifNIdioQv7VKMJDwP9jm" style="">
 
 <header class="hero" data-page-node-id="7vjBu6O9kYqTAiqKbPGqsO">
@@ -438,4 +473,61 @@
 
 
 
+
+<!-- 互动浮窗：分享 + 反馈 -->
+<div class="fab-bar" data-page-node-id="fab-bar">
+  <button class="fab alt" id="shareOpen" title="分享" data-page-node-id="fab-share">🔗</button>
+  <button class="fab" id="fbOpen" title="反馈 / 纠错" data-page-node-id="fab-fb">📝</button>
+</div>
+
+<div class="modal-mask" id="fbMask" data-page-node-id="fb-mask">
+  <div class="modal" data-page-node-id="fb-modal">
+    <button class="close" id="fbClose" data-page-node-id="fb-close" aria-label="关闭">×</button>
+    <h3 data-page-node-id="fb-h" style="">欢迎反馈你的想法</h3>
+    <div class="sub" data-page-node-id="fb-sub">发现内容错漏、想补充村史故事、或有建议——欢迎填写反馈问卷，你的一字一句，都会帮邵东村把故事讲得更准。</div>
+    <div class="fb-row qr-wrap" data-page-node-id="fb-r1">
+      <div data-page-node-id="fb-r1t">
+        
+        <div data-page-node-id="fb-r1tt" style="text-align: center; font-weight: 600; margin: 6px 0px;">扫二维码，填写问卷</div>
+        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码" data-page-node-id="fb-qr">
+        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener" data-page-node-id="fb-survey-link" style="white-space: pre-wrap;">点击这里，直接打开 ↗​</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-mask" id="shareMask" data-page-node-id="share-mask">
+  <div class="modal" data-page-node-id="share-modal">
+    <button class="close" id="shareClose" data-page-node-id="share-close" aria-label="关闭">×</button>
+    <h3 data-page-node-id="share-h">分享这个页面</h3>
+    <div class="sub" data-page-node-id="share-sub">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
+    <a class="share-opt" id="shareWeibo" data-page-node-id="sp-wb" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Ftubu.html"><span class="ic" data-page-node-id="0qPWY7ucOJ56t3OqXqIX5u">🌐</span>分享到微博</a>
+    <button class="share-opt" id="copyLink" data-page-node-id="sp-copy"><span class="ic" data-page-node-id="nxJxny24TuDm20CcFYfoxi">📋</span>复制链接</button>
+    <div class="share-qr-tip" data-page-node-id="sp-wx">微信扫码打开</div>
+    <img class="share-qr" id="wxQr" data-page-node-id="sp-qr" alt="微信扫码" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&amp;data=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Ftubu.html">
+  </div>
+</div>
+
+<script data-page-node-id="tb-fab-js">
+// 本地 file:// 预览时改用线上正式地址，避免二维码/分享链接指向本地临时文件
+const shareUrl=(location.protocol==='file:')?'https://tangload.github.io/shaodong-village/tubu.html':location.href;
+
+// 反馈弹窗
+const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('fbOpen'),fbClose=document.getElementById('fbClose');
+fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
+fbClose&&fbClose.addEventListener('click',()=>fbMask.classList.remove('show'));
+fbMask&&fbMask.addEventListener('click',e=>{if(e.target===fbMask)fbMask.classList.remove('show')});
+
+// 分享弹窗（居中模态，与反馈一致）
+const shareMask=document.getElementById('shareMask'),shareOpen=document.getElementById('shareOpen'),shareClose=document.getElementById('shareClose');
+shareOpen&&shareOpen.addEventListener('click',()=>shareMask.classList.add('show'));
+shareClose&&shareClose.addEventListener('click',()=>shareMask.classList.remove('show'));
+shareMask&&shareMask.addEventListener('click',e=>{if(e.target===shareMask)shareMask.classList.remove('show')});
+const shareWeibo=document.getElementById('shareWeibo');
+if(shareWeibo)shareWeibo.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(shareUrl)+'&title='+encodeURIComponent(document.title);
+const copyLink=document.getElementById('copyLink');
+copyLink&&copyLink.addEventListener('click',()=>{const u=shareUrl;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.innerHTML='<span class="ic">📋</span>已复制 ✓';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1500)});}else{prompt('复制此链接：',u)}});
+const wxQr=document.getElementById('wxQr');
+if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(shareUrl);
+</script>
 </body></html>
