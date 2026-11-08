@@ -130,27 +130,40 @@
   footer a:hover{color:#fff}
   footer .copy{margin-top:8px;font-size:12.5px;color:#b9c6bc}
 
-  /* ---------- 互动浮窗 ---------- */
-  .fab-bar{position:fixed;right:18px;bottom:22px;display:flex;flex-direction:column;gap:12px;z-index:50}
-  .fab{width:50px;height:50px;border-radius:50%;border:none;background:var(--tea);color:#fff;font-size:22px;
-    cursor:pointer;box-shadow:0 6px 18px rgba(20,80,59,.4);transition:transform .15s}
-  .fab.alt{background:var(--cinnabar)}
-  .fab:hover{transform:translateY(-2px)}
-  .modal-mask{position:fixed;inset:0;background:rgba(20,30,22,.55);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
-  .modal-mask.show{display:flex}
-  .modal{background:#fff;border-radius:18px;padding:30px 28px;max-width:400px;width:100%;position:relative;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-  .modal .close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:26px;color:#999;cursor:pointer;line-height:1}
-  .modal h3{font-family:var(--serif);font-size:21px;color:var(--tea-d);margin-bottom:10px}
-  .modal .sub{font-size:14px;color:var(--ink-soft);margin-bottom:18px;line-height:1.8}
-  .fb-qr,.share-qr{width:160px;height:160px;margin:6px auto;display:block}
-  .qr-wrap{text-align:center}
-  .share-opt{display:block;width:100%;text-align:left;padding:12px 16px;margin:8px 0;border:1px solid var(--line);border-radius:12px;
-    font-size:15px;color:var(--ink);background:#faf6ee;cursor:pointer;font-family:var(--sans)}
-  .share-opt:hover{background:#f1e9d8;color:var(--cinnabar)}
-  .share-opt .ic{margin-right:10px}
-  .share-qr-tip{margin-top:14px;font-size:13px;color:var(--ink-soft)}
+  /* 与站内其余页面共用同一套浮窗样式；以下为本页变量名到标准变量名的映射 */
+:root{--tea-deep:#14503b;--gold:#b8860b;--ink3:#5a5750;
+  --shadow:0 8px 22px rgba(40,34,24,.22)}
+/* ---------- 互动：反馈 / 分享 / 展开 ---------- */
+.fab-bar{position:fixed;right:18px;bottom:22px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab{width:52px;height:52px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(40,34,24,.22);
+  background:var(--tea);color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.fab:hover{transform:translateY(-3px);background:var(--tea-deep)}
+.fab.alt{background:var(--gold)}
+.fab.alt:hover{background:#9c6f2e}
+.modal-mask{position:fixed;inset:0;background:rgba(20,16,10,.5);z-index:70;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-mask.show{display:flex!important}
+.modal{background:var(--paper);max-width:430px;width:100%;border-radius:16px;padding:26px 24px;box-shadow:var(--shadow);position:relative;max-height:88vh;overflow:auto}
+.modal h3{font-family:var(--serif);color:var(--tea-deep);font-size:21px;margin-bottom:4px}
+.modal .sub{font-size:13px;color:var(--ink3);margin-bottom:14px}
+.modal .close{position:absolute;top:12px;right:16px;border:none;background:none;font-size:24px;color:var(--ink3);cursor:pointer;line-height:1}
+.modal .fb-row{display:block;text-align:center;padding:14px 0;border-top:1px solid var(--line)}
+.modal .fb-row:first-of-type{border-top:none}
+.modal .fb-ic{font-size:24px;line-height:1.2}
+.modal .fb-row a{color:var(--tea);font-weight:600;word-break:break-all}
+.modal .fb-qr{width:150px;height:150px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#fff;display:block;margin:14px auto 8px}
+.modal .fb-note{font-size:12.5px;color:var(--ink3);margin-top:8px;line-height:1.7}
+.modal .qr-wrap{text-align:center}
+.modal .share-opt{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;margin-top:10px;
+  border:1px solid var(--line,#e6ded2);border-radius:12px;background:var(--paper,#fff);color:var(--ink,#2b2620);
+  font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:.15s}
+.modal .share-opt:hover{background:var(--paper-d,var(--tea-soft,#f4efe6));border-color:var(--tea,#1d6b4f)}
+.modal .share-opt .ic{font-size:20px;line-height:1}
+.modal .share-qr{width:170px;height:170px;object-fit:cover;border-radius:10px;border:1px solid var(--line,#e6ded2);
+  background:#fff;display:block;margin:14px auto 4px}
+.modal .share-qr-tip{font-size:13px;color:var(--ink-soft,var(--ink3,#7a7066));text-align:center;margin-bottom:2px}
+@media(max-width:520px){.fab-bar{right:14px;bottom:calc(64px + env(safe-area-inset-bottom,0px))}.fab{width:48px;height:48px;font-size:20px}}
 
-  /* 游客游记 · 自媒体链接索引 2018—2026 */
+/* 游客游记 · 自媒体链接索引 2018—2026 */
   .linkidx{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 28px 22px;box-shadow:0 2px 14px rgba(60,50,30,.05);margin-top:22px}
   .linkidx .li-h{font-family:var(--serif);font-size:20px;color:var(--tea-d);font-weight:700;line-height:1.5}
   .linkidx .li-h em{font-family:var(--sans);font-style:normal;font-size:13px;color:#8a8478;font-weight:400;margin-left:12px;letter-spacing:.02em}
@@ -497,49 +510,60 @@
 </footer>
 
 <!-- 互动浮窗：分享 + 反馈 -->
-<div class="fab-bar" data-page-node-id="ZXfab001" style="box-sizing: border-box; margin: 0px; padding: 0px; position: fixed; right: 18px; bottom: 22px; display: flex; flex-direction: column; gap: 12px; z-index: 50;">
-  <button class="fab alt" id="shareOpen" title="分享" data-page-node-id="ZXfab002" style="box-sizing: border-box; margin: 0px; padding: 0px; width: 50px; height: 50px; border-radius: 50%; border: none; background: rgb(178, 58, 46); color: rgb(255, 255, 255); font-size: 22px; cursor: pointer; box-shadow: rgba(20, 80, 59, 0.4) 0px 6px 18px; transition: transform 0.15s;">🔗</button>
-  <button class="fab" id="fbOpen" title="反馈 / 纠错" data-page-node-id="ZXfab003" style="box-sizing: border-box; margin: 0px; padding: 0px; width: 50px; height: 50px; border-radius: 50%; border: none; background: rgb(29, 107, 79); color: rgb(255, 255, 255); font-size: 22px; cursor: pointer; box-shadow: rgba(20, 80, 59, 0.4) 0px 6px 18px; transition: transform 0.15s;">📝</button>
+<div class="fab-bar" data-page-node-id="ZXfab001">
+  <button class="fab alt" id="shareOpen" title="分享" data-page-node-id="ZXfab002">🔗</button>
+  <button class="fab" id="fbOpen" title="反馈 / 纠错" data-page-node-id="ZXfab003">📝</button>
 </div>
 
-<div class="modal-mask" id="fbMask" data-page-node-id="ZXfab004" style="box-sizing: border-box; margin: 0px; padding: 20px; position: fixed; inset: 0px; background: rgba(20, 30, 22, 0.55); display: none; align-items: center; justify-content: center; z-index: 60;">
-  <div class="modal" data-page-node-id="ZXfab005" style="box-sizing: border-box; margin: 0px; padding: 30px 28px; background: rgb(255, 255, 255); border-radius: 18px; max-width: 400px; width: 100%; position: relative; text-align: center; box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 60px;">
-    <button class="close" id="fbClose" aria-label="关闭" data-page-node-id="ZXfab006" style="box-sizing: border-box; margin: 0px; padding: 0px; position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 26px; color: rgb(153, 153, 153); cursor: pointer; line-height: 1;">×</button>
-    <h3 data-page-node-id="ZXfab007" style="box-sizing: border-box; margin: 0px 0px 10px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 21px; color: rgb(20, 80, 59);">欢迎反馈你的想法</h3>
-    <div class="sub" data-page-node-id="ZXfab008" style="box-sizing: border-box; margin: 0px 0px 18px; padding: 0px; font-size: 14px; color: rgb(90, 87, 80); line-height: 1.8;">发现内容错漏、想补充村史故事，或有建议——欢迎填写反馈问卷。</div>
-    <div class="qr-wrap" data-page-node-id="ZXfab009" style="box-sizing: border-box; margin: 0px; padding: 0px; text-align: center;">
-      <div data-page-node-id="ZXfab010" style="box-sizing: border-box; margin: 0px; padding: 0px;">
-        <div style="text-align: center; font-weight: 600; margin: 6px 0px; box-sizing: border-box; padding: 0px;" data-page-node-id="ZXfab011">扫二维码，填写问卷</div>
-        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码" data-page-node-id="ZXfab012" style="box-sizing: border-box; margin: 6px auto; padding: 0px; width: 160px; height: 160px; display: block;">
-        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener" data-page-node-id="ZXfab013" style="box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(29, 107, 79); text-decoration: none;">点击这里，直接打开 ↗</a>
+<div class="modal-mask" id="fbMask" data-page-node-id="ZXfab004">
+  <div class="modal" data-page-node-id="ZXfab005">
+    <button class="close" id="fbClose" data-page-node-id="ZXfab006" aria-label="关闭">×</button>
+    <h3 data-page-node-id="ZXfab007" style="">欢迎反馈你的想法</h3>
+    <div class="sub" data-page-node-id="ZXfab008">发现内容错漏、想补充村史故事，或有建议——欢迎填写反馈问卷。</div>
+    <div class="fb-row qr-wrap" data-page-node-id="ZXfab009">
+      <div data-page-node-id="ZXfab010">
+        
+        <div data-page-node-id="ZXfab011" style="text-align: center; font-weight: 600; margin: 6px 0px;">扫二维码，填写问卷</div>
+        <img class="fb-qr" id="fbQr" src="assets/feedback-qr.png" alt="邵东村网页反馈问卷二维码" data-page-node-id="ZXfab012">
+        <a href="https://wj.qq.com/s2/28187690/lm24/" target="_blank" rel="noopener" data-page-node-id="ZXfab013" style="white-space: pre-wrap;">点击这里，直接打开 ↗</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal-mask" id="shareMask" data-page-node-id="ZXfab014" style="box-sizing: border-box; margin: 0px; padding: 20px; position: fixed; inset: 0px; background: rgba(20, 30, 22, 0.55); display: none; align-items: center; justify-content: center; z-index: 60;">
-  <div class="modal" data-page-node-id="ZXfab015" style="box-sizing: border-box; margin: 0px; padding: 30px 28px; background: rgb(255, 255, 255); border-radius: 18px; max-width: 400px; width: 100%; position: relative; text-align: center; box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 60px;">
-    <button class="close" id="shareClose" aria-label="关闭" data-page-node-id="ZXfab016" style="box-sizing: border-box; margin: 0px; padding: 0px; position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 26px; color: rgb(153, 153, 153); cursor: pointer; line-height: 1;">×</button>
-    <h3 data-page-node-id="ZXfab017" style="box-sizing: border-box; margin: 0px 0px 10px; padding: 0px; font-family: &quot;Songti SC&quot;, STSong, SimSun, &quot;Noto Serif SC&quot;, serif; font-size: 21px; color: rgb(20, 80, 59);">分享这个页面</h3>
-    <div class="sub" data-page-node-id="ZXfab018" style="box-sizing: border-box; margin: 0px 0px 18px; padding: 0px; font-size: 14px; color: rgb(90, 87, 80); line-height: 1.8;">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
-    <a class="share-opt" id="shareWeibo" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Fzhenxing.html" data-page-node-id="ZXfab019" style="box-sizing: border-box; margin: 8px 0px; padding: 12px 16px; color: rgb(43, 43, 40); text-decoration: none; display: block; width: 100%; text-align: left; border: 1px solid rgb(216, 205, 184); border-radius: 12px; font-size: 15px; background: rgb(250, 246, 238); cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif;"><span class="ic" data-page-node-id="ZXfab020" style="box-sizing: border-box; margin: 0px 10px 0px 0px; padding: 0px;">🌐</span>分享到微博</a>
-    <button class="share-opt" id="copyLink" data-page-node-id="ZXfab021" style="box-sizing: border-box; margin: 8px 0px; padding: 12px 16px; display: block; width: 100%; text-align: left; border: 1px solid rgb(216, 205, 184); border-radius: 12px; font-size: 15px; color: rgb(43, 43, 40); background: rgb(250, 246, 238); cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif;"><span class="ic" data-page-node-id="ZXfab022" style="box-sizing: border-box; margin: 0px 10px 0px 0px; padding: 0px;">📋</span>复制链接</button>
-    <div class="share-qr-tip" data-page-node-id="ZXfab023" style="box-sizing: border-box; margin: 14px 0px 0px; padding: 0px; font-size: 13px; color: rgb(90, 87, 80);">微信扫码打开</div>
-    <img class="share-qr" id="wxQr" alt="微信扫码" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&amp;data=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Fzhenxing.html" data-page-node-id="ZXfab024" style="box-sizing: border-box; margin: 6px auto; padding: 0px; width: 160px; height: 160px; display: block;">
+<div class="modal-mask" id="shareMask" data-page-node-id="ZXfab014">
+  <div class="modal" data-page-node-id="ZXfab015">
+    <button class="close" id="shareClose" data-page-node-id="ZXfab016" aria-label="关闭">×</button>
+    <h3 data-page-node-id="ZXfab017">分享这个页面</h3>
+    <div class="sub" data-page-node-id="ZXfab018">把好故事讲给更多人听——选一种方式，把邵东村网页分享出去。</div>
+    <a class="share-opt" id="shareWeibo" data-page-node-id="ZXfab019" href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Fzhenxing.html"><span class="ic" data-page-node-id="ZXfab020">🌐</span>分享到微博</a>
+    <button class="share-opt" id="copyLink" data-page-node-id="ZXfab021"><span class="ic" data-page-node-id="ZXfab022">📋</span>复制链接</button>
+    <div class="share-qr-tip" data-page-node-id="ZXfab023">微信扫码打开</div>
+    <img class="share-qr" id="wxQr" data-page-node-id="ZXfab024" alt="微信扫码" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&amp;data=https%3A%2F%2Ftangload.github.io%2Fshaodong-village%2Fzhenxing.html">
   </div>
 </div>
 
 <script data-page-node-id="ZXjs001" style="box-sizing: border-box; margin: 0px; padding: 0px;">
+// 本地 file:// 预览时改用线上正式地址，避免二维码/分享链接指向本地临时文件
+const shareUrl=(location.protocol==='file:')?'https://tangload.github.io/shaodong-village/zhenxing.html':location.href;
+
+// 反馈弹窗
 const fbMask=document.getElementById('fbMask'),fbOpen=document.getElementById('fbOpen'),fbClose=document.getElementById('fbClose');
 fbOpen&&fbOpen.addEventListener('click',()=>fbMask.classList.add('show'));
 fbClose&&fbClose.addEventListener('click',()=>fbMask.classList.remove('show'));
 fbMask&&fbMask.addEventListener('click',e=>{if(e.target===fbMask)fbMask.classList.remove('show')});
+
+// 分享弹窗（居中模态，与反馈一致）
 const shareMask=document.getElementById('shareMask'),shareOpen=document.getElementById('shareOpen'),shareClose=document.getElementById('shareClose');
 shareOpen&&shareOpen.addEventListener('click',()=>shareMask.classList.add('show'));
 shareClose&&shareClose.addEventListener('click',()=>shareMask.classList.remove('show'));
 shareMask&&shareMask.addEventListener('click',e=>{if(e.target===shareMask)shareMask.classList.remove('show')});
+const shareWeibo=document.getElementById('shareWeibo');
+if(shareWeibo)shareWeibo.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(shareUrl)+'&title='+encodeURIComponent(document.title);
 const copyLink=document.getElementById('copyLink');
-copyLink&&copyLink.addEventListener('click',()=>{navigator.clipboard&&navigator.clipboard.writeText(location.href);copyLink.textContent='✓ 已复制';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1600);});
+copyLink&&copyLink.addEventListener('click',()=>{const u=shareUrl;if(navigator.clipboard){navigator.clipboard.writeText(u).then(()=>{copyLink.innerHTML='<span class="ic">📋</span>已复制 ✓';setTimeout(()=>copyLink.innerHTML='<span class="ic">📋</span>复制链接',1500)});}else{prompt('复制此链接：',u)}});
+const wxQr=document.getElementById('wxQr');
+if(wxQr)wxQr.src='https://api.qrserver.com/v1/create-qr-code/?size=170x170&data='+encodeURIComponent(shareUrl);
 </script>
 
 
